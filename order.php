@@ -12,7 +12,7 @@ session_start();?>
   <link rel="stylesheet" href="styles/all.css">
   <link rel="stylesheet" href="styles/icon.css">
   <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="styles/shards-dashboards.1.3.1.css">
+  <link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css" id="main-stylesheet" data-version="1.3.1">
   <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
   <link rel="stylesheet" href="styles/responsive.dataTables.css">
   <link rel="stylesheet" href="styles/font-awesome.css">
