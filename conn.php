@@ -2,7 +2,7 @@
 //使用define函数定义数据库服务器地址、用户名和密码常量
 define("HOST","127.0.0.1");
 define("USER","root");
-define("PASSWD","root");
+define("PASSWD","tianlang");
 //使用mysql_connect()函数，连接数据服务器
 $conn=mysqli_connect(HOST,USER,PASSWD);
 //如果数据库连接失败，抛出错误信息
