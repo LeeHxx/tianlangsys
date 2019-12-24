@@ -16,6 +16,44 @@ session_start();?>
   <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
   <link rel="stylesheet" href="styles/responsive.dataTables.css">
   <link rel="stylesheet" href="styles/font-awesome.css">
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    var order_id=$("#order_id").val();
+    var order_name=$("#order_name").val();
+    var order_type=$("#order_type").val();
+    var order_number=$("#order_number").val();
+    var order_client=$("#order_client").val();
+    var order_start=$("#order_start").val();
+    var order_end=$("#order_end").val();
+    if(order_id==""){
+      $("#order_id").focus();
+      return false;
+    }else if(order_name==""){
+      $("#order_name").focus();
+      return false;
+     }else if(order_type==""){
+      $("#order_type").focus();
+      return false;
+     }else if(order_number==""){
+      $("#order_number").focus();
+      return false;
+     }else if(order_client==""){
+      $("#order_client").focus();
+      return false;
+     }else if(order_start==""){
+      $("#order_start").focus();
+      return false;
+     }else if(order_end==""){
+      $("#order_end").focus();
+      return false;
+
+    }
+
+  });
+});
+</script>
 </head>
 <body class="h-100">
   <div class="container-fluid">
@@ -189,7 +227,7 @@ session_start();?>
             <div class="col-lg-8 mx-auto mt-4">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="#" class="py-4">
+                  <form action="order-add_check.php" class="py-4" id="order_add" method="post">
                     <div class="form-row mx-4 ">
                       <div class="col  ">
                         <h5 class="form-text m-0">订单信息</h5>
@@ -199,28 +237,28 @@ session_start();?>
                     <hr>
                     <div class="form-row mx-4">
                       <div class="form-group col-md-6">
-                        <label for="orderID">订单号</label>
-                        <input type="text" class="form-control" id="orderID" value="" placeholder="订单号">
+                        <label for="order_id">订单号</label>
+                        <input type="text" class="form-control" name="order_id" id="order_id" value="" placeholder="订单号">
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="productName">品名</label>
-                        <input type="text" class="form-control" id="productName" value="" placeholder="品名">
+                        <label for="order_name">品名</label>
+                        <input type="text" class="form-control" name="order_name" id="order_name" value="" placeholder="品名">
                       </div>
                     </div>
                     <div class="form-row mx-4">
                       <div class="form-group col-md-6">
-                        <label for="firstName">规格/型号/图号</label>
-                        <input type="text" class="form-control" id="firstName" value="" placeholder="规格/型号/图号">
+                        <label for="order_type">规格/型号/图号</label>
+                        <input type="text" class="form-control" name="order_type" id="order_type" value="" placeholder="规格/型号/图号">
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="firstName">订单量</label>
-                        <input type="text" class="form-control" id="firstName" value="" placeholder="订单量">
+                        <label for="order_number">订单量</label>
+                        <input type="text" class="form-control" name="order_number" id="order_number" value="" placeholder="订单量">
                       </div>
                     </div>
                     <div class="form-row mx-4">
                       <div class="form-group col-md-12">
-                        <label for="firstName">客户</label>
-                        <input type="text" class="form-control" id="firstName" value="" placeholder="客户">
+                        <label for="order_client">客户</label>
+                        <input type="text" class="form-control" name="order_client" id="order_client" value="" placeholder="客户">
                       </div>
                       <div class="form-group col-md-12">
                         <label for="firstName">接交单日期</label>
@@ -230,9 +268,9 @@ session_start();?>
                               <i class="fa fa-calendar"></i>
                             </span>
                           </span>
-                          <input type="text" class="input-sm form-control" id="transaction-history-date-range"  placeholder="接单日期"/>
+                          <input type="text" class="input-sm form-control" name="order_start" id="order_start"  placeholder="接单日期" />
                           <span class="input-group-middle"><span class="input-group-text">-</span></span>
-                          <input type="text" class="input-sm form-control" id="transaction-history-date-range" placeholder="交货日期" />
+                          <input type="text" class="input-sm form-control" name="order_end" id="order_end" placeholder="交货日期" />
                           <span class="input-group-append">
                             <span class="input-group-text">
                               <i class="fa fa-calendar"></i>
@@ -246,7 +284,7 @@ session_start();?>
                 </div>
                 <div class="card-footer border-top">
                   <div class="col">
-                    <a href="#" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加订单</a>
+                    <button id="btn1" form="order_add" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加订单</button>
                   </div>
                 </div>
               </div>
