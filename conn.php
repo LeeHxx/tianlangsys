@@ -11,7 +11,7 @@ if(!$conn)
 	die('Could not connect:' .mysqli_error());
 }
 //选择所要操作的数据库
-$dbselect=mysqli_select_db($conn,"stusys");
+$dbselect=mysqli_select_db($conn,"tl");
 //如果数据库选择失败，抛出错误信息
 if(!$dbselect)
 {
