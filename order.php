@@ -203,19 +203,23 @@ session_start();?>
 
               <?php
               require_once('conn.php');
-              $sql="select * from login";
+              $sql="select * from orders";
               $result=mysqli_query($conn,$sql);
               $loginNum=mysqli_num_rows($result);
+              if(!$result)
+{
+  die('Could not connect:' .mysqli_error());
+}
               for($i=0; $i<$loginNum; $i++){
                 $row = mysqli_fetch_assoc($result);
                 echo "<tr>";
-                echo "<td>{$row['id']}</td>";
-                echo "<td>{$row['zh']}</td>";
-                echo "<td>{$row['mm']}</td>";
-                echo "<td>{$row['zh']}</td>";
-                echo "<td>{$row['mm']}</td>";
-                echo "<td>管理员</td>";
-                echo "<td>管理员</td>";
+                echo "<td>{$row['order_id']}</td>";
+                echo "<td>{$row['order_start']}</td>";
+                echo "<td>{$row['order_client']}</td>";
+                echo "<td>{$row['order_name']}</td>";
+                echo "<td>{$row['order_type']}</td>";
+                echo "<td>{$row['order_number']}</td>";
+                echo "<td>{$row['order_end']}</td>";
                 echo "<td>
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
                 <button type='button' class='btn btn-white'>
