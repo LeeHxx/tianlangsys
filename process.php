@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html class="no-js h-100" lang="zh-CN">
 <head>
@@ -37,7 +36,7 @@
         <div class="nav-wrapper">
           <ul class="nav nav--no-borders flex-column">
             <li class="nav-item dropdown open">
-              <a class="nav-link dropdown-toggle  active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">insert_drive_file</i>
                 <span>订单管理</span>
               </a>
@@ -57,7 +56,7 @@
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">straighten</i>
                 <span>工艺管理</span>
               </a>
@@ -173,12 +172,12 @@
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">order</span>
+              <span class="text-uppercase page-subtitle">process</span>
               <h3 class="page-title">工艺列表</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="process-add.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 添加订单 </a>
+                <a id="add-new-event" href="process-add.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 添加 </a>
               </div>
             </div>
           </div>
@@ -206,6 +205,10 @@
               require_once('conn.php');
               $sql="select * from process";
               $result=mysqli_query($conn,$sql);
+              if (!$result) {
+                printf("Error: %s\n", mysqli_error($conn));
+                exit();
+            }
               $loginNum=mysqli_num_rows($result);
               if(!$result)
 {
