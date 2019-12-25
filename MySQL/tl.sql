@@ -11,7 +11,7 @@
  Target Server Version : 80013
  File Encoding         : 65001
 
- Date: 23/12/2019 16:24:25
+ Date: 25/12/2019 16:52:58
 */
 
 SET NAMES utf8mb4;
@@ -115,25 +115,27 @@ CREATE TABLE `inspection` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Table structure for order
+-- Table structure for orders
 -- ----------------------------
-DROP TABLE IF EXISTS `order`;
-CREATE TABLE `order` (
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `order_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `order_client` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `order_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `order_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `order_number` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `order_client` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `order_start` date DEFAULT NULL,
   `order_end` date DEFAULT NULL,
   PRIMARY KEY (`order_id`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of order
+-- Records of orders
 -- ----------------------------
 BEGIN;
-INSERT INTO `order` VALUES ('TL2020000', '航天电子板', '十四所', 'AAA2', '2000', '2019-10-30', '2019-10-15');
+INSERT INTO `orders` VALUES ('TL20190001', 'PCB', '件', '3123', '十四所', '2019-12-19', '2019-12-19');
+INSERT INTO `orders` VALUES ('TL2020000', '航天电子板', '2000', 'AAA2', '十四所', '2019-10-30', '2019-10-15');
+INSERT INTO `orders` VALUES ('TL230001', 'AA', '件', '10000', '十四所', '2019-12-10', '2019-12-13');
 COMMIT;
 
 -- ----------------------------
