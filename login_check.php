@@ -5,7 +5,7 @@ require_once('conn.php');
 $user=$_POST['user'];
 $passwd=$_POST['passwd'];
 //将查询语句赋给变量$sql
-$sql="select * from user where usable=1 and name='".$user."' and password='".$passwd."'";
+$sql="select * from user where usable=1 and user_name='".$user."' and user_password='".$passwd."'";
 //执行sql语
 $result=mysqli_query($conn,$sql);
 
