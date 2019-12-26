@@ -11,14 +11,14 @@ session_start();?>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="styles/all.css">
   <link rel="stylesheet" href="styles/icon.css">
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" href="styles/bootstrap.css">
   <link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css" id="main-stylesheet" data-version="1.3.1">
   <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
   <link rel="stylesheet" href="styles/responsive.dataTables.css">
   <link rel="stylesheet" href="styles/font-awesome.css">
 </head>
 <body class="h-100">
-  <div class="container-fluid">
+  <div class="container-fluid ">
     <div class="row">
       <!-- 侧边栏 -->
       <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
@@ -38,7 +38,7 @@ session_start();?>
 
         <div class="nav-wrapper">
           <ul class="nav nav--no-borders flex-column">
-            <li class="nav-item dropdown open">
+            <li class="nav-item dropdown ">
               <a class="nav-link dropdown-toggle  active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">insert_drive_file</i>
                 <span>订单管理</span>
@@ -49,11 +49,11 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item  dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">assignment_returned</i>
                 <span>物料管理</span>
               </a>
-              <div class="dropdown-menu dropdown-menu-small">
+              <div class="dropdown-menu  dropdown-menu-small">
                 <a class="dropdown-item " href="material.php">物料列表</a>
                 <a class="dropdown-item " href="material-add.php">添加</a>
               </div>
@@ -69,7 +69,7 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">home_work</i>
                 <span>仓库管理</span>
               </a>
@@ -78,19 +78,35 @@ session_start();?>
                 <a class="dropdown-item " href="warehouse-add.php">添加</a>
               </div>
             </li>
+
+
+
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">all_inclusive</i>
                 <span>生产制造管理</span>
               </a>
               <div class="dropdown-menu dropdown-menu-small">
-                <a class="dropdown-item " href="workshop-smt.php">车间作业</a>
+                <div class="dropdown">
+                <a class="dropdown-item  " data-toggle="dropdown" href="#">车间作业</a>
+                <div class="dropdown-menu  dropdown-menu-small">
+                  <a class="dropdown-item " href="#">STM</a>
+                </div>
+
+
+                </div>
+
                 <a class="dropdown-item " href="problem.php">问题反馈记录单</a>
                 <a class="dropdown-item " href="addition.php">物料补领申请单</a>
               </div>
             </li>
+
+
+
+
+
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">playlist_add_check</i>
                 <span>质量管理</span>
               </a>
@@ -100,7 +116,7 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">local_shipping</i>
                 <span>成品管理</span>
               </a>
@@ -168,7 +184,7 @@ session_start();?>
               </a>
             </nav>
           </nav>
-        </div> 
+        </div>
         <!-- end 顶栏 -->
         <!-- Page -->
         <div class="main-content-container container-fluid px-4 mb-4">
