@@ -2,6 +2,7 @@
 session_start();
 header("Content-type:text/html; charset=utf-8");
 require_once('conn.php');
+ 
 $user=$_POST['user'];
 $passwd=$_POST['passwd'];
 //将查询语句赋给变量$sql
@@ -27,7 +28,7 @@ if ($num>0) {
 	$_SESSION['admin']=$row['admin'];
     echo "yes";
 	exit;
-}else{	
+}else{
 	echo "no";
 	exit;
 	}
