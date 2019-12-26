@@ -205,9 +205,10 @@ session_start();?>
           <table class="transaction-history d-none">
             <thead>
               <tr>
-                <th>订单号</th>
+                <th>序列号</th>
                 <th>接单日期</th>
                 <th>客户</th>
+                <th>订单号</th>
                 <th>品名</th>
                 <th>规格/型号/图号</th>
                 <th>订单量</th>
@@ -228,10 +229,12 @@ session_start();?>
 }
               for($i=0; $i<$loginNum; $i++){
                 $row = mysqli_fetch_assoc($result);
+                $ii=$i+1;
                 echo "<tr>";
-                echo "<td>{$row['order_id']}</td>";
+                echo "<td>{$ii}</td>";
                 echo "<td>{$row['order_start']}</td>";
                 echo "<td>{$row['order_client']}</td>";
+                echo "<td>{$row['order_id']}</td>";
                 echo "<td>{$row['order_name']}</td>";
                 echo "<td>{$row['order_type']}</td>";
                 echo "<td>{$row['order_number']}</td>";
