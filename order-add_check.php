@@ -15,13 +15,16 @@ $sql="insert into orders values ('$id','$name','$type','$number','$client','$sta
 $result=mysqli_query($conn,$sql);
 
 if($result){
+    header("Location: order-add-success.php");
     echo "yes";
 	exit;
-}else{	
-	echo "no";
+}else{
+  header("Location: order-add-fail.php");
+  echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
 	}
 
 mysqli_close($conn);
+
 ?>
