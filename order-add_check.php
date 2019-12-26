@@ -10,7 +10,7 @@ $client=$_POST['order_client'];
 $start=$_POST['order_start'];
 $end=$_POST['order_end'];
 
-$sql="insert into orders values ('$id','$name','$type','$number','$client','$start','$end')";
+$sql="insert into orders(order_id,order_name,order_type,order_number,order_client,order_start,order_end) values ('$id','$name','$type','$number','$client','$start','$end')";
 
 $result=mysqli_query($conn,$sql);
 
