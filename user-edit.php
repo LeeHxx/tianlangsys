@@ -33,7 +33,7 @@ session_start();?>
       },"text");
 
     }
-    
+
   </script>
 </head>
 <body class="h-100">
@@ -41,7 +41,7 @@ session_start();?>
   session_start();
   require_once('conn.php');
   $id = $_GET['id'];
-  $sql="select * from user where id=$id";
+  $sql="select * from user where user_id=$id";
   $result=mysqli_query($conn,$sql);
   $sql_arr = mysqli_fetch_assoc($result);
   ?>
@@ -196,7 +196,7 @@ session_start();?>
             </nav>
           </nav>
           <!-- End -->
-        </div> 
+        </div>
         <!-- Page -->
         <div class="container-fluid px-0">
           <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
@@ -225,7 +225,7 @@ session_start();?>
                         <div class="form-row">
                           <div class="form-group col-md-6">
                             <label for="firstName">用户名</label>
-                            <input type="text" class="form-control" id="firstName" value="<?php echo $sql_arr['name'] ?>">
+                            <input type="text" class="form-control" id="firstName" value="<?php echo $sql_arr['user_name'] ?>">
                           </div>
                           <div class="form-group col-md-6">
                             <label for="displayEmail">所属部门</label>
@@ -243,7 +243,7 @@ session_start();?>
                                   <i class="material-icons">&#xE0CD;</i>
                                 </div>
                               </div>
-                              <input type="text" class="form-control" id="phoneNumber" value="<?php echo $sql_arr['name'] ?>">
+                              <input type="text" class="form-control" id="phoneNumber" value="<?php echo $sql_arr['user_id'] ?>">
                             </div>
                           </div>
                           <div class="form-group col-md-6">
@@ -358,7 +358,7 @@ session_start();?>
                     <div class="form-row mx-4">
                       <div class="form-group col-md-6">
                         <label for="firstName">旧密码</label>
-                        <input type="text" class="form-control" id="firstName"  value="<?php echo $sql_arr['password']?>" readonly="readonly">
+                        <input type="text" class="form-control" id="firstName"  value="<?php echo $sql_arr['user_password']?>" readonly="readonly">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="lastName">新密码</label>
