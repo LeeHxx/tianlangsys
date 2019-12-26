@@ -252,7 +252,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-6">
                         <label for="order_number">订单量</label>
-                        <input type="text" class="form-control" name="order_number" id="order_number" value="" placeholder="订单量">
+                        <input type="number" class="form-control" name="order_number" id="order_number" value="" placeholder="订单量">
                       </div>
                     </div>
                     <div class="form-row mx-4">
@@ -280,7 +280,7 @@ $(document).ready(function(){
                       </div>
                     </div>
 
-                  </form> 
+                  </form>
                 </div>
                 <div class="card-footer border-top">
                   <div class="col">
