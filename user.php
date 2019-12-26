@@ -187,7 +187,7 @@ session_start();?>
         </div>
         <!-- Page -->
         <div class="main-content-container container-fluid px-4 mb-4">
-          <!-- Page Header 
+          <!-- Page Header
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
               <span class="text-uppercase page-subtitle">user</span>
@@ -238,7 +238,7 @@ session_start();?>
                           <img class='border rounded' src='images/avatars/admin.png'>
                           </td>";
                           echo "<td class='lo-stats__order-details'>
-                          <span>#{$row1['name']}</span>
+                          <span>#{$row1['user_name']}</span>
                           <span>21 February 2018 20:32</span>
                           </td>";
                           echo "<td class='lo-stats__status'>
@@ -268,7 +268,7 @@ session_start();?>
                           <img class='border rounded' src='images/avatars/admin.png'>
                           </td>";
                           echo "<td class='lo-stats__order-details'>
-                          <span>#{$row0['name']}</span>
+                          <span>#{$row0['user_name']}</span>
                           <span>21 February 2018 20:32</span>
                           </td>";
                           if ($row0['usable']==1) {
@@ -278,9 +278,9 @@ session_start();?>
                             </div>
                             </td>";
                             echo "<td class='lo-stats__actions'>
-                            <form action='javascript:usable({$row0['id']})' method='post' id='u{$i}'>
+                            <form action='javascript:usable({$row0['user_id']})' method='post' id='u{$i}'>
                             </form>
-                            <form action='user-edit.php?id={$row0['id']}' method='post' id='e{$i}'>
+                            <form action='user-edit.php?id={$row0['user_id']}' method='post' id='e{$i}'>
                             </form>
                             <div class='btn-group d-table ml-auto' role='group' aria-label='Basic example'>
 
@@ -299,7 +299,7 @@ session_start();?>
                             </div>
                             </td>";
                             echo "<td class='lo-stats__actions'>
-                            <form action='javascript:usable({$row0['id']})' method='post' id='u{$i}'>
+                            <form action='javascript:usable({$row0['user_id']})' method='post' id='u{$i}'>
                             </form>
                             <div class='btn-group d-table ml-auto' role='group' aria-label='Basic example'>
                             <button type='button' class='btn btn-sm btn-white'>管理</button>
