@@ -5,7 +5,7 @@ require_once('conn.php');
 
 $id = $_GET['id'];
 
-$sql="update user set usable= not usable where id=$id ";
+$sql="update user set usable= not usable where user_id=$id ";
 //执行sql语
 
 //mysqli_query($conn,$sql) or die('添加数据出错：'.mysql_error());
@@ -15,7 +15,7 @@ if($result){
 
     echo "yes";
 	exit;
-}else{	
+}else{
 	echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
