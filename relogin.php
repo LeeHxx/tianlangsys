@@ -28,7 +28,7 @@
         }else{
           $.post("login_check.php",{user:user,passwd:passwd},function(data){
             if($.trim(data)=='yes'){
-              window.location.href='order.php';
+              window.location.href='index.php';
               return true;
             }else{
               window.location.href='relogin.php';
@@ -137,7 +137,7 @@
                             <i class="fa fa-user"></i>
                           </span>
                         </span>
-                        <input type="text" class="form-control is-invalid" id="user" name="user" aria-describedby="emailHelp" placeholder=" 用户名" required>
+                        <input type="text" class="form-control is-invalid" id="user" name="user" aria-describedby="emailHelp" placeholder=" 用户名或密码错误！" required>
                       </div>
                     </div>
                     <div class="form-group">
