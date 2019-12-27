@@ -33,7 +33,7 @@ if(isset($_SESSION['ischecked'])){unset($_SESSION['ischecked']);
         }else{
           $.post("login_check.php",{user:user,passwd:passwd},function(data){
             if($.trim(data)=='yes'){
-              window.location.href='order.php';
+              window.location.href='index.php';
               return true;
             }else{
               window.location.href='relogin.php';
