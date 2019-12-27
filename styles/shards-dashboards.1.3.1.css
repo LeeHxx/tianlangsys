@@ -1644,8 +1644,8 @@ select.form-control-lg:not([size]):not([multiple]) {
 
 .btn-group-lg>.btn,
 .btn-lg {
-    padding: .75rem 1.75rem;
-    font-size: 1.125rem;
+    padding: .5rem 1rem;
+    font-size: 1.0rem;
     line-height: 1.5;
     border-radius: .5rem
 }
@@ -4544,7 +4544,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
     white-space: nowrap;
     border-radius: .375rem;
     border-radius: .375rem;
-    background: #fff;
+    background: #ffffff82;
     color: #5a6169;
     box-shadow: 0 3px 15px rgba(90, 97, 105, .1), 0 2px 3px rgba(90, 97, 105, .2);
     font-size: .75rem;
