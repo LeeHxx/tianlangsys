@@ -140,12 +140,12 @@ $(document).ready(function(){
                     <div class="form-group">
                       <label for="exampleInputPassword2">确认密码</label>
                       <input type="password" class="form-control" id="passwd2" name="passwd2" placeholder="确认密码">
-                    </div>                   
+                    </div>
                     <div class="form-group mb-3 d-table mx-auto">
-                      
+
                     </div>
                     <button id="btn1" type="button" class="btn btn-pill btn-accent d-table mx-auto" data-toggle="modal" data-target="#create">创建账户</button>
-                    
+
                     <div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
                         <div class="modal-content">
@@ -156,11 +156,11 @@ $(document).ready(function(){
                             </button>
                           </div>
                           <div class="modal-body">
-                            
+
                             <strong>账户创建成功！</strong>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href='register.html'">好的</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="location.href='register.php'">好的</button>
                             <button type="button" class="btn btn-success" data-dismiss="modal" onclick="location.href='login.php'">登录</button>
                           </div>
                         </div>
@@ -169,7 +169,7 @@ $(document).ready(function(){
 
                   </form>
                 </div>
-                
+
               </div>
               <div class="auth-form__meta d-flex mt-4">
                 <a href="forgot-password.php">忘记密码?</a>
