@@ -1,3 +1,6 @@
+<?php
+require_once('session.php');
+session_start();?>
 <!DOCTYPE html>
 <html class="no-js h-100" lang="zh-CN">
 <head>
