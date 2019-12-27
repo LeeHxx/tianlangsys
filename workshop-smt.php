@@ -202,7 +202,7 @@ session_start();?>
 
               <?php
               require_once('conn.php');
-              $sql="select * from warehouse";
+              $sql="select * from smt";
               $result=mysqli_query($conn,$sql);
               if (!$result) {
                 printf("Error: %s\n", mysqli_error($conn));
