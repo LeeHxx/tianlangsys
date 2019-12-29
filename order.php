@@ -90,8 +90,11 @@ session_start();?>
                 <div class="dropdown">
                 <a class="dropdown-item  " data-toggle="dropdown" href="#">车间作业</a>
                 <div class="dropdown-menu  dropdown-menu-small">
-                  <a class="dropdown-item " href="#">STM</a>
-                  <a class="dropdown-item " href="#">STM</a>
+                  <a class="dropdown-item " href="workshop-smt.php">SMT</a>
+                  <a class="dropdown-item " href="workshop-dip.php">DIP</a>
+									<a class="dropdown-item " href="workshop-clean.php">清洗</a>
+									<a class="dropdown-item " href="workshop-glue.php">打胶</a>
+									<a class="dropdown-item " href="workshop-code.php">打码</a>
                 </div>
 
 
