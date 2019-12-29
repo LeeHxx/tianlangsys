@@ -18,40 +18,25 @@ session_start();?>
   <link rel="stylesheet" href="styles/font-awesome.css">
   <script src="scripts/jquery-3.3.1.min.js"></script>
   <script type="text/javascript">
-    function usable (id) {
-
-      $.post("usable.php?id="+id,function(data){
-        if($.trim(data)=='yes'){
-
-          window.location.href='user.php';
-          return true;
-        }else{
-
-          window.location.href='user.php';
-          return false;
-        }
-      },"text");
-
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    var m_id=$("#m_id").val();
+    if(m_id==""){
+      $("#m_id").focus();
+      return false;
     }
-
-  </script>
+  });
+});
+</script>
 </head>
 <body class="h-100">
-  <?php
-  session_start();
-  require_once('conn.php');
-  $id = $_GET['id'];
-  $sql="select * from user where user_id=$id";
-  $result=mysqli_query($conn,$sql);
-  $sql_arr = mysqli_fetch_assoc($result);
-  ?>
   <div class="container-fluid">
     <div class="row">
-      <!-- 侧栏 -->
+      <!-- 侧边栏 -->
       <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
         <div class="main-navbar">
           <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-            <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+            <a class="navbar-brand w-100 mr-0" href="index.php" style="line-height: 25px;">
               <div class="d-table m-auto">
                 <!--<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/logo.svg" alt="Shards Dashboard">-->
                 <span class="  d-md-inline ml-1">生产管理系统</span>
@@ -76,13 +61,13 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item  dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">assignment_returned</i>
                 <span>物料管理</span>
               </a>
               <div class="dropdown-menu dropdown-menu-small">
                 <a class="dropdown-item " href="material.php">物料列表</a>
-                <a class="dropdown-item " href="material-search.php">添加</a>
+                <a class="dropdown-item active" href="material-search.php">添加物料</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -139,7 +124,7 @@ session_start();?>
           </ul>
         </div>
       </aside>
-      <!-- End -->
+      <!-- End 侧边栏 -->
       <main class="main-content col-lg-10 col-md-9 col-sm-12 p-0 offset-lg-2 offset-md-3">
         <div class="main-navbar sticky-top bg-white">
           <!-- 顶栏 -->
@@ -195,194 +180,67 @@ session_start();?>
               </a>
             </nav>
           </nav>
-          <!-- End -->
         </div>
+        <!-- end 顶栏 -->
         <!-- Page -->
         <div class="container-fluid px-0">
           <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
-            <strong>OK!</strong> 账号信息修改成功! <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <strong>物料信息</strong> 添加成功！<button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
         </div>
-        <div class="main-content-container container-fluid px-4">
+        <div class="main-content-container container-fluid px-4 mb-4">
+          <!-- Page Header -->
+
+
+
+
           <div class="row">
             <div class="col-lg-8 mx-auto mt-4">
-              <!-- Edit User Details -->
-              <div class="card card-small edit-user-details mb-4">
-                <div class="card-header p-0">
-                </div>
+              <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="#" class="py-4">
-                    <div class="form-row mx-4">
-                      <div class="col mb-3">
-                        <h5 class="form-text m-0">基本信息</h5>
-                        <p class="form-text text-muted m-0">Setup your general profile details.</p>
-                      </div>
-                    </div>
-                    <div class="form-row mx-4">
-                      <div class="col-lg-8">
-                        <div class="form-row">
-                          <div class="form-group col-md-6">
-                            <label for="firstName">用户名</label>
-                            <input type="text" class="form-control" id="firstName" value="<?php echo $sql_arr['user_name'] ?>">
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="displayEmail">所属部门</label>
-                            <select class="custom-select">
-                              <option value="1" selected>生产车间</option>
-                              <option value="2">物料管理</option>
-                            </select>
-                          </div>
+                  <form action="material-search_check.php" class="py-4" id="material_add" method="post">
+                    <div class="form-row mx-4 ">
+                      <div class="col  ">
+                        <h5 class="form-text m-0">添加物料</h5>
 
-                          <div class="form-group col-md-6">
-                            <label for="phoneNumber">手机号码</label>
-                            <div class="input-group input-group-seamless">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                  <i class="material-icons">&#xE0CD;</i>
-                                </div>
-                              </div>
-                              <input type="text" class="form-control" id="phoneNumber" value="<?php echo $sql_arr['user_id'] ?>">
-                            </div>
-                          </div>
-                          <div class="form-group col-md-6">
-                            <label for="emailAddress">电子邮箱</label>
-                            <div class="input-group input-group-seamless">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text">
-                                  <i class="material-icons">&#xE0BE;</i>
-                                </div>
-                              </div>
-                              <input type="email" class="form-control" id="emailAddress">
-                            </div>
-                          </div>
-                        </div>
                       </div>
                     </div>
                     <hr>
                     <div class="form-row mx-4">
-                      <div class="col mb-3">
-                        <h5 class="form-text m-0">权限管理</h5>
-                        <p class="form-text text-muted m-0">Authority management</p>
-                      </div>
-                    </div>
 
-                    <div class="form-row mx-4">
-                      <label for="order" class="col col-form-label"> 订单管理 <small class="form-text text-muted"> 可以对订单进行增加修改删除操作的权限</small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="order" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="order"></label>
-                        </div>
-                      </div>
-                    </div>
+                      <div class="form-group col-md-12">
+                        <label for="order_id">订单号</label>
+                        <div class="input-group mb-3">
 
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="materials" class="col col-form-label"> 物料管理 <small class="form-text text-muted"> 对物料信息增加删除修改的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="materials" class="custom-control-input">
-                          <label class="custom-control-label" for="materials"></label>
+                        <input type="text" class="form-control is--invalid" name="m_id" id="m_id" value="" placeholder="输入订单号">
+                        <div class="input-group-append">
+                          <button id="btn1" class="btn btn-white" type="submit"><i class="material-icons mr-2">search</i>查找订单号</button>
                         </div>
                       </div>
-                    </div>
-
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="craft" class="col col-form-label"> 工艺管理 <small class="form-text text-muted"> 对工艺信息增加删除修改的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="craft" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="craft"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="warehouse" class="col col-form-label"> 仓库管理 <small class="form-text text-muted"> 对仓库信息增加删除修改的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="warehouse" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="warehouse"></label>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="making" class="col col-form-label"> 生产制造管理 <small class="form-text text-muted"> 对生产制造流程管理的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="making" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="making"></label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="quality" class="col col-form-label"> 质量管理 <small class="form-text text-muted"> 对质量信息管理的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="quality" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="quality"></label>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="border-top form-row mx-4">
-                      <hr>
-                      <label for="product" class="col col-form-label"> 成品管理 <small class="form-text text-muted"> 对成品信息管理的权限 </small>
-                      </label>
-                      <div class="col d-flex">
-                        <div class="custom-control custom-toggle ml-auto my-auto">
-                          <input type="checkbox" id="product" class="custom-control-input" checked>
-                          <label class="custom-control-label" for="product"></label>
-                        </div>
-                      </div>
-                    </div>
-                    <hr>
-                    <div class="form-row mx-4">
-                      <div class="col mb-3">
-                        <h5 class="form-text m-0">修改密码</h5>
-                        <p class="form-text text-muted m-0">Change your current password.</p>
-                      </div>
-                    </div>
-                    <div class="form-row mx-4">
-                      <div class="form-group col-md-6">
-                        <label for="firstName">旧密码</label>
-                        <input type="text" class="form-control" id="firstName"  value="<?php echo $sql_arr['user_password']?>" readonly="readonly">
-                      </div>
-                      <div class="form-group col-md-6">
-                        <label for="lastName">新密码</label>
-                        <input type="text" class="form-control" id="lastName" placeholder="新密码">
                       </div>
 
                     </div>
+
+
+
+
+
+
+
                   </form>
                 </div>
-                <div class="card-footer border-top">
-                  <div class="row">
-                    <div class="col">
-                      <a href="#" class="btn btn-sm btn-accent d-table mr-3"><i class="fa fa-check mr-1"></i>保存修改</a>
-                    </div>
-                    <div class="col text-right view-report">
-                      <a href="user.php">返回上一级 &rarr;</a>
-                    </div>
-                  </div>
-                </div>
+
               </div>
-              <!-- End Edit User Details  -->
             </div>
           </div>
-        </div>
+
+
+
+
+          </div>
+        <!-- end Page -->
       </main>
     </div>
   </div>
@@ -397,5 +255,6 @@ session_start();?>
   <script src="scripts/shards-dashboards.1.3.1.js"></script>
   <script src="scripts/jquery.dataTables.js"></script>
   <script src="scripts/dataTables.responsive.js"></script>
+  <script src="scripts/app/app-transaction-history.1.3.1.min.js"></script>
 </body>
 </html>

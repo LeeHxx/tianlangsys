@@ -11,14 +11,26 @@ session_start();?>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="styles/all.css">
   <link rel="stylesheet" href="styles/icon.css">
-  <link rel="stylesheet" href="styles/bootstrap.css">
-  <link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css" id="main-stylesheet" data-version="1.3.1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="styles/shards-dashboards.1.3.1.css">
   <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
   <link rel="stylesheet" href="styles/responsive.dataTables.css">
   <link rel="stylesheet" href="styles/font-awesome.css">
+  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    var m_id=$("#m_id").val();
+    if(m_id==""){
+      $("#m_id").focus();
+      return false;
+    }
+  });
+});
+</script>
 </head>
 <body class="h-100">
-  <div class="container-fluid ">
+  <div class="container-fluid">
     <div class="row">
       <!-- 侧边栏 -->
       <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
@@ -38,24 +50,24 @@ session_start();?>
 
         <div class="nav-wrapper">
           <ul class="nav nav--no-borders flex-column">
-            <li class="nav-item dropdown ">
-              <a class="nav-link dropdown-toggle  active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+            <li class="nav-item dropdown open">
+              <a class="nav-link dropdown-toggle  " data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                 <i class="material-icons">insert_drive_file</i>
                 <span>订单管理</span>
               </a>
               <div class="dropdown-menu dropdown-menu-small">
-                <a class="dropdown-item  active" href="order.php">订单列表</a>
+                <a class="dropdown-item  " href="order.php">订单列表</a>
                 <a class="dropdown-item " href="order-add.php">添加订单</a>
               </div>
             </li>
             <li class="nav-item  dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">assignment_returned</i>
                 <span>物料管理</span>
               </a>
-              <div class="dropdown-menu  dropdown-menu-small">
+              <div class="dropdown-menu dropdown-menu-small">
                 <a class="dropdown-item " href="material.php">物料列表</a>
-                <a class="dropdown-item " href="material-search.php">添加</a>
+                <a class="dropdown-item active" href="material-search.php">添加物料</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -69,7 +81,7 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">home_work</i>
                 <span>仓库管理</span>
               </a>
@@ -78,36 +90,19 @@ session_start();?>
                 <a class="dropdown-item " href="warehouse-add.php">添加</a>
               </div>
             </li>
-
-
-
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-submenu="true" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">all_inclusive</i>
                 <span>生产制造管理</span>
               </a>
               <div class="dropdown-menu dropdown-menu-small">
-                <div class="dropdown">
-                <a class="dropdown-item  " data-toggle="dropdown" href="#">车间作业</a>
-                <div class="dropdown-menu  dropdown-menu-small">
-                  <a class="dropdown-item " href="#">STM</a>
-                  <a class="dropdown-item " href="#">STM</a>
-                </div>
-
-
-                </div>
-
+                <a class="dropdown-item " href="workshop-smt.php">车间作业</a>
                 <a class="dropdown-item " href="problem.php">问题反馈记录单</a>
                 <a class="dropdown-item " href="addition.php">物料补领申请单</a>
               </div>
             </li>
-
-
-
-
-
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">playlist_add_check</i>
                 <span>质量管理</span>
               </a>
@@ -117,7 +112,7 @@ session_start();?>
               </div>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
                 <i class="material-icons">local_shipping</i>
                 <span>成品管理</span>
               </a>
@@ -190,76 +185,54 @@ session_start();?>
         <!-- Page -->
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
-          <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">order</span>
-              <h3 class="page-title">订单列表</h3>
-            </div>
-            <div class="col-12 col-sm-6 d-flex align-items-center">
-              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="order-add.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 添加订单 </a>
+
+
+
+
+          <div class="row">
+            <div class="col-lg-8 mx-auto mt-4">
+              <div class="card card-small mb-4">
+                <div class="card-body p-0">
+                  <form action="material-search_check.php" class="py-4" id="material_add" method="post">
+                    <div class="form-row mx-4 ">
+                      <div class="col  ">
+                        <h5 class="form-text m-0">添加物料</h5>
+
+                      </div>
+                    </div>
+                    <hr>
+                    <div class="form-row mx-4">
+
+                      <div class="form-group col-md-12">
+                        <label for="order_id">订单号</label>
+                        <div class="input-group mb-1">
+
+                        <input type="text" class="form-control is--valid" name="m_id" id="m_id" placeholder="输入订单号">
+                        <div class="input-group-append">
+                          <button id="btn1" class="btn btn-white" type="submit"><i class="material-icons mr-2">search</i>查找订单号</button>
+                        </div>
+                      </div>
+                      </div>
+
+                    </div>
+
+
+
+
+
+
+
+                  </form>
+                </div>
+
               </div>
             </div>
           </div>
-          <!-- End Page Header -->
-          <!-- Order Table -->
-          <table class="transaction-history d-none">
-            <thead>
-              <tr>
-                <th>序列号</th>
-                <th>接单日期</th>
-                <th>客户</th>
-                <th>订单号</th>
-                <th>品名</th>
-                <th>规格/型号/图号</th>
-                <th>订单量</th>
-                <th>交货日期</th>
-                <th>操作</th>
-              </tr>
-            </thead>
-            <tbody>
 
-              <?php
-              require_once('conn.php');
-              $sql="select * from orders";
-              $result=mysqli_query($conn,$sql);
-              $loginNum=mysqli_num_rows($result);
-              if(!$result)
-{
-  die('Could not connect:' .mysqli_error());
-}
-              for($i=0; $i<$loginNum; $i++){
-                $row = mysqli_fetch_assoc($result);
-                $ii=$i+1;
-                echo "<tr>";
-                echo "<td>{$ii}</td>";
-                echo "<td>{$row['order_start']}</td>";
-                echo "<td>{$row['order_client']}</td>";
-                echo "<td>{$row['order_id']}</td>";
-                echo "<td>{$row['order_name']}</td>";
-                echo "<td>{$row['order_type']}</td>";
-                echo "<td>{$row['order_volume']}</td>";
-                echo "<td>{$row['order_end']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button type='button' class='btn btn-danger'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
-                </div>
-                </td>";
-                echo "</tr>";
-              }
-              mysqli_free_result($result);
-              mysqli_close($conn);
-              ?>
 
-            </tbody>
-          </table>
-          <!-- End Order Table -->
-        </div>
+
+
+          </div>
         <!-- end Page -->
       </main>
     </div>

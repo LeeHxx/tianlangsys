@@ -24,7 +24,7 @@ session_start();?>
       <aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
         <div class="main-navbar">
           <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-            <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+            <a class="navbar-brand w-100 mr-0" href="index.php" style="line-height: 25px;">
               <div class="d-table m-auto">
                 <!--<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/logo.svg" alt="Shards Dashboard">-->
                 <span class="  d-md-inline ml-1">生产管理系统</span>
@@ -55,7 +55,7 @@ session_start();?>
               </a>
               <div class="dropdown-menu  dropdown-menu-small">
                 <a class="dropdown-item " href="material.php">物料列表</a>
-                <a class="dropdown-item " href="material-add.php">添加</a>
+                <a class="dropdown-item " href="material-search.php">添加</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -187,22 +187,16 @@ session_start();?>
         </div>
         <!-- end 顶栏 -->
         <!-- Page -->
-        <div class="main-content-container container-fluid px-4">
+        <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
-          <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
 
-
-            </div>
-
-          </div>
 
           <!-- End Page Header -->
           <!-- Order Table -->
-          <div class="row">
+          <div class="row mt-4">
 
 
-          <div class="col-lg-9   mb-4">
+          <div class="col-lg-9   mb-4 ">
             <div class="card card-small mb-4">
               <div class="jumbotron" style="background:#fff;">
                 <h1 class="display-4" style="font-weight: 400;">欢迎使用!</h1>

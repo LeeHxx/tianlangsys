@@ -56,7 +56,7 @@ session_start();?>
 							</a>
 							<div class="dropdown-menu dropdown-menu-small">
 								<a class="dropdown-item active" href="material.php">物料列表</a>
-								<a class="dropdown-item " href="material-add.php">添加</a>
+								<a class="dropdown-item " href="material-search.php">添加</a>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
@@ -198,192 +198,50 @@ session_start();?>
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>dd0001</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td><input type="text" class="form-control" id="row-1-age" name="row-1-age" value="61"/></td>
-								<td>合格</td>
-								<td>
-									<span class="text-warning">处理中</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>dd0002</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td>1234</td>
-								<td>合格</td>
-								<td>
-									<span class="text-warning">处理中</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>dd0003</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td>1234</td>
-								<td>合格</td>
-								<td>
-									<span class="text-warning">处理中</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>dd0004</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td>1234</td>
-								<td>合格</td>
-								<td>
-									<span class="text-success">完成</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>dd0005</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td>1234</td>
-								<td>合格</td>
-								<td>
-									<span class="text-success">完成</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
-							<tr>
-								<td>dd0006</td>
-								<td>abc</td>
-								<td>PCS</td>
-								<td>1234</td>
-								<td>2017 08-12 <span class="text-sm">02:10 PM</span>
-								</td>
-								<td>1234</td>
-								<td>1234</td>
-								<td>合格</td>
-								<td>
-									<span class="text-danger">取消</span>
-								</td>
-								<td>Mrs.Chauncey</td>
-								<td>
-									<div class="btn-group btn-group-sm" role="group" aria-label="Table row actions">
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE5CA;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE870;</i>
-										</button>
-										<button type="button" class="btn btn-white">
-											<i class="material-icons">&#xE254;</i>
-										</button>
-										<button type="button" class="btn btn-danger">
-											<i class="material-icons">&#xE872;</i>
-										</button>
-									</div>
-								</td>
-							</tr>
+
+
+
+              <?php
+              require_once('conn.php');
+              $sql="select * from material left join orders on (material.order_id=orders.order_id)";
+              $result=mysqli_query($conn,$sql);
+              $loginNum=mysqli_num_rows($result);
+              if(!$result){
+                die('Could not connect:' .mysqli_error());
+              }
+              for($i=0; $i<$loginNum; $i++){
+                $row = mysqli_fetch_assoc($result);
+                echo "<tr>";
+                echo "<td>{$row['order_id']}</td>";
+                echo "<td>{$row['order_name']}</td>";
+                echo "<td>{$row['order_type']}</td>";
+                echo "<td>{$row['order_volume']}</td>";
+                echo "<td>{$row['material_come']}</td>";
+                echo "<td>{$row['material_volume']}</td>";
+                echo "<td>{$row['material_type']}</td>";
+                echo "<td>{$row['material_okng']}</td>";
+                echo "<td>{$row['material_kitting']}</td>";
+                echo "<td>{$row['material_admin']}</td>";
+                echo "<td>
+                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                  <button type='button' class='btn btn-white'>
+                    <i class='material-icons'>&#xE254;</i>
+                  </button>
+                  <button type='button' class='btn btn-danger'>
+                    <i class='material-icons'>&#xE872;</i>
+                  </button>
+                </div>
+                </td>";
+                echo "</tr>";
+              }
+              mysqli_free_result($result);
+              mysqli_close($conn);
+              ?>
+
+
+
+
+
 
 						</tbody>
 					</table>

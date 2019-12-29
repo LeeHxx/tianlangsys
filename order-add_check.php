@@ -5,12 +5,12 @@ require_once('conn.php');
 $id=$_POST['order_id'];
 $name=$_POST['order_name'];
 $type=$_POST['order_type'];
-$number=$_POST['order_number'];
+$volume=$_POST['order_volume'];
 $client=$_POST['order_client'];
 $start=$_POST['order_start'];
 $end=$_POST['order_end'];
 
-$sql="insert into orders(order_id,order_name,order_type,order_number,order_client,order_start,order_end) values ('$id','$name','$type','$number','$client','$start','$end')";
+$sql="insert into orders(order_id,order_name,order_type,order_volume,order_client,order_start,order_end) values ('$id','$name','$type','$volume','$client','$start','$end')";
 
 $result=mysqli_query($conn,$sql);
 

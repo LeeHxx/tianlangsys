@@ -23,7 +23,7 @@ $(document).ready(function(){
     var order_id=$("#order_id").val();
     var order_name=$("#order_name").val();
     var order_type=$("#order_type").val();
-    var order_number=$("#order_number").val();
+    var order_volume=$("#order_volume").val();
     var order_client=$("#order_client").val();
     var order_start=$("#order_start").val();
     var order_end=$("#order_end").val();
@@ -36,8 +36,8 @@ $(document).ready(function(){
      }else if(order_type==""){
       $("#order_type").focus();
       return false;
-     }else if(order_number==""){
-      $("#order_number").focus();
+     }else if(order_volume==""){
+      $("#order_volume").focus();
       return false;
      }else if(order_client==""){
       $("#order_client").focus();
@@ -93,7 +93,7 @@ $(document).ready(function(){
               </a>
               <div class="dropdown-menu dropdown-menu-small">
                 <a class="dropdown-item " href="material.php">物料列表</a>
-                <a class="dropdown-item " href="material-add.php">添加</a>
+                <a class="dropdown-item " href="material-search.php">添加</a>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -258,8 +258,8 @@ $(document).ready(function(){
                         <input type="text" class="form-control" name="order_type" id="order_type" value="" placeholder="规格/型号/图号">
                       </div>
                       <div class="form-group col-md-6">
-                        <label for="order_number">订单量</label>
-                        <input type="text" class="form-control" name="order_number" id="order_number" value="" placeholder="订单量">
+                        <label for="order_volume">订单量</label>
+                        <input type="number" class="form-control" name="order_volume" id="order_volume" value="" placeholder="订单量">
                       </div>
                     </div>
                     <div class="form-row mx-4">
