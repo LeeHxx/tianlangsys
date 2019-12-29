@@ -25,7 +25,7 @@ session_start();?>
 			<aside class="main-sidebar col-12 col-md-3 col-lg-2 px-0">
 				<div class="main-navbar">
 					<nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
-						<a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
+						<a class="navbar-brand w-100 mr-0" href="index.php" style="line-height: 25px;">
 							<div class="d-table m-auto">
 								<!--<img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="images/logo.svg" alt="Shards Dashboard">-->
 								<span class="  d-md-inline ml-1">生产管理系统</span>
@@ -80,16 +80,26 @@ session_start();?>
 							</div>
 						</li>
 						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
-								<i class="material-icons">all_inclusive</i>
-								<span>生产制造管理</span>
-							</a>
-							<div class="dropdown-menu dropdown-menu-small">
-								<a class="dropdown-item " href="workshop-smt.php">车间作业</a>
-								<a class="dropdown-item " href="problem.php">问题反馈记录单</a>
-								<a class="dropdown-item " href="addition.php">物料补领申请单</a>
-							</div>
-						</li>
+              				<a class="nav-link dropdown-toggle active" data-submenu="true" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                				<i class="material-icons">all_inclusive</i>
+               					<span>生产制造管理</span>
+              				</a>
+              				<div class="dropdown-menu dropdown-menu-small">
+                				<div class="dropdown">
+                				<a class="dropdown-item  " data-toggle="dropdown" href="#">车间作业</a>
+                				<div class="dropdown-menu  dropdown-menu-small">
+									<a class="dropdown-item " href="workshop-smt.php">SMT</a>
+                  					<a class="dropdown-item " href="workshop-dip.php">DIP</a>
+									<a class="dropdown-item " href="workshop-clean.php">清洗</a>
+									<a class="dropdown-item " href="workshop-glue.php">打胶</a>
+									<a class="dropdown-item " href="workshop-code.php">打码</a>
+                				</div>
+                				</div>
+
+                				<a class="dropdown-item " href="problem.php">问题反馈记录单</a>
+                				<a class="dropdown-item " href="addition.php">物料补领申请单</a>
+              					</div>
+            			</li>
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
 								<i class="material-icons">playlist_add_check</i>
@@ -174,8 +184,8 @@ session_start();?>
 					<!-- Page Header -->
 					<div class="page-header row no-gutters py-4">
 						<div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
-							<span class="text-uppercase page-subtitle">workshop</span>
-							<h3 class="page-title">生产制造列表</h3>
+							<span class="text-uppercase page-subtitle">workshop-smt</span>
+							<h3 class="page-title">SMT作业列表</h3>
 						</div>
 
 					</div>
@@ -195,6 +205,11 @@ session_start();?>
                 			<th>首件生产日期</th>
                 			<th>首件完成时间</th>
                 			<th>首件操作者</th>
+                			<th>批次完成量</th>
+							<th>批次完成时间</th>
+							<th>操作者</th>
+							<th>转序日期</th>
+							<th>转序量</th>
                 			<th>操作</th>
 						</tr>
 					</thead>
@@ -219,7 +234,7 @@ session_start();?>
                 echo "<td>{$row['order_id']}</td>";
                 echo "<td>{$row['order_name']}</td>";
                 echo "<td>{$row['order_type']}</td>";
-                echo "<td>{$row['order_number']}</td>";
+                echo "<td>{$row['order_volume']}</td>";
                 echo "<td>{$row['lingliaoshijian']}</td>";
                 echo "<td>{$row['zhunbeishijain']}</td>";
                 echo "<td>{$row['chanxianhao']}</td>";
@@ -227,6 +242,11 @@ session_start();?>
 				echo "<td>{$row['shoujianshengchanriqi']}</td>";
 				echo "<td>{$row['shoujianwanchengshijian']}</td>";
 				echo "<td>{$row['shoujiancaozuozhe']}</td>";
+				echo "<td>{$row['piciwanchengliang']}</td>";
+				echo "<td>{$row['piciwanchengshijian']}</td>";
+				echo "<td>{$row['caozuozhe']}</td>";
+				echo "<td>{$row['zhuanxuriqi']}</td>";
+				echo "<td>{$row['zhuanxuliang']}</td>";
                 echo "<td>
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
                 <button type='button' class='btn btn-white'>
