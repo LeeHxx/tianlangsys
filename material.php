@@ -98,16 +98,6 @@ session_start();?>
 			</main>
 		</div>
 	</div>
-	<script src="scripts/jquery-3.3.1.min.js"></script>
-	<script src="scripts/popper.min.js"></script>
-	<script src="scripts/bootstrap.js"></script>
-	<script src="scripts/Chart.min.js"></script>
-	<script src="scripts/shards.min.js"></script>
-	<script src="scripts/jquery.sharrre.min.js"></script>
-	<script src="scripts/extras.1.3.1.min.js"></script>
-	<script src="scripts/shards-dashboards.1.3.1.js"></script>
-	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-	<script src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
-	<script src="scripts/app/app-transaction-history.1.3.1.min.js"></script>
+	<?php include('script.php') ?>
 </body>
 </html>

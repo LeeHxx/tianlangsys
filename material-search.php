@@ -33,9 +33,6 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
 
-
-
-
           <div class="row">
             <div class="col-lg-8 mx-auto mt-4">
               <div class="card card-small mb-4">
@@ -64,11 +61,6 @@ $(document).ready(function(){
                     </div>
 
 
-
-
-
-
-
                   </form>
                 </div>
 
@@ -77,24 +69,11 @@ $(document).ready(function(){
           </div>
 
 
-
-
           </div>
         <!-- end Page -->
       </main>
     </div>
   </div>
-  <script src="scripts/jquery-3.3.1.min.js"></script>
-  <script src="scripts/popper.min.js"></script>
-  <script src="scripts/bootstrap.js"></script>
-  <script src="scripts/Chart.min.js"></script>
-  <script src="scripts/shards.js"></script>
-  <script src="scripts/buttons.js"></script>
-  <script src="scripts/jquery.sharrre.min.js"></script>
-  <script src="scripts/extras.1.3.1.min.js"></script>
-  <script src="scripts/shards-dashboards.1.3.1.js"></script>
-  <script src="scripts/jquery.dataTables.js"></script>
-  <script src="scripts/dataTables.responsive.js"></script>
-  <script src="scripts/app/app-transaction-history.1.3.1.min.js"></script>
+  <?php include('script.php') ?>
 </body>
 </html>
