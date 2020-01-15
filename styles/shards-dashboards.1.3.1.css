@@ -8241,6 +8241,12 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     border-radius: .625rem
 }
 
+.auth-for .card-body {
+    overflow: hidden;
+    box-shadow: inset 0 4px 0 0 #007bff;
+    border-radius: .625rem
+}
+
 .auth-form__logo {
     max-width: 2.5rem
 }
@@ -8620,6 +8626,33 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     }
 
     .icon-sidebar-nav .main-sidebar .dropdown-menu .dropdown-item:last-of-type {
+        border-bottom: 0;
+        border-radius: 0 0 .375rem 0
+    }
+
+
+    .bbb.dropdown-menu {
+        border-radius: 0 .375rem .375rem 0;
+        position: absolute !important;
+        left: 100% !important;
+        width: 12.5rem;
+        box-shadow: 0 2px 0 rgba(90, 97, 105, .11), 0 4px 8px rgba(90, 97, 105, .12), 0 10px 10px rgba(90, 97, 105, .06), 0 7px 70px rgba(90, 97, 105, .1);
+        transition: opacity 250ms ease-in-out;
+        display: block;
+        visibility: hidden;
+        opacity: 0
+    }
+
+    .bbb.dropdown-menu.show {
+        opacity: 1;
+        visibility: visible
+    }
+
+    .bbb.dropdown-menu .dropdown-item:first-of-type {
+        border-radius: 0 .375rem 0 0
+    }
+
+    .bbb.dropdown-menu .dropdown-item:last-of-type {
         border-bottom: 0;
         border-radius: 0 0 .375rem 0
     }
