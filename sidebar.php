@@ -42,7 +42,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="process.php">工艺列表</a>
-          <a class="dropdown-item " href="process-add.php">添加</a>
+          <a class="dropdown-item " href="process-search.php">添加</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -52,7 +52,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="warehouse.php">仓库列表</a>
-          <a class="dropdown-item " href="warehouse-add.php">添加</a>
+          <a class="dropdown-item " href="warehouse-search.php">添加</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -88,7 +88,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="quality.php">质量列表</a>
-          <a class="dropdown-item " href="quality-add.php">添加</a>
+          <a class="dropdown-item " href="quality-search.php">添加</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -98,7 +98,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="product.php">成品列表</a>
-          <a class="dropdown-item " href="product-add.php">添加成品</a>
+          <a class="dropdown-item " href="product-search.php">添加成品</a>
         </div>
       </li>
     </ul>
