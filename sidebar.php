@@ -32,7 +32,7 @@
         </a>
         <div class="dropdown-menu  dropdown-menu-small ">
           <a class="dropdown-item " href="material.php">物料列表</a>
-          <a class="dropdown-item " href="material-search.php">添加</a>
+          <a class="dropdown-item " href="material-search.php">物料管理</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
