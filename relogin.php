@@ -34,9 +34,10 @@
   </script>
 </head>
 <body class="h-100">
-  <div class="container-fluid icon-sidebar-nav h-100">
+  <div class="container-fluid h-100">
     <div class="row h-100">
       <!-- Main Sidebar -->
+
       <!-- End Main Sidebar -->
       <main class="main-content col">
         <div class="main-content-container container-fluid px-4 my-auto h-100">
