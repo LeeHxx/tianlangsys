@@ -73,8 +73,11 @@ $(document).ready(function(){
           require_once('conn.php');
           $id = $_SESSION['order_id'];
           $sql="select * from orders where order_id='$id' ";
+          $sql0="select * from material where order_id='$id' ";
           $result=mysqli_query($conn,$sql);
           $sql_arr = mysqli_fetch_assoc($result);
+          $result0=mysqli_query($conn,$sql0);
+          $sql_arr0 = mysqli_fetch_assoc($result0);
           ?>
 
 
@@ -114,7 +117,7 @@ $(document).ready(function(){
             <div class="col-lg-12 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="material-add_check.php" class="py-4" id="material_add" method="post">
+                  <form action="material-edit_check.php" class="py-4" id="material_edit" method="post">
 
 
                     <div class="form-row mx-4">
@@ -141,7 +144,7 @@ $(document).ready(function(){
                       <div class="form-group col-md-2">
                         <label for="order_client">来料日期</label>
                         <div class="input-group with-addon-icon-left" >
-                          <input type="text" class="form-control" name="material_come" id="transaction-history-date-range" placeholder="来料日期">
+                          <input type="text" class="form-control" name="material_come" id="transaction-history-date-range" value="<?php echo $sql_arr0['material_come'] ?>" placeholder="来料日期">
                           <span class="input-group-append">
                             <span class="input-group-text">
                                 <i class="fa fa-calendar"></i>
@@ -151,29 +154,29 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-2">
                         <label for="material_volume">数量</label>
-                        <input type="number" class="form-control" name="material_volume" id="material_volume" value="" placeholder="数量">
+                        <input type="number" class="form-control" name="material_volume" id="material_volume" value="<?php echo $sql_arr0['material_volume'] ?>" placeholder="数量">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="material_type">品种</label>
-                        <input type="text" class="form-control" name="material_type" id="material_type" value="" placeholder="品种">
+                        <input type="text" class="form-control" name="material_type" id="material_type" value="<?php echo $sql_arr0['material_type'] ?>" placeholder="品种">
                       </div>
 
                       <div class="col-md-2 mb-4">
                         <label for="material_okng">合格/NG</label>
                         <select class="custom-select" id="material_okng" name="material_okng">
-                          <option value="" selected="">请选择...</option>
+                          <option value="<?php echo $sql_arr0['material_okng'] ?>" selected=""><?php echo $sql_arr0['material_okng'] ?></option>
                           <option value="合格">合格</option>
                           <option value="NG">NG</option>
                         </select>
                       </div>
                       <div class="form-group col-md-2">
                         <label for="material_kitting">齐套状态</label>
-                        <input type="text" class="form-control" name="material_kitting" id="material_kitting" value="" placeholder="齐套状态">
+                        <input type="text" class="form-control" name="material_kitting" id="material_kitting" value="<?php echo $sql_arr0['material_kitting'] ?>" placeholder="齐套状态">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="material_admin">物管员</label>
                         <select class="custom-select" name="material_admin" id="material_admin" value="" placeholder="物管员">
-                          <option value="" selected="">请选择...</option>
+                          <option value="<?php echo $sql_arr0['material_admin'] ?>" selected=""><?php echo $sql_arr0['material_admin'] ?></option>
                           <option value="小李">小李</option>
                           <option value="小张">小张</option>
                         </select>
@@ -184,7 +187,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="material_add" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加物料信息</button>
+                    <button id="btn2" form="material_edit" class="btn btn-info  mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>修改物料信息</button>
                   </div>
                 </div>
               </div>
