@@ -4,19 +4,7 @@ session_start();?>
 <!DOCTYPE html>
 <html class="no-js h-100" lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>生产计划进度管理系统</title>
-  <meta name="description" content="tianlang">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="styles/all.css">
-  <link rel="stylesheet" href="styles/icon.css">
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" id="main-stylesheet" data-version="1.3.1" href="styles/shards-dashboards.1.3.1.css">
-  <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
-  <link rel="stylesheet" href="styles/responsive.dataTables.css">
-  <link rel="stylesheet" href="styles/font-awesome.css">
-  <script src="scripts/jquery-3.3.1.min.js"></script>
+  <?php include('head.php') ?>
   <script type="text/javascript">
     function usable (id) {
 
@@ -227,9 +215,9 @@ session_start();?>
                             <label for="firstName">用户名</label>
                             <input type="text" class="form-control" id="firstName" value="<?php echo $sql_arr['user_name'] ?>">
                           </div>
-                          <div class="form-group col-md-6">
+                          <div class="form-group col-md-4">
                             <label for="displayEmail">所属部门</label>
-                            <select class="custom-select">
+                            <select class="selectpicker">
                               <option value="1" selected>生产车间</option>
                               <option value="2">物料管理</option>
                             </select>
@@ -386,16 +374,6 @@ session_start();?>
       </main>
     </div>
   </div>
-  <script src="scripts/jquery-3.3.1.min.js"></script>
-  <script src="scripts/popper.min.js"></script>
-  <script src="scripts/bootstrap.js"></script>
-  <script src="scripts/Chart.min.js"></script>
-  <script src="scripts/shards.js"></script>
-  <script src="scripts/buttons.js"></script>
-  <script src="scripts/jquery.sharrre.min.js"></script>
-  <script src="scripts/extras.1.3.1.min.js"></script>
-  <script src="scripts/shards-dashboards.1.3.1.js"></script>
-  <script src="scripts/jquery.dataTables.js"></script>
-  <script src="scripts/dataTables.responsive.js"></script>
+  <?php include('script.php') ?>
 </body>
 </html>
