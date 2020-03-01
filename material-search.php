@@ -60,6 +60,9 @@ $(document).ready(function(){
             </div>
           </div>
 
+          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改物料的订单号<br>按下回车键进行搜索</p>
+
+
 
           </div>
         <!-- end Page -->
