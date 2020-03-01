@@ -10,3 +10,5 @@
 <script src="scripts/jquery.dataTables.js"></script>
 <script src="scripts/dataTables.responsive.js"></script>
 <script src="scripts/app/app-transaction-history.1.3.1.min.js"></script>
+<script src="scripts/bootstrap-select.js"></script>
+<script src="scripts/i18n/defaults-zh_CN.min.js"></script>
