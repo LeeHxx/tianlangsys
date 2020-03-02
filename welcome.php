@@ -20,7 +20,7 @@ session_start();?>
               <div class="card card-small mb-4">
                 <div class="jumbotron" style="background:#fff;">
                   <h1 class="display-4" style="font-weight: 400;">欢迎使用!</h1>
-                  <p class="lead">欢迎使用南京天朗电子装配有限公司生产管理系统.</p>
+                  <p class="lead">欢迎使用南京天朗电子装备有限公司生产管理系统.</p>
                   <hr class="my-4">
                   <p>查看订单信息或者添加新的订单?</p>
                   <a class="btn btn-primary btn-pill  btn-lg" href="order.php" role="button"><i class="material-icons mr-2">insert_drive_file</i>添加订单</a>
@@ -30,6 +30,55 @@ session_start();?>
                   <hr class="my-4">
                   <p>填写问题反馈记录单？</p>
                   <a class="btn btn-primary btn-pill btn-lg" href="#" role="button"><i class="material-icons mr-2">report</i>问题反馈</a>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-12 col-sm-12 mb-4">
+              <div class="card card-small">
+                <div class="card-header border-bottom">
+                  <h6 class="m-0">订单交货提醒</h6>
+                </div>
+                <div class="card-body p-0">
+                  <ul class="list-group list-group-flush">
+                    <li class="list-group-item px-4">
+                      <div class="progress-wrapper">
+                        <strong class="text-muted d-block mb-2">订单号TL0001</strong>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
+                            <span class="progress-value">剩余3天</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item px-4">
+                      <div class="progress-wrapper">
+                        <strong class="text-muted d-block mb-2">订单号TL0002</strong>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 64%;">
+                            <span class="progress-value">剩余2天</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li class="list-group-item px-4">
+                      <div class="progress-wrapper">
+                        <strong class="text-muted d-block mb-2">订单号TL0003</strong>
+                        <div class="progress progress-sm">
+                          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 23%;">
+                            <span class="progress-value">剩余1天</span>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-footer border-top">
+                  <div class="row">
+
+                    <div class="col text-right view-report">
+                      <a href="#">详细信息 →</a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -138,55 +187,7 @@ session_start();?>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-12 col-sm-12 mb-4">
-                <div class="card card-small">
-                  <div class="card-header border-bottom">
-                    <h6 class="m-0">订单交货提醒</h6>
-                  </div>
-                  <div class="card-body p-0">
-                    <ul class="list-group list-group-flush">
-                    <li class="list-group-item px-4">
-                      <div class="progress-wrapper">
-                        <strong class="text-muted d-block mb-2">#TL0001</strong>
-                        <div class="progress progress-sm">
-                          <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
-                            <span class="progress-value">剩余3天</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item px-4">
-                      <div class="progress-wrapper">
-                        <strong class="text-muted d-block mb-2">#TL0002</strong>
-                        <div class="progress progress-sm">
-                          <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 64%;">
-                            <span class="progress-value">剩余2天</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li class="list-group-item px-4">
-                      <div class="progress-wrapper">
-                        <strong class="text-muted d-block mb-2">#TL0003</strong>
-                        <div class="progress progress-sm">
-                          <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 23%;">
-                            <span class="progress-value">剩余1天</span>
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                  </ul>
-                  </div>
-                  <div class="card-footer border-top">
-                    <div class="row">
 
-                      <div class="col text-right view-report">
-                        <a href="#">详细信息 →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
           </div>
 
         </div>
