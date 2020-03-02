@@ -5,6 +5,23 @@ session_start();?>
 <html class="no-js h-100" lang="zh-CN">
 <head>
   <?php include('head.php') ?>
+  <script type="text/javascript">
+    function dele(id) {
+      if(confirm("确认删除吗？")){
+      $.post("order-del_check.php?id="+id,function(data){
+        if($.trim(data)=='yes'){
+          alert("删除成功！")
+          window.location.href='order.php';
+          return true;
+        }else{
+          alert("该条记录无法删除 ！")
+          window.location.href='order.php';
+          return false;
+        }
+      },"text");
+      }
+    }
+  </script>
 </head>
 <body class="h-100">
   <div class="container-fluid ">
@@ -55,10 +72,6 @@ session_start();?>
               $sql="select * from orders";
               $result=mysqli_query($conn,$sql);
               $loginNum=mysqli_num_rows($result);
-              if(!$result)
-{
-  die('Could not connect:' .mysqli_error());
-}
               for($i=0; $i<$loginNum; $i++){
                 $row = mysqli_fetch_assoc($result);
                 $ii=$i+1;
@@ -72,11 +85,16 @@ session_start();?>
                 echo "<td>{$row['order_volume']}</td>";
                 echo "<td>{$row['order_end']}</td>";
                 echo "<td>
+                <form action='javascript:dele({$row['id']})' method='post' id='{$row['order_id']}'>
+                </form>
+                <form action='order-edit.php?id={$row['order_id']}' method='post' id='edit{$i}'>
+                </form>
+
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
+                <button form='edit{$i}' type='submit' class='btn btn-white'>
                 <i class='material-icons'>&#xE254;</i>
                 </button>
-                <button type='button' class='btn btn-danger'>
+                <button form='{$row['order_id']}' type='submit' class='btn btn-danger'>
                 <i class='material-icons'>&#xE872;</i>
                 </button>
                 </div>
