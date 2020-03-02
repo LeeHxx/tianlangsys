@@ -78,43 +78,41 @@ $(document).ready(function(){
           <!-- End Page Header -->
           <!-- Transaction History Table -->
           <div class="row">
-            <div class="col-lg-8 mx-auto mt-4">
+            <div class="col-lg-12 mx-auto">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
                   <form action="order-add_check.php" class="py-4" id="order_add" method="post">
-                    <div class="form-row mx-4 ">
+                    <!--<div class="form-row mx-4 ">
                       <div class="col  ">
                         <h5 class="form-text m-0">订单信息</h5>
-
                       </div>
                     </div>
-                    <hr>
-                    <div class="form-row mx-4">
-                      <div class="form-group col-md-6">
+                    <hr>-->
+                    <div class="form-row mx-4 mt-2">
+                      <div class="form-group col-md-3">
                         <label for="order_id">订单号</label>
                         <input type="text" class="form-control" name="order_id" id="order_id" value="" placeholder="订单号">
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-3">
                         <label for="order_name">品名</label>
                         <input type="text" class="form-control" name="order_name" id="order_name" value="" placeholder="品名">
                       </div>
-                    </div>
-                    <div class="form-row mx-4">
-                      <div class="form-group col-md-6">
+
+                      <div class="form-group col-md-3">
                         <label for="order_type">规格/型号/图号</label>
                         <input type="text" class="form-control" name="order_type" id="order_type" value="" placeholder="规格/型号/图号">
                       </div>
-                      <div class="form-group col-md-6">
+                      <div class="form-group col-md-3">
                         <label for="order_volume">订单量</label>
                         <input type="number" class="form-control" name="order_volume" id="order_volume" value="" placeholder="订单量">
                       </div>
                     </div>
                     <div class="form-row mx-4">
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-4">
                         <label for="order_client">客户</label>
-                        <input type="text" class="form-control" name="order_client" id="order_client" value="" placeholder="客户">
+                        <input type="text" class="form-control" name="order_client" id="order_client" value="" placeholder="客户名称">
                       </div>
-                      <div class="form-group col-md-12">
+                      <div class="form-group col-md-8">
                         <label for="firstName">接交单日期</label>
                         <div class="input-daterange input-group" id="transaction-history-date-range">
                           <span class="input-group-prepend">
