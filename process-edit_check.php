@@ -10,7 +10,7 @@ $allocation=$_POST['personal_allocation'];
 $confirmation_data=$_POST['process_confirmation_data'];
 $confirm=$_POST['process_confirm'];
 
-$sql="insert into process(order_id,bom,stencil,tooling,personal_allocation,process_confirmation_data,process_confirmor) values ('$id','$bom','$stencil','$tooling','$allocation','$confirmation_data','$confirm')";
+$sql="UPDATE process set bom='$bom',stencil='$stencil',tooling='$tooling',personal_allocation='$allocation',process_confirmation_data='$confirmation_data',process_confirmor='$confirm' WHERE order_id='$id'";
 
 $result=mysqli_query($conn,$sql);
 

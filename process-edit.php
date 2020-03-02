@@ -73,8 +73,11 @@ $(document).ready(function(){
           require_once('conn.php');
           $id = $_SESSION['order_id'];
           $sql="select * from orders where order_id='$id' ";
+          $sql0="select * from process where order_id='$id' ";
           $result=mysqli_query($conn,$sql);
           $sql_arr = mysqli_fetch_assoc($result);
+          $result0=mysqli_query($conn,$sql0);
+          $sql_arr0 = mysqli_fetch_assoc($result0);
           ?>
 
 
@@ -89,7 +92,7 @@ $(document).ready(function(){
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="process_id" id="process_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="process_id" id="process_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>（已编辑）" aria-label="Search">
                   </div>
                 </form>
               </div>
@@ -102,7 +105,7 @@ $(document).ready(function(){
             <div class="col-lg-12 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="process-add_check.php" class="py-4" id="process_add0" method="post">
+                  <form action="process-edit_check.php" class="py-4" id="process_add0" method="post">
 
 
                     <div class="form-row mx-4">
@@ -128,24 +131,24 @@ $(document).ready(function(){
                     <div class="form-row mx-4">
                       <div class="form-group col-md-2">
                         <label for="bom">bom版本</label>
-                        <input type="text" class="form-control" name="bom" id="bom" value="" placeholder="bom版本">
+                        <input type="text" class="form-control" name="bom" id="bom" value="<?php echo $sql_arr0['bom'] ?>" placeholder="bom版本">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="stencil">网板号</label>
-                        <input type="text" class="form-control" name="stencil" id="stencil" value="" placeholder="网板号">
+                        <input type="text" class="form-control" name="stencil" id="stencil" value="<?php echo $sql_arr0['stencil'] ?>" placeholder="网板号">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="tooling">工装</label>
-                        <input type="text" class="form-control" name="tooling" id="tooling" value="" placeholder="工装">
+                        <input type="text" class="form-control" name="tooling" id="tooling" value="<?php echo $sql_arr0['tooling'] ?>" placeholder="工装">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="personal_allocation">人力配置</label>
-                        <input type="text" class="form-control" name="personal_allocation" id="personal_allocation" value="" placeholder="人力配置">
+                        <input type="text" class="form-control" name="personal_allocation" id="personal_allocation" value="<?php echo $sql_arr0['personal_allocation'] ?>" placeholder="人力配置">
                       </div>
                       <div class="form-group col-md-2">
                         <label for="process_confirmation_data">确认日期</label>
                         <div class="input-group with-addon-icon-left" >
-                          <input type="text" class="form-control" name="process_confirmation_data" id="transaction-history-date-range" placeholder="确认日期">
+                          <input type="text" class="form-control" name="process_confirmation_data" id="transaction-history-date-range" value="<?php echo $sql_arr0['process_confirmation_data'] ?>" placeholder="确认日期">
                           <span class="input-group-append">
                             <span class="input-group-text">
                                 <i class="fa fa-calendar"></i>
@@ -155,7 +158,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-2">
                         <label for="process_confirm">确认者</label>
-                        <input type="text" class="form-control" name="process_confirm" id="process_confirm" value="" placeholder="确认者">
+                        <input type="text" class="form-control" name="process_confirm" id="process_confirm" value="<?php echo $sql_arr0['process_confirmor'] ?>" placeholder="确认者">
                       </div>
                     </div>
 
@@ -163,7 +166,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="process_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加工艺</button>
+                    <button id="btn2" form="process_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存工艺信息</button>
                   </div>
                 </div>
               </div>
