@@ -3,8 +3,6 @@ session_start();
 header("Content-type:text/html; charset=utf-8");
 require_once('conn.php');
 $m_id=$_POST['m_id'];
-echo $m_id;
-echo "??";
 $sql="select * from orders where order_id='$m_id' ";
 $sql0="select * from material where order_id='$m_id' ";
 
