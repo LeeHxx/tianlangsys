@@ -92,7 +92,7 @@ $(document).ready(function(){
                       <i class="fa fa-search ml-2 "></i>
                     </div>
                   </div>
-                  <input class="navbar-search form-control ml-3" name="m_id" id="m_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
+                  <input class="navbar-search form-control ml-3" name="m_id" id="m_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>(已编辑)" aria-label="Search">
                 </div>
               </form>
 
