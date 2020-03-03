@@ -54,7 +54,7 @@ session_start();?>
           <table class="transaction-history d-none">
             <thead>
               <tr>
-                <th>序列号</th>
+                <th>#</th>
                 <th>接单日期</th>
                 <th>客户</th>
                 <th>订单号</th>
