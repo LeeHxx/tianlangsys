@@ -164,9 +164,9 @@ $(document).ready(function(){
                       <div class="col-md-2 mb-4">
                         <label for="material_okng">合格/NG</label>
                         <select class="custom-select" id="material_okng" name="material_okng">
-                          <option value="<?php echo $sql_arr0['material_okng'] ?>" selected=""><?php echo $sql_arr0['material_okng'] ?></option>
-                          <option value="合格">合格</option>
-                          <option value="NG">NG</option>
+
+                          <option value="合格" <?php  if($sql_arr0['material_okng']=='合格'){?>selected <?php }?>>合格</option>
+                          <option value="NG" <?php  if($sql_arr0['material_okng']=='NG'){?>selected <?php }?>>NG</option>
                         </select>
                       </div>
                       <div class="form-group col-md-2">
@@ -175,10 +175,9 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-2">
                         <label for="material_admin">物管员</label>
-                        <select class="custom-select" name="material_admin" id="material_admin" value="" placeholder="物管员">
-                          <option value="<?php echo $sql_arr0['material_admin'] ?>" selected=""><?php echo $sql_arr0['material_admin'] ?></option>
-                          <option value="小李">小李</option>
-                          <option value="小张">小张</option>
+                        <select class="custom-select" name="material_admin" id="material_admin" >
+                          <option value="小李" <?php  if($sql_arr0['material_admin']=='小李'){?>selected <?php }?>>小李</option>
+                          <option value="小张" <?php  if($sql_arr0['material_admin']=='小张'){?>selected <?php }?>>小张</option>
                         </select>
                       </div>
                     </div>
