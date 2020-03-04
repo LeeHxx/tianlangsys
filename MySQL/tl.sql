@@ -1,33 +1,26 @@
--- phpMyAdmin SQL Dump
--- version 4.8.5
--- https://www.phpmyadmin.net/
---
--- 主机： localhost
--- 生成日期： 2020-02-24 13:06:33
--- 服务器版本： 8.0.12
--- PHP 版本： 7.3.4
+/*
+ Navicat Premium Data Transfer
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
-SET time_zone = "+00:00";
+ Source Server         : localhost_3306
+ Source Server Type    : MySQL
+ Source Server Version : 80013
+ Source Host           : localhost:3306
+ Source Schema         : tl
 
+ Target Server Type    : MySQL
+ Target Server Version : 80013
+ File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+ Date: 04/03/2020 04:00:30
+*/
 
---
--- 数据库： `tl`
---
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `addition`
---
-
+-- ----------------------------
+-- Table structure for addition
+-- ----------------------------
+DROP TABLE IF EXISTS `addition`;
 CREATE TABLE `addition` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `addition_date` date DEFAULT NULL COMMENT '补领日期',
@@ -37,22 +30,21 @@ CREATE TABLE `addition` (
   `addition_reason` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '补领原因',
   `addition_leader` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '组长确认',
   `addition_price` float DEFAULT NULL COMMENT '物料单价',
-  `addition_controller` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '物管员确认'
+  `addition_controller` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '物管员确认',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 转存表中的数据 `addition`
---
+-- ----------------------------
+-- Records of addition
+-- ----------------------------
+BEGIN;
+INSERT INTO `addition` VALUES ('TL230001', '2020-02-12', '1', 1, '1111', '1', '1', 1.5, '1');
+COMMIT;
 
-INSERT INTO `addition` (`order_id`, `addition_date`, `addition_type`, `addition_volume`, `addition_applicant`, `addition_reason`, `addition_leader`, `addition_price`, `addition_controller`) VALUES
-('TL230001', '2020-02-12', '1', 1, '1111', '1', '1', 1.5, '1');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `cleaning`
---
-
+-- ----------------------------
+-- Table structure for cleaning
+-- ----------------------------
+DROP TABLE IF EXISTS `cleaning`;
 CREATE TABLE `cleaning` (
   `order_id` varchar(20) NOT NULL COMMENT '订单号',
   `cleaning_get` date DEFAULT NULL COMMENT '领料日期',
@@ -61,22 +53,21 @@ CREATE TABLE `cleaning` (
   `cleaning_completion` int(11) DEFAULT NULL COMMENT '批次完成量',
   `cleaning_end` date DEFAULT NULL COMMENT '批次完成时间',
   `cleaning_turn_date` date DEFAULT NULL COMMENT '转序日期',
-  `cleaning_turn_volume` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序量'
+  `cleaning_turn_volume` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序量',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `cleaning`
---
+-- ----------------------------
+-- Records of cleaning
+-- ----------------------------
+BEGIN;
+INSERT INTO `cleaning` VALUES ('TL230001', '2020-02-04', '2', '2', 2, '2020-02-07', '2020-02-08', '2');
+COMMIT;
 
-INSERT INTO `cleaning` (`order_id`, `cleaning_get`, `cleaning_readiness`, `cleaning_opertor`, `cleaning_completion`, `cleaning_end`, `cleaning_turn_date`, `cleaning_turn_volume`) VALUES
-('TL230001', '2020-02-04', '2', '2', 2, '2020-02-07', '2020-02-08', '2');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `code`
---
-
+-- ----------------------------
+-- Table structure for code
+-- ----------------------------
+DROP TABLE IF EXISTS `code`;
 CREATE TABLE `code` (
   `order_id` varchar(20) NOT NULL COMMENT '订单号',
   `code_get` date DEFAULT NULL COMMENT '领料日期',
@@ -85,22 +76,21 @@ CREATE TABLE `code` (
   `code_completion` int(11) DEFAULT NULL COMMENT '批次完成量',
   `code_end` date DEFAULT NULL COMMENT '批次完成时间',
   `code_turn_date` date DEFAULT NULL COMMENT '转序日期',
-  `code_turn_volume` int(11) DEFAULT NULL COMMENT '转序量'
+  `code_turn_volume` int(11) DEFAULT NULL COMMENT '转序量',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `code`
---
+-- ----------------------------
+-- Records of code
+-- ----------------------------
+BEGIN;
+INSERT INTO `code` VALUES ('TL230001', '2020-02-14', '2', 's', 430000, '2020-02-15', '2020-02-18', 43);
+COMMIT;
 
-INSERT INTO `code` (`order_id`, `code_get`, `code_readiness`, `code_opertor`, `code_completion`, `code_end`, `code_turn_date`, `code_turn_volume`) VALUES
-('TL230001', '2020-02-14', '2', 's', 430000, '2020-02-15', '2020-02-18', 43);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `dip`
---
-
+-- ----------------------------
+-- Table structure for dip
+-- ----------------------------
+DROP TABLE IF EXISTS `dip`;
 CREATE TABLE `dip` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `dip_get` date DEFAULT NULL COMMENT '领料日期',
@@ -112,22 +102,21 @@ CREATE TABLE `dip` (
   `dip_batch_end` date DEFAULT NULL COMMENT '批次完成时间',
   `dip_opertor` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '操作者',
   `dip_turn_date` date DEFAULT NULL COMMENT '转序日期',
-  `dip_turn_volume` int(11) DEFAULT NULL COMMENT '转序量'
+  `dip_turn_volume` int(11) DEFAULT NULL COMMENT '转序量',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `dip`
---
+-- ----------------------------
+-- Records of dip
+-- ----------------------------
+BEGIN;
+INSERT INTO `dip` VALUES ('TL230001', '2020-02-01', '1', '1', '2020-02-12', '1', 1, '2020-02-19', '1', '2020-02-21', 1);
+COMMIT;
 
-INSERT INTO `dip` (`order_id`, `dip_get`, `dip_recipient`, `dip_readiness`, `dip_first_start`, `dip_first_opertor`, `dip_batch_completion`, `dip_batch_end`, `dip_opertor`, `dip_turn_date`, `dip_turn_volume`) VALUES
-('TL230001', '2020-02-01', '1', '1', '2020-02-12', '1', 1, '2020-02-19', '1', '2020-02-21', 1);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `glue`
---
-
+-- ----------------------------
+-- Table structure for glue
+-- ----------------------------
+DROP TABLE IF EXISTS `glue`;
 CREATE TABLE `glue` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `glue_get` date DEFAULT NULL COMMENT '领料日期',
@@ -136,98 +125,98 @@ CREATE TABLE `glue` (
   `glue_completion` int(11) DEFAULT NULL COMMENT '批次完成量',
   `glue_end` date DEFAULT NULL COMMENT '批次完成时间',
   `glue_turn_date` date DEFAULT NULL COMMENT '转序日期',
-  `glue_turn_volume` int(11) DEFAULT NULL COMMENT '转序量'
+  `glue_turn_volume` int(11) DEFAULT NULL COMMENT '转序量',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `glue`
---
+-- ----------------------------
+-- Records of glue
+-- ----------------------------
+BEGIN;
+INSERT INTO `glue` VALUES ('TL230001', '2020-02-05', '2', '3', 3, '2020-02-13', '2020-02-21', 333);
+COMMIT;
 
-INSERT INTO `glue` (`order_id`, `glue_get`, `glue_readiness`, `glue_opertor`, `glue_completion`, `glue_end`, `glue_turn_date`, `glue_turn_volume`) VALUES
-('TL230001', '2020-02-05', '2', '3', 3, '2020-02-13', '2020-02-21', 333);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `material`
---
-
+-- ----------------------------
+-- Table structure for material
+-- ----------------------------
+DROP TABLE IF EXISTS `material`;
 CREATE TABLE `material` (
-  `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
-  `material_come` date DEFAULT NULL COMMENT '来料日期',
-  `material_volume` int(20) DEFAULT NULL COMMENT '数量',
-  `material_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '品种',
-  `material_okng` tinyint(1) DEFAULT NULL COMMENT '是否合格',
-  `material_kitting` tinyint(1) DEFAULT NULL COMMENT '是否齐套',
-  `material_admin` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL COMMENT '物管员'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 转存表中的数据 `material`
---
-
-INSERT INTO `material` (`order_id`, `material_come`, `material_volume`, `material_type`, `material_okng`, `material_kitting`, `material_admin`) VALUES
-('TL20190001', '2019-12-24', 200, NULL, 1, 1, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `operator`
---
-
-CREATE TABLE `operator` (
-  `operator_id` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `operator_name` varchar(20) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
---
--- 转存表中的数据 `operator`
---
-
-INSERT INTO `operator` (`operator_id`, `operator_name`) VALUES
-('1', '订单管理员'),
-('2', '物料管理员'),
-('3', '工艺管理员'),
-('4', '仓库管理员'),
-('5', 'smt首件管理员'),
-('6', 'smt管理员'),
-('7', 'dip首件管理员'),
-('8', 'dip管理员'),
-('9', 'cleaning管理员'),
-('10', 'glue管理员'),
-('11', '打码员');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `orders`
---
-
-CREATE TABLE `orders` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `order_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `order_type` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `order_volume` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `order_client` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `material_come` date DEFAULT NULL,
+  `material_volume` int(20) DEFAULT NULL,
+  `material_type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `material_okng` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `material_kitting` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  `material_admin` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`,`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of material
+-- ----------------------------
+BEGIN;
+INSERT INTO `material` VALUES (7, 'dd0001', '2020-03-03', 100, 'PCB', '合格', '1', '小张');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for operator
+-- ----------------------------
+DROP TABLE IF EXISTS `operator`;
+CREATE TABLE `operator` (
+  `operator_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `operator_name` varchar(20) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`operator_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- ----------------------------
+-- Records of operator
+-- ----------------------------
+BEGIN;
+INSERT INTO `operator` VALUES ('1', '订单管理员');
+INSERT INTO `operator` VALUES ('2', '物料管理员');
+INSERT INTO `operator` VALUES ('3', '工艺管理员');
+INSERT INTO `operator` VALUES ('4', '仓库管理员');
+INSERT INTO `operator` VALUES ('5', 'smt首件管理员');
+INSERT INTO `operator` VALUES ('6', 'smt管理员');
+INSERT INTO `operator` VALUES ('7', 'dip首件管理员');
+INSERT INTO `operator` VALUES ('8', 'dip管理员');
+INSERT INTO `operator` VALUES ('9', 'cleaning管理员');
+INSERT INTO `operator` VALUES ('10', 'glue管理员');
+INSERT INTO `operator` VALUES ('11', '打码员');
+COMMIT;
+
+-- ----------------------------
+-- Table structure for orders
+-- ----------------------------
+DROP TABLE IF EXISTS `orders`;
+CREATE TABLE `orders` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
+  `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `order_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `order_type` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `order_volume` int(20) DEFAULT NULL,
+  `order_client` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `order_start` date DEFAULT NULL,
-  `order_end` date DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `order_end` date DEFAULT NULL,
+  PRIMARY KEY (`id`,`order_id`) USING BTREE,
+  UNIQUE KEY `order_id` (`order_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `orders`
---
+-- ----------------------------
+-- Records of orders
+-- ----------------------------
+BEGIN;
+INSERT INTO `orders` VALUES (5, 'dd0001', '航天电子板', '个', 100, '十三所', '2020-03-03', '2020-03-06');
+INSERT INTO `orders` VALUES (6, 'dd0002', 'PCB', '个', 12, '十三所', '2020-03-06', '2020-03-08');
+INSERT INTO `orders` VALUES (7, 'dd0003', 'PCB', '个', 18, '十三所', '2020-03-10', '2020-03-15');
+INSERT INTO `orders` VALUES (15, 'dd0004', 'PCB', '条', 2000, '十四所', '2020-03-03', '2020-03-08');
+COMMIT;
 
-INSERT INTO `orders` (`order_id`, `order_name`, `order_type`, `order_volume`, `order_client`, `order_start`, `order_end`) VALUES
-('TL20190001', 'PCB', '件', '3123', '十四所', '2019-12-19', '2019-12-19'),
-('TL2020000', '航天电子板', '2000', 'AAA2', '十四所', '2019-10-30', '2019-10-15'),
-('TL230001', 'AA', '件', '10000', '十四所', '2019-12-10', '2019-12-13');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `problem`
---
-
+-- ----------------------------
+-- Table structure for problem
+-- ----------------------------
+DROP TABLE IF EXISTS `problem`;
 CREATE TABLE `problem` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `feedback_date` date DEFAULT NULL COMMENT '反馈日期',
@@ -236,45 +225,46 @@ CREATE TABLE `problem` (
   `problem_description` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '问题描述',
   `solving_time` date DEFAULT NULL COMMENT '要求解决时间',
   `solution` varchar(300) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '解决措施',
-  `problem_responsible` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '相关责任人'
+  `problem_responsible` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '相关责任人',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 转存表中的数据 `problem`
---
+-- ----------------------------
+-- Records of problem
+-- ----------------------------
+BEGIN;
+INSERT INTO `problem` VALUES ('TL230001', '2020-02-12', 's', 'ssss', '一二三', '2020-02-14', 'ssssssss', 'ssss');
+COMMIT;
 
-INSERT INTO `problem` (`order_id`, `feedback_date`, `feedback`, `problem_type`, `problem_description`, `solving_time`, `solution`, `problem_responsible`) VALUES
-('TL230001', '2020-02-12', 's', 'ssss', '一二三', '2020-02-14', 'ssssssss', 'ssss');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `process`
---
-
+-- ----------------------------
+-- Table structure for process
+-- ----------------------------
+DROP TABLE IF EXISTS `process`;
 CREATE TABLE `process` (
+  `id` int(255) NOT NULL AUTO_INCREMENT,
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `bom` varchar(10) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT 'bom版本',
   `stencil` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '网板号',
   `tooling` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '工装',
   `personal_allocation` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '人力配置',
   `process_confirmation_data` date DEFAULT NULL COMMENT '确认日期',
-  `process_confirmor` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '确认者'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+  `process_confirmor` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '确认者',
+  PRIMARY KEY (`id`,`order_id`) USING BTREE
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `process`
---
+-- ----------------------------
+-- Records of process
+-- ----------------------------
+BEGIN;
+INSERT INTO `process` VALUES (1, 'dd0001', '1.1', '0', '0', '0', '2019-10-10', '小李');
+INSERT INTO `process` VALUES (2, 'dd0002', '1', '1', '1', '1', '2020-03-03', '1');
+INSERT INTO `process` VALUES (3, 'dd0003', '1', '1', '1', '1', '2020-03-03', '1');
+COMMIT;
 
-INSERT INTO `process` (`order_id`, `bom`, `stencil`, `tooling`, `personal_allocation`, `process_confirmation_data`, `process_confirmor`) VALUES
-('TL20190001', '2', '1', '1', '3', '2019-10-10', NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `product`
---
-
+-- ----------------------------
+-- Table structure for product
+-- ----------------------------
+DROP TABLE IF EXISTS `product`;
 CREATE TABLE `product` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `product_receive_date` date DEFAULT NULL COMMENT '接料日期',
@@ -284,22 +274,21 @@ CREATE TABLE `product` (
   `product_pack_volume` int(11) DEFAULT NULL COMMENT '包装数量',
   `product_deliver` date DEFAULT NULL COMMENT '出库日期',
   `product_deliver_volume` int(11) DEFAULT NULL COMMENT '出库量',
-  `product_shipper` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发货人'
+  `product_shipper` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '发货人',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 转存表中的数据 `product`
---
+-- ----------------------------
+-- Records of product
+-- ----------------------------
+BEGIN;
+INSERT INTO `product` VALUES ('TL230001', '2020-02-14', 'AS', '2020-02-15', 'AS', 12, '2020-02-20', 23, 'AS');
+COMMIT;
 
-INSERT INTO `product` (`order_id`, `product_receive_date`, `product_receiver`, `product_pack_date`, `product_packer`, `product_pack_volume`, `product_deliver`, `product_deliver_volume`, `product_shipper`) VALUES
-('TL230001', '2020-02-14', 'AS', '2020-02-15', 'AS', 12, '2020-02-20', 23, 'AS');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `quality`
---
-
+-- ----------------------------
+-- Table structure for quality
+-- ----------------------------
+DROP TABLE IF EXISTS `quality`;
 CREATE TABLE `quality` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `quality_first_date` date DEFAULT NULL COMMENT '首件送检日期',
@@ -310,22 +299,21 @@ CREATE TABLE `quality` (
   `quality_OK_volume` int(11) DEFAULT NULL COMMENT '合格数',
   `quality_NG_volume` int(11) DEFAULT NULL COMMENT 'NG数',
   `quality_inspection_confirm` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '检验确认',
-  `quality_inspection_date` date DEFAULT NULL COMMENT '检验确认日期'
+  `quality_inspection_date` date DEFAULT NULL COMMENT '检验确认日期',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
---
--- 转存表中的数据 `quality`
---
+-- ----------------------------
+-- Records of quality
+-- ----------------------------
+BEGIN;
+INSERT INTO `quality` VALUES ('TL230001', '2020-02-20', '2', '2', '2020-02-22', '2', 2, 2, '2', '2020-02-27');
+COMMIT;
 
-INSERT INTO `quality` (`order_id`, `quality_first_date`, `quality_first_inspection`, `quality_first_confirm`, `quality_batch_inspect`, `quality_inspection`, `quality_OK_volume`, `quality_NG_volume`, `quality_inspection_confirm`, `quality_inspection_date`) VALUES
-('TL230001', '2020-02-20', '2', '2', '2020-02-22', '2', 2, 2, '2', '2020-02-27');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `smt`
---
-
+-- ----------------------------
+-- Table structure for smt
+-- ----------------------------
+DROP TABLE IF EXISTS `smt`;
 CREATE TABLE `smt` (
   `order_id` varchar(20) NOT NULL COMMENT '订单号',
   `smt_get` date DEFAULT NULL COMMENT '领料日期',
@@ -339,66 +327,69 @@ CREATE TABLE `smt` (
   `smt_batch_end` date DEFAULT NULL COMMENT '批次完成时间',
   `smt_opertor` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '操作者',
   `smt_turn_department` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序部门',
-  `smt_turn_volume` int(11) DEFAULT NULL COMMENT '转序量'
+  `smt_turn_volume` int(11) DEFAULT NULL COMMENT '转序量',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `smt`
---
+-- ----------------------------
+-- Records of smt
+-- ----------------------------
+BEGIN;
+INSERT INTO `smt` VALUES ('TL230001', '2020-02-04', '1', '2', '1', '2020-02-06', '2020-02-12', '2', '1', '2020-02-21', '1', '1', 1);
+INSERT INTO `smt` VALUES ('TL2020000', '2020-02-11', '1', '1', '1', '2020-02-07', '2020-02-08', '1', '1', '2020-02-14', '1', '1', 1);
+INSERT INTO `smt` VALUES ('TL20190001', '2020-02-03', '2', '2', '2', '2020-02-05', '2020-02-07', '2', '2', '2020-02-14', '2', '2', 2);
+INSERT INTO `smt` VALUES ('3', '2020-02-05', '3', '3', '3', NULL, NULL, '3', '3', NULL, '3', '3', 3);
+INSERT INTO `smt` VALUES ('4', NULL, '4', '4', '4', NULL, NULL, '4', '4', NULL, '4', '4', 4);
+INSERT INTO `smt` VALUES ('5', NULL, '5', '5', '5', NULL, NULL, '5', '5', NULL, '5', '5', 5);
+COMMIT;
 
-INSERT INTO `smt` (`order_id`, `smt_get`, `smt_readiness`, `smt_line`, `smt_classes`, `smt_first_start`, `smt_first_end`, `smt_first_opertor`, `smt_batch_completion`, `smt_batch_end`, `smt_opertor`, `smt_turn_department`, `smt_turn_volume`) VALUES
-('TL230001', '2020-02-04', '1', '2', '1', '2020-02-06', '2020-02-12', '2', '1', '2020-02-21', '1', '1', 1),
-('TL2020000', '2020-02-11', '1', '1', '1', '2020-02-07', '2020-02-08', '1', '1', '2020-02-14', '1', '1', 1),
-('TL20190001', '2020-02-03', '2', '2', '2', '2020-02-05', '2020-02-07', '2', '2', '2020-02-14', '2', '2', 2),
-('3', '2020-02-05', '3', '3', '3', NULL, NULL, '3', '3', NULL, '3', '3', 3),
-('4', NULL, '4', '4', '4', NULL, NULL, '4', '4', NULL, '4', '4', 4),
-('5', NULL, '5', '5', '5', NULL, NULL, '5', '5', NULL, '5', '5', 5);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `user`
---
-
+-- ----------------------------
+-- Table structure for user
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `user_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `user_password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `usable` bit(1) DEFAULT b'1',
+  `job` varchar(255) DEFAULT NULL,
+  `tel` varchar(255) DEFAULT NULL,
   `admin` bit(1) DEFAULT b'0',
-  `order` bit(1) DEFAULT b'0',
-  `usable` bit(1) DEFAULT b'1'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `orders` bit(1) DEFAULT b'0',
+  `material` bit(1) DEFAULT b'0',
+  `process` bit(1) DEFAULT b'0',
+  `warehouse` bit(1) DEFAULT b'0',
+  `making` bit(1) DEFAULT b'0',
+  `quality` bit(1) DEFAULT b'0',
+  `product` bit(1) DEFAULT b'0',
+  PRIMARY KEY (`user_id`) USING BTREE
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `user`
---
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+BEGIN;
+INSERT INTO `user` VALUES (1, 'admin', 'admin', b'1', '超级管理员', NULL, b'1', b'1', b'0', b'0', b'0', b'0', b'0', b'0');
+INSERT INTO `user` VALUES (2, 'ceo', 'ceo', b'1', '总经理', '8888', b'0', b'1', b'1', b'1', b'1', b'1', b'1', b'1');
+INSERT INTO `user` VALUES (3, 'SC', '123', b'1', '生产主管', '123321', b'0', b'0', b'0', b'0', b'0', b'1', b'0', b'0');
+INSERT INTO `user` VALUES (4, 'WL', '999', b'1', '物料管理', '0000', b'0', b'0', b'1', b'0', b'0', b'0', b'0', b'0');
+INSERT INTO `user` VALUES (5, 'test', '1', b'1', '成品管理', '123124', b'0', b'0', b'0', b'0', b'0', b'0', b'0', b'0');
+COMMIT;
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_password`, `admin`, `order`, `usable`) VALUES
-(1, 'admin', 'admin', b'1', b'1', b'1'),
-(2, '1', '1', b'0', b'0', b'1'),
-(3, '123', '123', b'0', b'0', b'1'),
-(4, '12', '123', b'0', b'0', b'0'),
-(5, 'test', '1', b'0', b'0', b'0'),
-(6, '物料管理', '1', b'0', b'0', b'1');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `usertable`
---
-
+-- ----------------------------
+-- Table structure for usertable
+-- ----------------------------
+DROP TABLE IF EXISTS `usertable`;
 CREATE TABLE `usertable` (
   `id` varchar(10) NOT NULL,
   `name` varchar(10) NOT NULL,
   `pwd` varchar(10) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `warehouse`
---
-
+-- ----------------------------
+-- Table structure for warehouse
+-- ----------------------------
+DROP TABLE IF EXISTS `warehouse`;
 CREATE TABLE `warehouse` (
   `order_id` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '订单号',
   `warehouse_place` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '存放货位号',
@@ -408,121 +399,15 @@ CREATE TABLE `warehouse` (
   `warehouse_turn_department` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序部门',
   `warehouse_turn_volume` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序量',
   `warehouse_turn_date` date DEFAULT NULL COMMENT '转序日期',
-  `warehouse_turn_group` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序班组'
+  `warehouse_turn_group` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL COMMENT '转序班组',
+  PRIMARY KEY (`order_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `warehouse`
---
-
-INSERT INTO `warehouse` (`order_id`, `warehouse_place`, `warehouse_kitting`, `warehouse_preprocessing`, `warehouse_keeper`, `warehouse_turn_department`, `warehouse_turn_volume`, `warehouse_turn_date`, `warehouse_turn_group`) VALUES
-('TL20190001', '1800', 1, 0, '2019-10-19', 'SMT', 'DIP', '2019-12-25', '1800');
-
---
--- 转储表的索引
---
-
---
--- 表的索引 `addition`
---
-ALTER TABLE `addition`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `cleaning`
---
-ALTER TABLE `cleaning`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `code`
---
-ALTER TABLE `code`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `dip`
---
-ALTER TABLE `dip`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `glue`
---
-ALTER TABLE `glue`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `material`
---
-ALTER TABLE `material`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `operator`
---
-ALTER TABLE `operator`
-  ADD PRIMARY KEY (`operator_id`);
-
---
--- 表的索引 `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`order_id`) USING BTREE;
-
---
--- 表的索引 `problem`
---
-ALTER TABLE `problem`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `process`
---
-ALTER TABLE `process`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `product`
---
-ALTER TABLE `product`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `quality`
---
-ALTER TABLE `quality`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `smt`
---
-ALTER TABLE `smt`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 表的索引 `user`
---
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`user_id`) USING BTREE;
-
---
--- 表的索引 `warehouse`
---
-ALTER TABLE `warehouse`
-  ADD PRIMARY KEY (`order_id`);
-
---
--- 在导出的表使用AUTO_INCREMENT
---
-
---
--- 使用表AUTO_INCREMENT `user`
---
-ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+-- ----------------------------
+-- Records of warehouse
+-- ----------------------------
+BEGIN;
+INSERT INTO `warehouse` VALUES ('TL20190001', '1800', 1, 0, '2019-10-19', 'SMT', 'DIP', '2019-12-25', '1800');
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+SET FOREIGN_KEY_CHECKS = 1;
