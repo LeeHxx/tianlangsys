@@ -32,17 +32,17 @@ session_start();?>
 					<table class="transaction-history d-none">
 						<thead>
 							<tr>
-								<th>订单号</th>
-								<th>品名</th>
-								<th>规格/型号/图号</th>
-								<th>订单量</th>
+								<th><strong>订单号</strong></th>
+								<th><strong>品名</strong></th>
+								<th><strong>规格/型号/图号</strong></th>
+								<th><strong>订单量</strong></th>
 								<th>来料日期</th>
 								<th>数量</th>
 								<th>品种</th>
 								<th>合格/NG</th>
 								<th>齐套状态</th>
 								<th>物管员</th>
-								<th>操作</th>
+								<!-- <th>操作</th> -->
 							</tr>
 						</thead>
 						<tbody>
@@ -60,26 +60,30 @@ session_start();?>
               for($i=0; $i<$loginNum; $i++){
                 $row = mysqli_fetch_assoc($result);
                 echo "<tr>";
-                echo "<td>{$row['order_id']}</td>";
-                echo "<td>{$row['order_name']}</td>";
-                echo "<td>{$row['order_type']}</td>";
-                echo "<td>{$row['order_volume']}</td>";
+                echo "<td><strong>{$row['order_id']}</strong></td>";
+                echo "<td><strong>{$row['order_name']}</strong></td>";
+                echo "<td><strong>{$row['order_type']}</strong></td>";
+                echo "<td><strong>{$row['order_volume']}</strong></td>";
                 echo "<td>{$row['material_come']}</td>";
                 echo "<td>{$row['material_volume']}</td>";
                 echo "<td>{$row['material_type']}</td>";
-                echo "<td>{$row['material_okng']}</td>";
+                if ($row['material_okng']=='合格') {
+                echo "<td><span class='badge badge-pill badge-success'>{$row['material_okng']}</span></td>";
+              }else {
+                echo "<td><span class='badge badge-pill badge-danger'>{$row['material_okng']}</span></td>";
+              }
                 echo "<td>{$row['material_kitting']}</td>";
                 echo "<td>{$row['material_admin']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                  <button type='button' class='btn btn-white'>
-                    <i class='material-icons'>&#xE254;</i>
-                  </button>
-                  <button type='button' class='btn btn-danger'>
-                    <i class='material-icons'>&#xE872;</i>
-                  </button>
-                </div>
-                </td>";
+                // echo "<td>
+                // <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                //   <button type='button' class='btn btn-white'>
+                //     <i class='material-icons'>&#xE254;</i>
+                //   </button>
+                //   <button type='button' class='btn btn-danger'>
+                //     <i class='material-icons'>&#xE872;</i>
+                //   </button>
+                // </div>
+                // </td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);
