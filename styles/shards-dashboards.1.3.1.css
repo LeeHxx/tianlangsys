@@ -8631,7 +8631,7 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     }
 
 
-    .bbb.dropdown-menu {
+    .bbb.dropdown-menu:hover {
         border-radius: 0 .375rem .375rem 0;
         position: absolute !important;
         left: 100% !important;
