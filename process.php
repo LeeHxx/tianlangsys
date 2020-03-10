@@ -42,7 +42,7 @@ session_start();?>
                 <th>人力配置</th>
                 <th>确认日期</th>
                 <th>确认者</th>
-                <th>操作</th>
+                <!-- <th>操作</th> -->
             </tr>
             </thead>
             <tbody>
@@ -70,16 +70,16 @@ session_start();?>
 				echo "<td>{$row['personal_allocation']}</td>";
 				echo "<td>{$row['process_confirmation_data']}</td>";
                 echo "<td>{$row['process_confirmor']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button type='button' class='btn btn-danger'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
-                </div>
-                </td>";
+                // echo "<td>
+                // <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                // <button type='button' class='btn btn-white'>
+                // <i class='material-icons'>&#xE254;</i>
+                // </button>
+                // <button type='button' class='btn btn-danger'>
+                // <i class='material-icons'>&#xE872;</i>
+                // </button>
+                // </div>
+                // </td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);
