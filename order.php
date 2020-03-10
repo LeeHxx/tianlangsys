@@ -54,7 +54,7 @@ session_start();?>
           <table class="transaction-history d-none">
             <thead>
               <tr>
-                <th>#</th>
+                <th>序号</th>
                 <th>接单日期</th>
                 <th>客户</th>
                 <th>订单号</th>
@@ -77,13 +77,13 @@ session_start();?>
                 $ii=$i+1;
                 echo "<tr>";
                 echo "<td>{$ii}</td>";
-                echo "<td>{$row['order_start']}</td>";
-                echo "<td>{$row['order_client']}</td>";
-                echo "<td>{$row['order_id']}</td>";
-                echo "<td>{$row['order_name']}</td>";
-                echo "<td>{$row['order_type']}</td>";
-                echo "<td>{$row['order_volume']}</td>";
-                echo "<td>{$row['order_end']}</td>";
+                echo "<td><strong>{$row['order_start']}</strong></td>";
+                echo "<td><strong>{$row['order_client']}</strong></td>";
+                echo "<td><strong>{$row['order_id']}</strong></td>";
+                echo "<td><strong>{$row['order_name']}</strong></td>";
+                echo "<td><strong>{$row['order_type']}</strong></td>";
+                echo "<td><strong>{$row['order_volume']}</strong></td>";
+                echo "<td><strong>{$row['order_end']}</strong></td>";
                 echo "<td>
                 <form action='javascript:dele({$row['id']})' method='post' id='{$row['order_id']}'>
                 </form>
@@ -94,7 +94,7 @@ session_start();?>
                 <button form='edit{$i}' type='submit' class='btn btn-white'>
                 <i class='material-icons'>&#xE254;</i>
                 </button>
-                <button form='{$row['order_id']}' type='submit' class='btn btn-danger'>
+                <button form='{$row['order_id']}' type='submit' class='btn btn-white'>
                 <i class='material-icons'>&#xE872;</i>
                 </button>
                 </div>
