@@ -28,13 +28,13 @@ session_start();?>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-smt-search.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 添加smt </a>
+                <a id="add-new-event" href="workshop-smt-search.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> SMT管理 </a>
               </div>
             </div>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->
-          <div style="width:1500px;overflow:scroll;">
+          <div>
             <table class="transaction-history d-none">
               <thead>
 			          <tr>
