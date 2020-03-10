@@ -31,8 +31,8 @@
           <span>物料管理</span>
         </a>
         <div class="dropdown-menu  dropdown-menu-small ">
-          <a class="dropdown-item " href="material.php">物料列表</a>
           <a class="dropdown-item " href="material-search.php">物料管理</a>
+          <a class="dropdown-item " href="material.php">已来料订单</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -41,8 +41,8 @@
           <span>工艺管理</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
+          <a class="dropdown-item " href="process-search.php">工艺管理</a>
           <a class="dropdown-item " href="process.php">工艺列表</a>
-          <a class="dropdown-item " href="process-search.php">添加</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -64,7 +64,7 @@
           <div class="dropdown bbb">
           <a class="dropdown-item  " data-toggle="dropdown" href="workshop">车间作业</a>
           <div class="dropdown-menu  dropdown-menu-small">
-            <a class="dropdown-item " href="workshop-smt.php">SMT</a>
+            <a class="dropdown-item " href="workshop-smt-search.php">SMT</a>
             <a class="dropdown-item " href="workshop-dip.php">DIP</a>
             <a class="dropdown-item " href="workshop-clean.php">清洗</a>
             <a class="dropdown-item " href="workshop-glue.php">打胶</a>
