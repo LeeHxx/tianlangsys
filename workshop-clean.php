@@ -23,12 +23,12 @@ session_start();?>
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">Clean</span>
-              <h3 class="page-title">clean列表</h3>
+              <span class="text-uppercase page-subtitle">清洗</span>
+              <h3 class="page-title">清洗列表</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-clean-search.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 添加clean </a>
+                <a id="add-new-event" href="workshop-clean-search.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i> 清洗管理 </a>
               </div>
             </div>
           </div>

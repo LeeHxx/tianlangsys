@@ -7,11 +7,11 @@ $get=$_POST['cleaning_get'];
 $readiness=$_POST['cleaning_readiness'];
 $opertor=$_POST['cleaning_opertor'];
 $completion=$_POST['cleaning_completion'];
-$end=$_POST['cleaning_end'];
+$batch_end=$_POST['cleaning_end'];
 $turn_date=$_POST['cleaning_turn_date'];
 $volume=$_POST['cleaning_turn_volume'];
 
-$sql="insert into cleaning(order_id,cleaning_get,cleaning_readiness,cleaning_opertor,cleaning_completion,cleaning_end,cleaning_turn_date,cleaning_turn_volume) values ('$id','$get','$readiness','$opertor','$completion','$end','$turn_date','$volume')";
+$sql="insert into cleaning(order_id,cleaning_get,cleaning_readiness,cleaning_opertor,cleaning_completion,cleaning_end,cleaning_turn_date,cleaning_turn_volume) values ('$id','$get','$readiness','$opertor','$completion','$batch_end','$turn_date','$volume')";
 
 $result=mysqli_query($conn,$sql);
 

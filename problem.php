@@ -34,7 +34,7 @@ session_start();?>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->
-          <div>
+          <div style="width:1500px;overflow:scroll;" >
           <table class="transaction-history d-none">
             <thead>
 			        <tr>
