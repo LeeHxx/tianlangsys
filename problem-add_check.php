@@ -11,7 +11,7 @@ $solving_time=$_POST['solving_time'];
 $solution=$_POST['solution'];
 $responsible=$_POST['problem_responsible'];
 
-$sql="insert into problem(order_id,feedback_date,feedback,problem_type,problem_description,solving_time,solution,problem_responsible) values ('$id','$feedback_date','$feedback','$type','$description','$solving_time','$solution','$responsible')";
+$sql="insert into problem(order_id,feedback_date,feedback,problem_type,problem_description,solving_time,solution,problem_responsible) values ('$id','$feedback_date','$feedback','$type','$description','$solving_time','$solution','responsible')";
 
 $result=mysqli_query($conn,$sql);
 

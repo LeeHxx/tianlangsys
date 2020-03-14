@@ -44,6 +44,7 @@ $(document).ready(function(){
       $("#glue_turn_volume").focus();
       return false;
     }
+
   });
 });
 </script>
@@ -63,18 +64,6 @@ $(document).ready(function(){
         <!-- Page -->
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
-          <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">打胶</span>
-              <h3 class="page-title">打胶管理</h3>
-            </div>
-            <div class="col-12 col-sm-6 d-flex align-items-center">
-              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-glue.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
-              </div>
-            </div>
-
-          </div>
 
           <?php
           session_start();
@@ -86,47 +75,63 @@ $(document).ready(function(){
           ?>
 
 
-
           <div class="row">
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-8 mx-auto mt-4">
               <div class="card card-small mb-4">
-                <form action="workshop-glue-search_check.php" class="main-navbar__search w-100 " id="workshop-glue_add" method="post">
-                  <div class="input-group input-group-seamless ">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fa fa-search ml-2 "></i>
+                <div class="card-body p-0">
+                  <form action="workshop-glue-search_check.php" class="py-4" method="post">
+                    <div class="form-row mx-4 ">
+                      <div class="col  ">
+                        <h5 class="form-text m-0">添加glue</h5>
+
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="glue_id" id="glue_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
-                  </div>
-                </form>
+                    <hr>
+                    <div class="form-row mx-4">
+
+                      <div class="form-group col-md-12">
+                        <label for="order_id">订单号</label>
+                        <div class="input-group mb-1">
+
+                          <input type="text" class="form-control is--valid" name="glue_id" id="glue_id" placeholder="输入订单号" value="<?php echo $_SESSION['order_id'] ?>">
+                          <div class="input-group-append">
+                            <button id="btn1" class="btn btn-white" type="submit"><i class="material-icons mr-2">search</i>查找订单号</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
           </div>
 
 
 
+
+
+
           <div class="row">
-            <div class="col-lg-12 mx-auto ">
+            <div class="col-lg-8 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="workshop-glue-add_check.php" class="py-4" id="workshop-glue_add0" method="post">
+                  <form action="workshop-glue-add_check.php" class="py-4" id="workshop-glue_add" method="post">
 
 
                     <div class="form-row mx-4">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="order_id">订单号</label>
                         <input type="text" class="form-control" name="order_id" id="order_id" value="<?php echo $sql_arr['order_id'] ?>" placeholder="订单号" readonly="readonly">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="order_name">品名</label>
                         <input type="text" class="form-control" name="order_name" id="order_name" value="<?php echo $sql_arr['order_name'] ?>" placeholder="品名" readonly="readonly">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="order_type">规格/型号/图号</label>
                         <input type="text" class="form-control" name="order_type" id="order_type" value="<?php echo $sql_arr['order_type'] ?>" placeholder="规格/型号/图号" readonly="readonly">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="order_volume">订单量</label>
                         <input type="number" class="form-control" name="order_volume" id="order_volume" value="<?php echo $sql_arr['order_volume'] ?>" placeholder="订单量" readonly="readonly">
                       </div>
@@ -134,31 +139,38 @@ $(document).ready(function(){
 
                     <hr class="mx-4">
                     <div class="form-row mx-4">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="glue_get">领料日期</label>
-                        <input type="date" class="form-control" name="glue_get" id="glue_get" value="" placeholder="领料日期">
+                        <div class="input-group with-addon-icon-left" >
+                          <input type="text" class="form-control" name="glue_get" id="transaction-history-date-range" placeholder="领料日期">
+                          <span class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                          </span>
+                        </div>
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">                      
                         <label for="glue_readiness">准备时间</label>
                         <input type="text" class="form-control" name="glue_readiness" id="glue_readiness" value="" placeholder="准备时间">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="glue_opertor">操作者</label>
                         <input type="text" class="form-control" name="glue_opertor" id="glue_opertor" value="" placeholder="操作者">
                       </div>
-                      <div class="form-group col-md-3">
-                        <label for="glue_completion">批次完成量</label>
-                        <input type="number" class="form-control" name="glue_completion" id="glue_completion" value="" placeholder="批次完成量">
+                      <div class="form-group col-md-6">
+                        <label for=" glue_completion ">批次完成量</label>
+                        <input type="number" class="form-control" name=" glue_completion " id=" glue_completion " value="" placeholder="批次完成量">
                       </div>
-                      <div class="form-group col-md-3">
-                        <label for="glue_end">批次完成日期</label>
-                        <input type="date" class="form-control" name="glue_end" id="glue_end" value="" placeholder="批次完成日期">
+                      <div class="form-group col-md-6">
+                        <label for=" glue_end ">批次完成日期</label>
+                        <input type="date" class="form-control" name=" glue_end " id="glue_end" placeholder="批次完成日期">
                       </div>
-                      <div class="form-group col-md-3">
-                        <label for="glue_turn_date">转序日期</label>
-                        <input type="date" class="form-control" name="glue_turn_date" id="glue_turn_date" value="" placeholder="转序日期">
+                      <div class="form-group col-md-6">
+                        <label for=" glue_turn_date ">转序日期</label>
+                        <input type="date" class="form-control" name=" glue_turn_date " id="glue_turn_date" placeholder="转序日期">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-6">
                         <label for="glue_turn_volume">转序量</label>
                         <input type="number" class="form-control" name="glue_turn_volume" id="glue_turn_volume" value="" placeholder="转序量">
                       </div>
@@ -168,7 +180,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="workshop-glue_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加glue</button>
+                    <button id="btn2" form="workshop-glue_add" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加</button>
                   </div>
                 </div>
               </div>

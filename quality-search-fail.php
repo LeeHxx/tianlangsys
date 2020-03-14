@@ -6,15 +6,15 @@ session_start();?>
 <head>
   <?php include('head.php') ?>
   <script type="text/javascript">
-  $(document).ready(function(){
-    $("#btn1").click(function(){
-      var q_id=$("#q_id").val();
-      if(q_id==""){
-        $("#q_id").focus();
-        return false;
-      }
-    });
+$(document).ready(function(){
+  $("#btn1").click(function(){
+    var quality_id=$("#quality_id").val();
+    if(quality_id==""){
+      $("#quality_id").focus();
+      return false;
+    }
   });
+});
 </script>
 </head>
 <body class="h-100">
@@ -39,40 +39,54 @@ session_start();?>
         </div>
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
-          <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">quality</span>
-              <h3 class="page-title">质量管理</h3>
-            </div>
-          </div>
 
 
 
 
           <div class="row">
-            <div class="col-lg-5 mx-auto">
+            <div class="col-lg-8 mx-auto mt-4">
               <div class="card card-small mb-4">
+                <div class="card-body p-0">
+                  <form action="quality-search_check.php" class="py-4" id="quality_add" method="post">
+                    <div class="form-row mx-4 ">
+                      <div class="col  ">
+                        <h5 class="form-text m-0">添加质量情况</h5>
 
-                <form action="quality-search_check.php" class="main-navbar__search w-100 " method="post">
-                  <div class="input-group input-group-seamless ">
-                    <div class="input-group-prepend">
-                      <div class="input-group-text">
-                        <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="q_id" id="q_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
-                  </div>
-                </form>
+                    <hr>
+                    <div class="form-row mx-4">
 
+                      <div class="form-group col-md-12">
+                        <label for="order_id">订单号</label>
+                        <div class="input-group mb-3">
+
+                        <input type="text" class="form-control is-invalid" name="quality_id" id="quality_id" value="" placeholder="输入订单号">
+                        <div class="input-group-append">
+                          <button id="btn1" class="btn btn-outline-danger" type="submit"><i class="material-icons mr-2">search</i>查找订单号</button>
+                        </div>
+                      </div>
+                      </div>
+
+                    </div>
+
+
+
+
+
+
+
+                  </form>
+                </div>
 
               </div>
             </div>
           </div>
 
-          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改物料的订单号<br>按下回车键进行搜索</p>
 
 
-        </div>
+
+          </div>
         <!-- end Page -->
       </main>
     </div>

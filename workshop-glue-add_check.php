@@ -7,11 +7,11 @@ $get=$_POST['glue_get'];
 $readiness=$_POST['glue_readiness'];
 $opertor=$_POST['glue_opertor'];
 $completion=$_POST['glue_completion'];
-$batch_end=$_POST['glue_end'];
+$finish=$_POST['glue_finish'];
 $turn_date=$_POST['glue_turn_date'];
 $volume=$_POST['glue_turn_volume'];
 
-$sql="insert into glue(order_id,glue_get,glue_readiness,glue_opertor,glue_completion,glue_end,glue_turn_date,glue_turn_volume) values ('$id','$get','$readiness','$opertor','$completion','$batch_end','$turn_date','$volume')";
+$sql="insert into glue(order_id,glue_get,glue_readiness,glue_opertor,glue_completion,glue_finish,glue_turn_date,glue_turn_volume) values ('$id','$get','$readiness','$opertor','$completion','$finish','$turn_date','$volume')";
 
 $result=mysqli_query($conn,$sql);
 
