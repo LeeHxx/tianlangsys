@@ -18,7 +18,7 @@ $(document).ready(function(){
     var product_receive_date=$("#product_receive_date").val();
     var product_receiver=$("#product_receiver").val();
     var product_pack_date=$("#product_pack_date").val();
-    var product_packer=$("#product_packer").val();   
+    var product_packer=$("#product_packer").val();
     var product_pack_volume=$("#product_pack_volume").val();
     var product_deliver=$("#product_deliver").val();
     var product_deliver_volume=$("#product_deliver_volume").val();
@@ -72,6 +72,11 @@ $(document).ready(function(){
             <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
             <span class="text-uppercase page-subtitle">product</span>
               <h3 class="page-title">成品管理</h3>
+            </div>
+            <div class="col-12 col-sm-6 d-flex align-items-center">
+              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
+                <a id="add-new-event" href="product-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+              </div>
             </div>
 
           </div>
@@ -137,7 +142,7 @@ $(document).ready(function(){
 
                     <hr class="mx-4">
                     <div class="form-row mx-4">
-                    <div class="form-group col-md-3">
+                      <div class="form-group col-md-3">
                         <label for="product_receive_date">接料日期</label>
                         <input type="date" class="form-control" name="product_receive_date" id="product_receive_date" value="<?php echo $sql_arr0['product_receive_date'] ?>" placeholder="接料日期">
                       </div>
@@ -146,8 +151,8 @@ $(document).ready(function(){
                         <input type="text" class="form-control" name="product_receiver" id="product_receiver" value="<?php echo $sql_arr0['product_receiver'] ?>" placeholder="接收者">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for=" product_pack_date ">包装日期</label>
-                        <input type="date" class="form-control" name=" product_pack_date " id=" product_pack_date " value="<?php echo $sql_arr0['product_pack_date'] ?>" placeholder="包装日期">
+                        <label for="product_pack_date">包装日期</label>
+                        <input type="date" class="form-control" name="product_pack_date" id="product_pack_date" value="<?php echo $sql_arr0['product_pack_date'] ?>" placeholder="包装日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_packer">包装者</label>
@@ -162,19 +167,20 @@ $(document).ready(function(){
                         <input type="date" class="form-control" name="product_deliver" id="product_deliver" value="<?php echo $sql_arr0['product_deliver'] ?>" placeholder="出库日期">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for="product_deliver_volume">出库量</label>
-                        <input type="number" class="form-control" name="product_deliver_volume" id="product_deliver_volume" value="<?php echo $sql_arr0['product_deliver_volume'] ?>" placeholder="出库量">
+                        <label for="product_deliver_volume">出库数量</label>
+                        <input type="number" class="form-control" name="product_deliver_volume" id="product_deliver_volume" value="<?php echo $sql_arr0['product_deliver_volume'] ?>" placeholder="出库数量">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for=" product_shipper ">发货人</label>
-                        <input type="text" class="form-control" name=" product_shipper " id=" product_shipper " value="<?php echo $sql_arr0['product_shipper'] ?>" placeholder="发货人">
+                        <label for="product_shipper">发货人</label>
+                        <input type="text" class="form-control" name="product_shipper" id="product_shipper" value="<?php echo $sql_arr0['product_shipper'] ?>" placeholder="发货人">
                       </div>
+                    </div>
 
                   </form>
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="product_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存成品信息</button>
+                    <button id="btn2" form="product_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存</button>
                   </div>
                 </div>
               </div>
