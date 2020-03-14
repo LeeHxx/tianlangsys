@@ -8,9 +8,9 @@ session_start();?>
   <script type="text/javascript">
 $(document).ready(function(){
   $("#btn1").click(function(){
-    var q_id=$("#q_id").val();
-    if(q_id==""){
-      $("#q_id").focus();
+    var quality_id=$("#quality_id").val();
+    if(quality_id==""){
+      $("#quality_id").focus();
       return false;
     }
   });
@@ -18,12 +18,12 @@ $(document).ready(function(){
     var quality_first_date=$("#quality_first_date").val();
     var quality_first_inspection=$("#quality_first_inspection").val();
     var quality_first_confirm=$("#quality_first_confirm").val();
-    var quality_batch_inspect=$("#quality_batch_inspect").val();   
+    var quality_batch_inspect=$("#quality_batch_inspect").val();
     var quality_inspection=$("#quality_inspection").val();
     var quality_OK_volume=$("#quality_OK_volume").val();
     var quality_NG_volume=$("#quality_NG_volume").val();
     var quality_inspection_confirm=$("#quality_inspection_confirm").val();
-    var quality_inspection_date=$("#quality_inspection_date").val();
+    var  quality_inspection_date =$("# quality_inspection_date ").val();
     if(quality_first_date==""){
       $("#quality_first_date").focus();
       return false;
@@ -55,7 +55,6 @@ $(document).ready(function(){
 
   });
 });
-
 </script>
 </head>
 <body class="h-100">
@@ -74,8 +73,8 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">quality</span>
+            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <span class="text-uppercase page-subtitle">quality</span>
               <h3 class="page-title">质量管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
@@ -83,6 +82,7 @@ $(document).ready(function(){
                 <a id="add-new-event" href="quality-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
               </div>
             </div>
+
           </div>
 
           <?php
@@ -97,17 +97,19 @@ $(document).ready(function(){
           $sql_arr0 = mysqli_fetch_assoc($result0);
           ?>
 
+
+
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-                <form action="quality-search_check.php" class="main-navbar__search w-100" method="post">
+                <form action="quality-search_check.php" class="main-navbar__search w-100 " id="quality_add" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="q_id" id="q_id" style="height:50px; border-radius:25px;" type="text" value="" placeholder="<?php echo $_SESSION['order_id'] ?>（已编辑）" aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="quality_id" id="quality_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>（已编辑）" aria-label="Search">
                   </div>
                 </form>
               </div>
@@ -120,7 +122,8 @@ $(document).ready(function(){
             <div class="col-lg-12 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="quality-edit_check.php" class="py-4" id="quality_add" method="post">
+                  <form action="quality-edit_check.php" class="py-4" id="quality_add0" method="post">
+
 
                     <div class="form-row mx-4">
                       <div class="form-group col-md-3">
@@ -168,16 +171,16 @@ $(document).ready(function(){
                         <input type="number" class="form-control" name="quality_OK_volume" id="quality_OK_volume" value="<?php echo $sql_arr0['quality_OK_volume'] ?>" placeholder="合格数">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for="quality_NG_volume">不合格数</label>
-                        <input type="number" class="form-control" name="quality_NG_volume" id="quality_NG_volume" value="<?php echo $sql_arr0['quality_NG_volume'] ?>" placeholder="不合格数">
+                        <label for="quality_NG_volume">NG数</label>
+                        <input type="number" class="form-control" name="quality_NG_volume" id="quality_NG_volume" value="<?php echo $sql_arr0['quality_NG_volume'] ?>" placeholder="NG数">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for=" quality_inspection_confirm ">送检确认</label>
-                        <input type="text" class="form-control" name=" quality_inspection_confirm " id=" quality_inspection_confirm " value="<?php echo $sql_arr0['quality_inspection_confirm'] ?>" placeholder="送检确认">
+                        <label for="quality_inspection_confirm">检验确认</label>
+                        <input type="text" class="form-control" name="quality_inspection_confirm" id="quality_inspection_confirm" value="<?php echo $sql_arr0['quality_inspection_confirm'] ?>" placeholder="检验确认">
                       </div>
                       <div class="form-group col-md-3">
-                        <label for="quality_inspection_date">送检确认日期</label>
-                        <input type="date" class="form-control" name="quality_inspection_date" id="quality_inspection_date" value="<?php echo $sql_arr0['quality_inspection_date'] ?>" placeholder="送检确认日期">
+                        <label for="quality_inspection_date">检验确认日期</label>
+                        <input type="date" class="form-control" name="quality_inspection_date" id="quality_inspection_date" value="<?php echo $sql_arr0['quality_inspection_date'] ?>" placeholder="检验确认日期">
                       </div>
                     </div>
 
@@ -185,7 +188,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="quality_add" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存质量信息</button>
+                    <button id="btn2" form="quality_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存</button>
                   </div>
                 </div>
               </div>

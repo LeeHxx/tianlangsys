@@ -14,7 +14,6 @@ $inspection_confirm=$_POST['quality_inspection_confirm'];
 $inspection_date=$_POST['quality_inspection_date'];
 
 $sql="UPDATE quality set quality_first_date='$first_date',quality_first_inspection='$first_inspection',quality_first_confirm='$first_confirm',quality_batch_inspect='$batch_inspect',quality_inspection='$inspection',quality_OK_volume='$OK_volume',quality_NG_volume='$NG_volume',quality_inspection_confirm='$inspection_confirm',quality_inspection_date='$inspection_date'";
-
 $result=mysqli_query($conn,$sql);
 
 if($result){

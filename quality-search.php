@@ -8,9 +8,9 @@ session_start();?>
   <script type="text/javascript">
   $(document).ready(function(){
     $("#btn1").click(function(){
-      var q_id=$("#q_id").val();
-      if(q_id==""){
-        $("#q_id").focus();
+      var quality_id=$("#quality_id").val();
+      if(quality_id==""){
+        $("#quality_id").focus();
         return false;
       }
     });
@@ -37,6 +37,11 @@ session_start();?>
               <span class="text-uppercase page-subtitle">quality</span>
               <h3 class="page-title">质量管理</h3>
             </div>
+            <div class="col-12 col-sm-6 d-flex align-items-center">
+              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
+                <a id="add-new-event" href="quality.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 质量列表 </a>
+              </div>
+            </div>
 
           </div>
 
@@ -50,7 +55,7 @@ session_start();?>
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="q_id" id="q_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="quality_id" id="quality_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
                   </div>
                 </form>
               </div>

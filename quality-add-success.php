@@ -8,9 +8,9 @@ session_start();?>
   <script type="text/javascript">
   $(document).ready(function(){
     $("#btn1").click(function(){
-      var q_id=$("#q_id").val();
-      if(q_id==""){
-        $("#q_id").focus();
+      var quality_id=$("#quality_id").val();
+      if(quality_id==""){
+        $("#quality_id").focus();
         return false;
       }
     });
@@ -46,7 +46,7 @@ session_start();?>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="quality-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+                <a id="add-new-event" href="quality.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 质量列表 </a>
               </div>
             </div>
 
@@ -66,7 +66,7 @@ session_start();?>
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="q_id" id="q_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="quality_id" id="quality_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
                   </div>
                 </form>
 
@@ -75,7 +75,7 @@ session_start();?>
             </div>
           </div>
 
-          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改的订单号<br>按下回车键进行搜索</p>
+          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改物料的订单号<br>按下回车键进行搜索</p>
 
 
         </div>

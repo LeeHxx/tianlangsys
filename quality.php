@@ -73,7 +73,7 @@ session_start();?>
                   echo "<td>{$row['quality_first_confirm']}</td>";
         	  			echo "<td>{$row['quality_batch_inspect']}</td>";
 	          			echo "<td>{$row['quality_inspection']}</td>";
-			          	echo "<td>{$row['quality_acceptance_volume']}</td>";
+			          	echo "<td>{$row['quality_OK_volume']}</td>";
 		          		echo "<td>{$row['quality_NG_volume']}</td>";
 		          		echo "<td>{$row['quality_inspection_confirm']}</td>";
 		          		echo "<td>{$row['quality_inspection_date']}</td>";
