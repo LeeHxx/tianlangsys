@@ -14,7 +14,7 @@ $opertor=$_POST['dip_opertor'];
 $turn_date=$_POST['dip_turn_date'];
 $volume=$_POST['dip_turn_volume'];
 
-$sql="insert into dip(order_id,dip_get,dip_recipient,dip_readiness,dip_first_start,dip_first_opertor,dip_batch_completion,dip_batch_end,dip_opertor,dip_turn_date,dip_turn_volume) values ('$id','$get','$recipient','$readiness','$first_start','$first_end','$first_opertor','$completion','$batch_end','$opertor','$turn_date','$volume')";
+$sql="insert into dip(order_id,dip_get,dip_recipient,dip_readiness,dip_first_start,dip_first_opertor,dip_batch_completion,dip_batch_end,dip_opertor,dip_turn_date,dip_turn_volume) values ('$id','$get','$recipient','$readiness','$first_start','$first_opertor','$completion','$batch_end','$opertor','$turn_date','$volume')";
 
 $result=mysqli_query($conn,$sql);
 

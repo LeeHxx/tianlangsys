@@ -77,6 +77,7 @@ session_start();?>
                 echo "<td>
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
                 <button type='button' class='btn btn-white'>
+                <a href='warehouse-edit.php?order_id={$row['order_id']}'>
                 <i class='material-icons'>&#xE254;</i>
                 </button>
                 <button type='button' class='btn btn-danger'>

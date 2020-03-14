@@ -12,7 +12,8 @@ $leader=$_POST['addition_leader'];
 $price=$_POST['addition_price'];
 $controller=$_POST['addition_controller'];
 
-$sql="insert into material(order_id,addition_date,addition_type,addition_volume,addition_applicant,addition_reason,addition_leader,addition_price,addition_controller) values ('$id','$addition_date','$type','$volume','$applicant','$reason','$leader','$price','$controller')";
+$sql="insert into addition(order_id,addition_date,addition_type,addition_volume,addition_applicant,addition_reason,addition_leader,addition_price,addition_controller) values
+ ('$id','$addition_date','$type','$volume','$applicant','$reason','$leader','$price','$controller')";
 
 $result=mysqli_query($conn,$sql);
 
