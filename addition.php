@@ -50,7 +50,7 @@ session_start();?>
             	  <th>组长确认</th>
             	  <th>物料单价</th>
                 <th>物管员确认</th>
-                <th>操作</th>
+                <!-- <th>操作</th> -->
               </tr>
             </thead>
             <tbody>
@@ -80,16 +80,16 @@ session_start();?>
         				echo "<td>{$row['addition_leader']}</td>";
 		        		echo "<td>{$row['addition_price']}</td>";
 	        			echo "<td>{$row['addition_controller']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button type='button' class='btn btn-danger'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
-                </div>
-                </td>";
+                //echo "<td>
+                //<div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                //<button type='button' class='btn btn-white'>
+                //<i class='material-icons'>&#xE254;</i>
+                //</button>
+                //<button type='button' class='btn btn-danger'>
+                //<i class='material-icons'>&#xE872;</i>
+                //</button>
+                //</div>
+                //</td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);

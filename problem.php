@@ -49,7 +49,7 @@ session_start();?>
                 <th>要求解决时间</th>
                 <th>解决措施</th>
                 <th>相关责任人</th>
-                <th>操作</th>
+                <!-- <th>操作</th> -->
               </tr>
             </thead>
             <tbody>
@@ -78,16 +78,16 @@ session_start();?>
 	        			echo "<td>{$row['solving_time']}</td>";
 	        			echo "<td>{$row['solution']}</td>";
 		        		echo "<td>{$row['problem_responsible']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                  <button type='button' class='btn btn-white'>
-                    <i class='material-icons'>&#xE254;</i>
-                  </button>
-                  <button type='button' class='btn btn-danger'>
-                    <i class='material-icons'>&#xE872;</i>
-                  </button>
-                </div>
-                </td>";
+                //echo "<td>
+                //<div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                  //<button type='button' class='btn btn-white'>
+                   //<i class='material-icons'>&#xE254;</i>
+                  //</button>
+                  //<button type='button' class='btn btn-danger'>
+                    //<i class='material-icons'>&#xE872;</i>
+                  //</button>
+                //</div>
+                //</td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);

@@ -31,8 +31,8 @@ session_start();?>
         <!-- end 顶栏 -->
         <!-- Page -->
         <div class="container-fluid px-0">
-          <div class="alert alert-danger alert-dismissible fade show m-0" role="alert">
-            <strong>未找到此订单！</strong> 请检查订单号后重试！<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
+            <strong>半成品信息</strong> 添加成功！<button type="button" class="close" data-dismiss="alert" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
@@ -46,9 +46,10 @@ session_start();?>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 半成品列表 </a>
+                <a id="add-new-event" href="warehouse-semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 半成品列表 </a>
               </div>
             </div>
+
           </div>
 
 
@@ -58,7 +59,7 @@ session_start();?>
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
 
-                <form action="semi-search_check.php" class="main-navbar__search w-100 " method="post">
+                <form action="warehouse-semi-search_check.php" class="main-navbar__search w-100 " method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">

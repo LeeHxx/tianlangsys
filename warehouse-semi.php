@@ -39,7 +39,7 @@ session_start();?>
                 <th>入库日期</th>
                 <th>存放货位号</th>
                 <th>领取时间</th>
-                <th>操作</th>
+                <!-- <th>操作</th> -->
             </tr>
             </thead>
             <tbody>
@@ -64,17 +64,16 @@ session_start();?>
                 echo "<td>{$row['semi_income']}</td>";
                 echo "<td>{$row['semi_place']}</td>";
                 echo "<td>{$row['semi_receive']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
-                <a href='warehouse-edit.php?order_id={$row['order_id']}'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button type='button' class='btn btn-danger'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
-                </div>
-                </td>";
+                // echo "<td>
+                // <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                // <button type='button' class='btn btn-white'>
+                // <i class='material-icons'>&#xE254;</i>
+                // </button>
+                // <button type='button' class='btn btn-danger'>
+                // <i class='material-icons'>&#xE872;</i>
+                // </button>
+                // </div>
+                // </td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);
