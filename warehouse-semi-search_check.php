@@ -14,16 +14,16 @@ $result0=mysqli_query($conn,$sql0);
 $num0=mysqli_num_rows($result0);
 if ($num0>0) {
   $_SESSION['order_id']=$semi_id;
-    header("Location: semi-edit.php");
+    header("Location: warehouse-semi-edit.php");
     echo "yes";
 	exit;
 }elseif($num>0){
   $_SESSION['order_id']=$semi_id;
-    header("Location: semi-add.php");
+    header("Location: warehouse-semi-add.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: semi-search-fail.php");
+  header("Location: warehouse-semi-search-fail.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

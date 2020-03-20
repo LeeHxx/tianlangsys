@@ -33,7 +33,7 @@ session_start();?>
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
               <span class="text-uppercase page-subtitle">quality</span>
               <h3 class="page-title">质量管理</h3>
             </div>
@@ -62,7 +62,7 @@ session_start();?>
             </div>
           </div>
 
-          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改的订单号<br>按下回车键进行搜索</p>
+          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改信息的订单号<br>按下回车键进行搜索</p>
 
         </div>
 

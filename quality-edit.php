@@ -55,6 +55,10 @@ $(document).ready(function(){
 
   });
 });
+$('.datepicker').datepicker({
+  format: "yyyy-mm-dd",
+  orientation:" auto",
+  });
 </script>
 </head>
 <body class="h-100">
@@ -73,7 +77,7 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
             <span class="text-uppercase page-subtitle">quality</span>
               <h3 class="page-title">质量管理</h3>
             </div>
@@ -148,21 +152,25 @@ $(document).ready(function(){
                     <div class="form-row mx-4">
                       <div class="form-group col-md-3">
                         <label for="quality_first_date">首件送检日期</label>
-                        <input type="date" class="form-control" name="quality_first_date" id="quality_first_date" value="<?php echo $sql_arr0['quality_first_date'] ?>" placeholder="首件送检日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="quality_first_date" id="quality_first_date" value="<?php echo $sql_arr0['quality_first_date'] ?>" placeholder="首件送检日期">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label for="quality_first_inspection">首件送检者</label>
                         <input type="text" class="form-control" name="quality_first_inspection" id="quality_first_inspection" value="<?php echo $sql_arr0['quality_first_inspection'] ?>" placeholder="首件送检者">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label for="quality_first_confirm">首件确认</label>
-                        <input type="text" class="form-control" name="quality_first_confirm" id="quality_first_confirm" value="<?php echo $sql_arr0['quality_first_confirm'] ?>" placeholder="首件确认">
+                        <select class="custom-select" name="quality_first_confirm" id="quality_first_confirm" value="<?php echo $sql_arr0['quality_first_confirm'] ?>" placeholder="首件确认">
+                          <option value="" selected="">请选择...</option>
+                          <option value="已确认" <?php  if($sql_arr0['quality_first_confirm']=='已确认'){?>selected <?php }?>>已确认</option>
+                          <option value="未确认" <?php  if($sql_arr0['quality_first_confirm']=='未确认'){?>selected <?php }?>>未确认</option>
+                        </select>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="quality_batch_inspect">批次送检日期</label>
-                        <input type="date" class="form-control" name="quality_batch_inspect" id="quality_batch_inspect" value="<?php echo $sql_arr0['quality_batch_inspect'] ?>" placeholder="批次送检日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="quality_batch_inspect" id="quality_batch_inspect" value="<?php echo $sql_arr0['quality_batch_inspect'] ?>" placeholder="批次送检日期">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-2">
                         <label for="quality_inspection">送检者</label>
                         <input type="text" class="form-control" name="quality_inspection" id="quality_inspection" value="<?php echo $sql_arr0['quality_inspection'] ?>" placeholder="送检者">
                       </div>
@@ -180,7 +188,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-3">
                         <label for="quality_inspection_date">检验确认日期</label>
-                        <input type="date" class="form-control" name="quality_inspection_date" id="quality_inspection_date" value="<?php echo $sql_arr0['quality_inspection_date'] ?>" placeholder="检验确认日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="quality_inspection_date" id="quality_inspection_date" value="<?php echo $sql_arr0['quality_inspection_date'] ?>" placeholder="检验确认日期">
                       </div>
                     </div>
 
@@ -188,7 +196,7 @@ $(document).ready(function(){
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="quality_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存</button>
+                    <button id="btn2" form="quality_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存修改</button>
                   </div>
                 </div>
               </div>

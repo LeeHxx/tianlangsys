@@ -37,7 +37,7 @@
         <a class="dropdown-item" href="userInfo.php"><i class="material-icons">&#xE7FD;</i> 账户信息</a>
 
         <?php if($_SESSION['admin']=='1'){?>
-          <a class="dropdown-item" href="user.php"><i class="material-icons">&#xE8B8;</i> 账户管理</a>
+          <a class="dropdown-item" href="user.php" target="_blank"><i class="material-icons">&#xE8B8;</i> 账户管理</a>
         <?php }?>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item text-danger" href="login.php"><i class="material-icons text-danger">&#xE879;</i> 安全退出 </a>

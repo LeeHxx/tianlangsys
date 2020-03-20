@@ -52,9 +52,9 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="warehouse.php">仓库列表</a>
-          <a class="dropdown-item " href="semi.php">半成品列表</a>
-          <a class="dropdown-item " href="warehouse-search.php">库存管理</a>          
-          <a class="dropdown-item " href="semi-search.php">半成品管理</a>
+          <a class="dropdown-item " href="warehouse-semi.php">半成品列表</a>
+          <a class="dropdown-item " href="warehouse-search.php">仓库管理</a>          
+          <a class="dropdown-item " href="warehouse-semi-search.php">半成品管理</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
@@ -67,17 +67,17 @@
           <a class="dropdown-item  " data-toggle="dropdown" href="workshop">车间作业</a>
           <div class="dropdown-menu  dropdown-menu-small">
             <a class="dropdown-item " href="workshop-smt-search.php">SMT</a>
-            <a class="dropdown-item " href="workshop-dip.php">DIP</a>
-            <a class="dropdown-item " href="workshop-clean.php">清洗</a>
-            <a class="dropdown-item " href="workshop-glue.php">打胶</a>
-            <a class="dropdown-item " href="workshop-code.php">打码</a>
+            <a class="dropdown-item " href="workshop-dip-search.php">DIP</a>
+            <a class="dropdown-item " href="workshop-clean-search.php">清洗</a>
+            <a class="dropdown-item " href="workshop-glue-search.php">打胶</a>
+            <a class="dropdown-item " href="workshop-code-search.php">打码</a>
           </div>
 
 
           </div>
 
-          <a class="dropdown-item " href="problem.php">问题反馈记录单</a>
-          <a class="dropdown-item " href="addition.php">物料补领申请单</a>
+          <a class="dropdown-item " href="problem-search.php">问题反馈记录单</a>
+          <a class="dropdown-item " href="addition-search.php">物料补领申请单</a>
         </div>
       </li>
 

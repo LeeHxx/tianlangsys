@@ -15,11 +15,13 @@ $sql="insert into orders(order_id,order_name,order_type,order_volume,order_clien
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: order-add-success.php");
+    echo "<script>alert('添加成功！');window.location.href='order-add-success.php';</script>";
+    //header("Location: order-add-success.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: order-add-fail.php");
+  echo "<script>alert('添加失败！请检查订单号是否重复。');window.history.back(-1);</script>";
+  //header("Location: order-add-fail.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

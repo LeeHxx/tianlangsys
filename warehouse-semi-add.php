@@ -28,7 +28,6 @@ $(document).ready(function(){
       $("#semi_receive").focus();
       return false;
     }
-
   });
 });
 </script>
@@ -50,12 +49,12 @@ $(document).ready(function(){
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
-            <span class="text-uppercase page-subtitle">semi-finished</span>
+              <span class="text-uppercase page-subtitle">semi-finished</span>
               <h3 class="page-title">半成品管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="semi-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+                <a id="add-new-event" href="warehouse-semi-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
               </div>
             </div>
 
@@ -66,11 +65,8 @@ $(document).ready(function(){
           require_once('conn.php');
           $id = $_SESSION['order_id'];
           $sql="select * from orders where order_id='$id' ";
-          $sql0="select * from semi where order_id='$id' ";
           $result=mysqli_query($conn,$sql);
           $sql_arr = mysqli_fetch_assoc($result);
-          $result0=mysqli_query($conn,$sql0);
-          $sql_arr0 = mysqli_fetch_assoc($result0);
           ?>
 
 
@@ -78,14 +74,14 @@ $(document).ready(function(){
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-                <form action="semi-search_check.php" class="main-navbar__search w-100 " id="semi_add" method="post">
+                <form action="warehouse-semi-search_check.php" class="main-navbar__search w-100 " id="semi_add" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="semi_id" id="semi_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>（已编辑）" aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="semi_id" id="semi_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
                   </div>
                 </form>
               </div>
@@ -98,7 +94,7 @@ $(document).ready(function(){
             <div class="col-lg-12 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="semi-edit_check.php" class="py-4" id="semi_add0" method="post">
+                  <form action="warehouse-semi-add_check.php" class="py-4" id="semi_add0" method="post">
 
 
                     <div class="form-row mx-4">
@@ -124,23 +120,22 @@ $(document).ready(function(){
                     <div class="form-row mx-4">
                       <div class="form-group col-md-3">
                         <label for="semi_income">入库时间</label>
-                        <input type="date" class="form-control" name="semi_income" id="semi_income" value="<?php echo $sql_arr0['semi_income'] ?>" placeholder="入库时间">
+                        <input type="date" class="form-control" name="semi_income" id="semi_income" value="" placeholder="入库时间">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="semi_place">存放位置</label>
-                        <input type="text" class="form-control" name="semi_place" id="semi_place" value="<?php echo $sql_arr0['semi_place'] ?>" placeholder="存放位置">
+                        <input type="text" class="form-control" name="semi_place" id="semi_place" value="" placeholder="存放位置">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="semi_receive">领取时间</label>
-                        <input type="date" class="form-control" name="semi_receive" id="semi_receive" value="<?php echo $sql_arr0['semi_receive'] ?>" placeholder="领取时间">
+                        <input type="date" class="form-control" name="semi_receive" id="semi_receive" value="" placeholder="入库时间">
                       </div>
-                    </div>
 
                   </form>
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="semi_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存半成品信息</button>
+                    <button id="btn2" form="semi_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>半成品入库</button>
                   </div>
                 </div>
               </div>

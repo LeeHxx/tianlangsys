@@ -30,13 +30,6 @@ session_start();?>
         </div>
         <!-- end 顶栏 -->
         <!-- Page -->
-        <div class="container-fluid px-0">
-          <div class="alert alert-success alert-dismissible fade show m-0" role="alert">
-            <strong>半成品信息</strong> 添加成功！<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-        </div>
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
@@ -46,20 +39,16 @@ session_start();?>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 半成品列表 </a>
+                <a id="add-new-event" href="warehouse-semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 半成品列表 </a>
               </div>
             </div>
 
           </div>
 
-
-
-
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-
-                <form action="semi-search_check.php" class="main-navbar__search w-100 " method="post">
+                <form action="warehouse-semi-search_check.php" class="main-navbar__search w-100 " id="semi_add" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
@@ -69,20 +58,19 @@ session_start();?>
                     <input class="navbar-search form-control ml-3" name="semi_id" id="semi_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." aria-label="Search">
                   </div>
                 </form>
-
-
               </div>
             </div>
           </div>
 
-          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改物料的订单号<br>按下回车键进行搜索</p>
-
+          <p style="text-align: center; color:#C0C0C0" class="mt-3">请输入要添加或修改的订单号<br>按下回车键进行搜索</p>
 
         </div>
-        <!-- end Page -->
-      </main>
-    </div>
+
+      </div>
+      <!-- end Page -->
+    </main>
   </div>
-  <?php include('script.php') ?>
+</div>
+<?php include('script.php') ?>
 </body>
 </html>

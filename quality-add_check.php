@@ -18,11 +18,13 @@ $sql="insert into quality(order_id,quality_first_date,quality_first_inspection,q
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: quality-add-success.php");
+    echo "<script>alert('添加成功！');window.location.href='quality-search.php';</script>";
+    //header("Location: quality-add-success.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: quality-add.php");
+  echo "<script>alert('添加失败！');window.location.href='quality-search.php';</script>";
+  //header("Location: quality-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

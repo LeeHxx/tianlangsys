@@ -15,11 +15,13 @@ $sql="UPDATE orders set order_name='$name',order_type='$type',order_volume='$vol
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: order-add-success.php");
+    echo "<script>alert('修改成功！');window.location.href='order.php';</script>";
+    //header("Location: order-add-success.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: order-add-fail.php");
+  echo "<script>alert('修改失败！请重新检查所填写信息。');window.history.back(-1);</script>";
+  //header("Location: order-add-fail.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

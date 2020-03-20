@@ -48,7 +48,7 @@ session_start();?>
                 <th>批次完成时间</th>
                 <th>转序日期</th>
                 <th>转序量</th>
-                <th>操作</th>
+                <!-- <th>操作</th> -->
             </tr>
             </thead>
             <tbody>
@@ -77,16 +77,16 @@ session_start();?>
                 echo "<td>{$row['code_end']}</td>";
                 echo "<td>{$row['code_turn_date']}</td>";
                 echo "<td>{$row['code_turn_volume']}</td>";
-                echo "<td>
-                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button type='button' class='btn btn-white'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button type='button' class='btn btn-danger'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
-                </div>
-                </td>";
+                // echo "<td>
+                // <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                // <button type='button' class='btn btn-white'>
+                // <i class='material-icons'>&#xE254;</i>
+                // </button>
+                // <button type='button' class='btn btn-danger'>
+                // <i class='material-icons'>&#xE872;</i>
+                // </button>
+                // </div>
+                // </td>";
                 echo "</tr>";
               }
               mysqli_free_result($result);
