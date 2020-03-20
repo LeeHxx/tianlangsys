@@ -29,7 +29,7 @@ session_start();?>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->
-          <div style="width:1500px;">
+          <div>
             <table class="transaction-history d-none">
               <thead>
 			          <tr>
