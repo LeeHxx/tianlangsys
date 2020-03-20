@@ -53,7 +53,7 @@
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="warehouse.php">仓库列表</a>
           <a class="dropdown-item " href="warehouse-semi.php">半成品列表</a>
-          <a class="dropdown-item " href="warehouse-search.php">仓库管理</a>          
+          <a class="dropdown-item " href="warehouse-search.php">仓库管理</a>
           <a class="dropdown-item " href="warehouse-semi-search.php">半成品管理</a>
         </div>
       </li>
@@ -89,8 +89,8 @@
           <span>质量管理</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
-          <a class="dropdown-item " href="quality.php">质量列表</a>
           <a class="dropdown-item " href="quality-search.php">质量管理</a>
+          <a class="dropdown-item " href="quality.php">质量列表</a>
         </div>
       </li>
       <li class="nav-item dropdown aaa">
