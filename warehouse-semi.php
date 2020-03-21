@@ -26,6 +26,11 @@ session_start();?>
               <span class="text-uppercase page-subtitle">semi-finished</span>
               <h3 class="page-title">半成品列表</h3>
             </div>
+            <div class="col-12 col-sm-6 d-flex align-items-center">
+              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
+                <a id="add-new-event" href="warehouse-semi-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+              </div>
+            </div>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->

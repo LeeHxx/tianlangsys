@@ -14,6 +14,10 @@ $(document).ready(function(){
       return false;
     }
   });
+  $('.datepicker').datepicker({
+    format: "yyyy-mm-dd",
+    orientation:"top",
+    });
   $("#btn2").click(function(){
     var warehouse_place=$("#warehouse_place").val();
     var warehouse_kitting=$("#warehouse_kitting").val();
@@ -69,7 +73,7 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
             <span class="text-uppercase page-subtitle">warehouse</span>
               <h3 class="page-title">仓库管理</h3>
             </div>
@@ -169,7 +173,7 @@ $(document).ready(function(){
                       <div class="form-group col-md-3">
                         <label for="warehouse_turn_date">转序日期</label>
                         <div class="input-group with-addon-icon-left" >
-                          <input type="text" class="form-control" name="warehouse_turn_date" id="transaction-history-date-range" value="<?php echo $sql_arr0['warehouse_turn_date'] ?>" placeholder="转序日期">
+                          <input type="text" data-provide="datepicker" class="form-control" name="warehouse_turn_date" id="warehouse_turn_date" value="<?php echo $sql_arr0['warehouse_turn_date'] ?>" placeholder="转序日期">
                           <span class="input-group-append">
                             <span class="input-group-text">
                                 <i class="fa fa-calendar"></i>

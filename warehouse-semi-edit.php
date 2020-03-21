@@ -31,6 +31,10 @@ $(document).ready(function(){
 
   });
 });
+$('.datepicker').datepicker({
+  format: "yyyy-mm-dd",
+  orientation:" auto",
+  });
 </script>
 </head>
 <body class="h-100">
@@ -49,7 +53,7 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
             <span class="text-uppercase page-subtitle">semi-finished</span>
               <h3 class="page-title">半成品管理</h3>
             </div>
@@ -122,17 +126,17 @@ $(document).ready(function(){
 
                     <hr class="mx-4">
                     <div class="form-row mx-4">
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-4">
                         <label for="semi_income">入库时间</label>
-                        <input type="date" class="form-control" name="semi_income" id="semi_income" value="<?php echo $sql_arr0['semi_income'] ?>" placeholder="入库时间">
+                        <input type="date" data-provide="datepicker" class="form-control" name="semi_income" id="semi_income" value="<?php echo $sql_arr0['semi_income'] ?>" placeholder="入库时间">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-4">
                         <label for="semi_place">存放位置</label>
                         <input type="text" class="form-control" name="semi_place" id="semi_place" value="<?php echo $sql_arr0['semi_place'] ?>" placeholder="存放位置">
                       </div>
-                      <div class="form-group col-md-3">
+                      <div class="form-group col-md-4">
                         <label for="semi_receive">领取时间</label>
-                        <input type="date" class="form-control" name="semi_receive" id="semi_receive" value="<?php echo $sql_arr0['semi_receive'] ?>" placeholder="领取时间">
+                        <input type="date" data-provide="datepicker" class="form-control" name="semi_receive" id="semi_receive" value="<?php echo $sql_arr0['semi_receive'] ?>" placeholder="领取时间">
                       </div>
                     </div>
 
