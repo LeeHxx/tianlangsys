@@ -99,8 +99,8 @@
           <span>成品管理</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
-          <a class="dropdown-item " href="product.php">成品列表</a>
           <a class="dropdown-item " href="product-search.php">成品管理</a>
+          <a class="dropdown-item " href="product.php">成品列表</a>
         </div>
       </li>
     </ul>
