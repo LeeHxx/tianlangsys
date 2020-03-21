@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="styles/all.css">
 <link rel="stylesheet" href="styles/icon.css">
 <link rel="stylesheet" href="styles/bootstrap.css">
-<link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css?v=2011" id="main-stylesheet" data-version="1.3.1">
+<link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css?v=201" id="main-stylesheet" data-version="1.3.1">
 <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
 <link rel="stylesheet" href="styles/responsive.dataTables.css">
 <link rel="stylesheet" href="styles/font-awesome.css">
