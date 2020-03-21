@@ -1,6 +1,6 @@
 <?php
 //使用define函数定义数据库服务器地址、用户名和密码常量
-define("HOST","127.0.0.1");
+define("HOST","35.229.128.202");
 define("USER","root");
 define("PASSWD","tianlang");
 //使用mysql_connect()函数，连接数据服务器
