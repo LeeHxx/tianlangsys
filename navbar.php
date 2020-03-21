@@ -50,3 +50,8 @@
     </a>
   </nav>
 </nav>
+<div class="tl-loader">
+  <div class="spinner-border" style="width:50px;height:50px;margin:auto;position:absolute;top:0;bottom:0;left:0;right:0;" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>

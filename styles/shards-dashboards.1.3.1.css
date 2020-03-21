@@ -425,16 +425,6 @@ pre {
     background-color: rgba(255, 255, 255, .075)
 }
 
-.fh5co-loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url(../images/Preloader_2.gif) center no-repeat #fff;
-}
-
 .form-control {
     height: auto;
     padding: .4375rem .75rem;
@@ -8895,4 +8885,15 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     .user-teams .card-body {
         min-height: 21rem
     }
+}
+
+.tl-loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    /* background: url(../images/Preloader_2.gif) center no-repeat #ffffff66; */
+    background: #ffffff00
 }
