@@ -50,6 +50,10 @@ $(document).ready(function(){
     }
   });
 });
+$('.datepicker').datepicker({
+  format: "yyyy-mm-dd",
+  orientation:"auto",
+  });
 </script>
 </head>
 <body class="h-100">
@@ -68,7 +72,7 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
               <span class="text-uppercase page-subtitle">product</span>
               <h3 class="page-title">成品管理</h3>
             </div>
@@ -140,7 +144,7 @@ $(document).ready(function(){
                     <div class="form-row mx-4">
                       <div class="form-group col-md-3">
                         <label for="product_receive_date">接料日期</label>
-                        <input type="date" class="form-control" name="product_receive_date" id="product_receive_date" value="" placeholder="首件送检日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="product_receive_date" id="product_receive_date" value="" placeholder="首件送检日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_receiver">接收者</label>
@@ -148,7 +152,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_pack_date">包装日期</label>
-                        <input type="date" class="form-control" name="product_pack_date" id="product_pack_date" value="" placeholder="包装日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="product_pack_date" id="product_pack_date" value="" placeholder="包装日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_packer">包装者</label>
@@ -160,7 +164,7 @@ $(document).ready(function(){
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_deliver">出库日期</label>
-                        <input type="date" class="form-control" name="product_deliver" id="product_deliver" value="" placeholder="出库日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="product_deliver" id="product_deliver" value="" placeholder="出库日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="product_deliver_volume">出库数量</label>

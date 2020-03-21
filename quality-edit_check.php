@@ -22,7 +22,8 @@ if($result){
     echo "yes";
 	exit;
 }else{
-  header("Location: quality-add.php");
+  echo "<script>alert('修改失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  //header("Location: quality-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

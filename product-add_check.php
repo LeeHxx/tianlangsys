@@ -17,11 +17,13 @@ $sql="insert into product(order_id,product_receive_date,product_receiver,product
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: product-add-success.php");
+    echo "<script>alert('添加成功！');window.location.href='product-add-success.php';</script>";
+    //header("Location: product-add-success.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: product-add.php");
+  echo "<script>alert('添加失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  //header("Location: product-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

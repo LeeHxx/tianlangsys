@@ -23,7 +23,7 @@ if($result){
     echo "yes";
 	exit;
 }else{
-  echo "<script>alert('添加失败！');window.location.href='quality-search.php';</script>";
+  echo "<script>alert('添加失败！请检查填写信息无误。');window.history.back(-1);</script>";
   //header("Location: quality-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
