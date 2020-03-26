@@ -176,8 +176,9 @@ $(document).ready(function(){
                       <div class="form-group col-md-2">
                         <label for="material_admin">物管员</label>
                         <select class="custom-select" name="material_admin" id="material_admin" >
-                          <option value="小李" <?php  if($sql_arr0['material_admin']=='小李'){?>selected <?php }?>>小李</option>
-                          <option value="小张" <?php  if($sql_arr0['material_admin']=='小张'){?>selected <?php }?>>小张</option>
+                          <option value="徐庆山" <?php  if($sql_arr0['material_admin']=='徐庆山'){?>selected <?php }?>>徐庆山</option>
+                          <option value="秦祥珠" <?php  if($sql_arr0['material_admin']=='秦祥珠'){?>selected <?php }?>>秦祥珠</option>
+                          <option value="庞菲菲" <?php  if($sql_arr0['material_admin']=='庞菲菲'){?>selected <?php }?>>庞菲菲</option>
                         </select>
                       </div>
                     </div>

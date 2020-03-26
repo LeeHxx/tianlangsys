@@ -174,8 +174,9 @@ $(document).ready(function(){
                         <label for="material_admin">物管员</label>
                         <select class="custom-select" name="material_admin" id="material_admin" value="" placeholder="物管员">
                           <option value="" selected="">请选择...</option>
-                          <option value="小李">小李</option>
-                          <option value="小张">小张</option>
+                          <option value="徐庆山">徐庆山</option>
+                          <option value="秦祥珠">秦祥珠</option>
+                          <option value="庞菲菲">庞菲菲</option>
                         </select>
                       </div>
                     </div>
