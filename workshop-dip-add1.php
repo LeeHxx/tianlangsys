@@ -56,9 +56,13 @@ $(document).ready(function(){
       $("#dip_turn_volume").focus();
       return false;
     }
-
   });
+  $('.datepicker').datepicker({
+    format: "yyyy-mm-dd",
+    orientation:" auto",
+    });
 });
+
 </script>
 </head>
 <body class="h-100">
@@ -78,15 +82,14 @@ $(document).ready(function(){
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-                <span class="text-uppercase page-subtitle">DIP</span>
-                <h3 class="page-title">DIP管理</h3>
+              <span class="text-uppercase page-subtitle">DIP</span>
+              <h3 class="page-title">DIP管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-dip.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+                <a id="add-new-event" href="workshop-dip-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
               </div>
             </div>
-
           </div>
 
           <?php
@@ -94,31 +97,43 @@ $(document).ready(function(){
           require_once('conn.php');
           $id = $_SESSION['order_id'];
           $sql="select * from orders where order_id='$id' ";
-          $sql0="select * from dip where order_id='$id' ";
           $result=mysqli_query($conn,$sql);
           $sql_arr = mysqli_fetch_assoc($result);
-          $result0=mysqli_query($conn,$sql0);
-          $sql_arr0 = mysqli_fetch_assoc($result0);
           ?>
-
-
 
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-                <form action="workshop-dip-search_check.php" class="main-navbar__search w-100 " id="workshop-dip_add" method="post">
+                <form action="workshop-dip-search_check.php" class="main-navbar__search w-100" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="dip_id" id="dip_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>（已编辑）" aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="dip_id" id="dip_id" style="height:50px; border-radius:25px;" type="text" value="<?php echo $_SESSION['order_id'] ?>" placeholder="请输入订单号..." aria-label="Search">
                   </div>
                 </form>
               </div>
             </div>
           </div>
+
+          <!-- <div class="row">
+            <div class="col-lg-5 mx-auto">
+              <div class="card card-small mb-4">
+                <form action="workshop-dip-search_check.php" class="main-navbar__search w-100 " method="post">
+                  <div class="input-group input-group-seamless ">
+                    <div class="input-group-prepend">
+                      <div class="input-group-text">
+                        <i class="fa fa-search ml-2 "></i>
+                      </div>
+                    </div>
+                    <input class="navbar-search form-control ml-3" name="dip_id" id="dip_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div> -->
 
 
 
@@ -126,7 +141,7 @@ $(document).ready(function(){
             <div class="col-lg-12 mx-auto ">
               <div class="card card-small mb-4">
                 <div class="card-body p-0">
-                  <form action="workshop-dip-edit_check.php" class="py-4" id="workshop-dip_add0" method="post">
+                  <form action="workshop-dip-add_check.php" class="py-4" id="workshop-dip_add0" method="post">
 
 
                     <div class="form-row mx-4">
@@ -152,52 +167,51 @@ $(document).ready(function(){
                     <div class="form-row mx-4">
                       <div class="form-group col-md-3">
                         <label for="dip_get">领料日期</label>
-                        <input type="date" class="form-control" name="dip_get" id="dip_get" value="<?php echo $sql_arr0['dip_get'] ?>" placeholder="领料日期">
+                        <input type="date" data-provide="datepicker" class="form-control" name="dip_get" id="dip_get" value="" placeholder="领料日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_recipient">领料者</label>
-                        <input type="text" class="form-control" name="dip_recipient" id="dip_recipient" value="<?php echo $sql_arr0['dip_recipient'] ?>" placeholder="领料者">
+                        <input type="text" class="form-control" name="dip_recipient" id="dip_recipient" value="" placeholder="领料者">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_readiness">准备时间</label>
-                        <input type="text" class="form-control" name="dip_readiness" id="dip_readiness" value="<?php echo $sql_arr0['dip_readiness'] ?>" placeholder="准备时间">
+                        <input type="text" class="form-control" name="dip_readiness" id="dip_readiness" value="" placeholder="准备时间">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_first_start">首件生产日期</label>
-                        <input type="date" class="form-control" name="dip_first_start" id="dip_first_start" value="<?php echo $sql_arr0['dip_first_start'] ?>" placeholder="首件生产日期">
+                        <input type="date" class="form-control" name="dip_first_start" id="dip_first_start" value="" placeholder="首件生产日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_first_opertor">首件操作者</label>
-                        <input type="text" class="form-control" name="dip_first_opertor" id="dip_first_opertor" value="<?php echo $sql_arr0['dip_first_opertor'] ?>" placeholder="首件操作者">
+                        <input type="text" class="form-control" name="dip_first_opertor" id="dip_first_opertor" value="" placeholder="首件操作者">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_batch_completion">批次完成量</label>
-                        <input type="number" class="form-control" name="dip_batch_completion" id="dip_batch_completion" value="<?php echo $sql_arr0['dip_batch_completion'] ?>" placeholder="批次完成量">
+                        <input type="number" class="form-control" name="dip_batch_completion" id="dip_batch_completion" value="" placeholder="批次完成量">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_batch_end">批次完成日期</label>
-                        <input type="date" class="form-control" name="dip_batch_end" id="dip_batch_end" value="<?php echo $sql_arr0['dip_batch_end'] ?>" placeholder="批次完成日期">
+                        <input type="date" class="form-control" name="dip_batch_end" id="dip_batch_end" value="" placeholder="批次完成日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_opertor">操作者</label>
-                        <input type="text" class="form-control" name="dip_opertor" id="dip_opertor" value="<?php echo $sql_arr0['dip_opertor'] ?>" placeholder="操作者">
+                        <input type="text" class="form-control" name="dip_opertor" id="dip_opertor" value="" placeholder="操作者">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_turn_date">转序日期</label>
-                        <input type="date" class="form-control" name="dip_turn_date" id="dip_turn_date" value="<?php echo $sql_arr0['dip_turn_date'] ?>" placeholder="转序日期">
+                        <input type="date" class="form-control" name="dip_turn_date" id="dip_turn_date" value="" placeholder="转序日期">
                       </div>
                       <div class="form-group col-md-3">
                         <label for="dip_turn_volume">转序量</label>
-                        <input type="number" class="form-control" name="dip_turn_volume" id="dip_turn_volume" value="<?php echo $sql_arr0['dip_turn_volume'] ?>" placeholder="转序量">
+                        <input type="number" class="form-control" name="dip_turn_volume" id="dip_turn_volume" value="" placeholder="转序量">
                       </div>
                     </div>
-
 
                   </form>
                 </div>
                 <div class="card-footer border-top ">
                   <div class="col">
-                    <button id="btn2" form="workshop-dip_add0" class="btn  btn-info mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>保存DIP信息</button>
+                    <button id="btn2" form="workshop-dip_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加DIP</button>
                   </div>
                 </div>
               </div>

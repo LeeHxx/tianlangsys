@@ -19,11 +19,13 @@ $sql="insert into dip(order_id,dip_get,dip_recipient,dip_readiness,dip_first_sta
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: workshop-dip-add-success.php");
+    echo "<script>alert('添加成功！');window.location.href='workshop-dip-add.php';</script>";
+    //header("Location: workshop-dip-add-success.php");
     echo "yes";
 	exit;
 }else{
-  header("Location: workshop-dip-add.php");
+  echo "<script>alert('添加失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  //header("Location: workshop-dip-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
