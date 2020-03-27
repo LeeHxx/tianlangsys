@@ -15,7 +15,7 @@ $sql="insert into orders(order_id,order_name,order_type,order_volume,order_clien
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    echo "<script>alert('添加成功！');window.location.href='order-add-success.php';</script>";
+    echo "<script>alert('添加成功！');window.location.href='order.php';</script>";
     //header("Location: order-add-success.php");
     echo "yes";
 	exit;
