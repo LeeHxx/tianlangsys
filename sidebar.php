@@ -64,7 +64,7 @@
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <div class="dropdown bbb">
-          <a class="dropdown-item  " data-toggle="dropdown" href="workshop">车间作业</a>
+          <a class="dropdown-item  " data-toggle="dropdown" href="workshop-">车间作业</a>
           <div class="dropdown-menu  dropdown-menu-small">
             <a class="dropdown-item " href="workshop-smt-search.php">SMT</a>
             <a class="dropdown-item " href="workshop-dip-search.php">DIP</a>
@@ -77,7 +77,7 @@
           </div>
 
           <a class="dropdown-item " href="problem-search.php">问题反馈记录单</a>
-          <a class="dropdown-item " href="addition-search.php">物料补领申请单</a>
+          <a class="dropdown-item " href="workshopaddition-search.php">物料补领申请单</a>
         </div>
       </li>
 
