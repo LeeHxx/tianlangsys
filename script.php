@@ -17,4 +17,7 @@
 		$(".tl-loader").fadeOut("slow");
     $(".spinner-border").fadeOut("slow");
 	});
+	$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+});
 </script>
