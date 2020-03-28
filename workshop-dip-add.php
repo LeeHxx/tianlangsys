@@ -108,9 +108,9 @@ session_start();?>
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-card card" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
-          <div class="card-header">
+          <div class="card-header" style="display: flex;">
             <!-- Title -->
-
+            <h5 class="modal-title col text-center" id="gridModalLabel">新增</h5>
             <!-- Close -->
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
@@ -143,7 +143,14 @@ session_start();?>
               <div class="form-row mx-4">
                 <div class="form-group col-md-3">
                   <label for="dip_get">领料日期</label>
+                  <div class="input-group with-addon-icon-left" >
                   <input type="date" data-provide="datepicker" class="form-control" name="dip_get" id="dip_get" value="" placeholder="领料日期">
+                  <span class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                  </span>
+                </div>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_recipient">领料者</label>
@@ -155,7 +162,14 @@ session_start();?>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_first_start">首件生产日期</label>
+                  <div class="input-group with-addon-icon-left" >
                   <input type="date" data-provide="datepicker" class="form-control" name="dip_first_start" id="dip_first_start" value="" placeholder="首件生产日期">
+                  <span class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                  </span>
+                  </div>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_first_opertor">首件操作者</label>
@@ -167,7 +181,14 @@ session_start();?>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_batch_end">批次完成日期</label>
+                  <div class="input-group with-addon-icon-left" >
                   <input type="date" data-provide="datepicker" class="form-control" name="dip_batch_end" id="dip_batch_end" value="" placeholder="批次完成日期">
+                  <span class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                  </span>
+                  </div>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_opertor">操作者</label>
@@ -175,7 +196,14 @@ session_start();?>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_turn_date">转序日期</label>
+                  <div class="input-group with-addon-icon-left" >
                   <input type="date" data-provide="datepicker" class="form-control" name="dip_turn_date" id="dip_turn_date" value="" placeholder="转序日期">
+                  <span class="input-group-append">
+                    <span class="input-group-text">
+                        <i class="fa fa-calendar"></i>
+                    </span>
+                  </span>
+                  </div>
                 </div>
                 <div class="form-group col-md-3">
                   <label for="dip_turn_volume">转序量</label>
@@ -187,7 +215,7 @@ session_start();?>
           </div>
           <div class="card-footer border-top ">
             <div class="col">
-              <button id="btn2" form="workshop-dip_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加DIP</button>
+              <button id="btn2" form="workshop-dip_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>确定</button>
             </div>
           </div>
 
@@ -197,99 +225,6 @@ session_start();?>
     </div>
   </div>
 
-  <!-- modal编辑窗口 -->
-  <div class="modal fade" id="modaladdnew" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-card card" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
-          <div class="card-header">
-            <!-- Title -->
-
-            <!-- Close -->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- body  -->
-          <div class="card-body p-0">
-            <form action="workshop-dip-add_check.php" class="py-4" id="workshop-dip_add0" method="post">
-
-              <div class="form-row mx-4">
-                <div class="form-group col-md-3">
-                  <label for="order_id">订单号</label>
-                  <input type="text" class="form-control" name="order_id" id="order_id" value="<?php echo $sql_arr['order_id'] ?>" placeholder="订单号" readonly="readonly">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="order_name">品名</label>
-                  <input type="text" class="form-control" name="order_name" id="order_name" value="<?php echo $sql_arr['order_name'] ?>" placeholder="品名" readonly="readonly">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="order_type">规格/型号/图号</label>
-                  <input type="text" class="form-control" name="order_type" id="order_type" value="<?php echo $sql_arr['order_type'] ?>" placeholder="规格/型号/图号" readonly="readonly">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="order_volume">订单量</label>
-                  <input type="number" class="form-control" name="order_volume" id="order_volume" value="<?php echo $sql_arr['order_volume'] ?>" placeholder="订单量" readonly="readonly">
-                </div>
-              </div>
-
-              <hr class="mx-4">
-              <div class="form-row mx-4">
-                <div class="form-group col-md-3">
-                  <label for="dip_get">领料日期</label>
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_get" id="dip_get" value="" placeholder="领料日期">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_recipient">领料者</label>
-                  <input type="text" class="form-control" name="dip_recipient" id="dip_recipient" value="" placeholder="领料者">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_readiness">准备时间</label>
-                  <input type="text" class="form-control" name="dip_readiness" id="dip_readiness" value="" placeholder="准备时间">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_first_start">首件生产日期</label>
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_first_start" id="dip_first_start" value="" placeholder="首件生产日期">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_first_opertor">首件操作者</label>
-                  <input type="text" class="form-control" name="dip_first_opertor" id="dip_first_opertor" value="" placeholder="首件操作者">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_batch_completion">批次完成量</label>
-                  <input type="number" class="form-control" name="dip_batch_completion" id="dip_batch_completion" value="" placeholder="批次完成量">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_batch_end">批次完成日期</label>
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_batch_end" id="dip_batch_end" value="" placeholder="批次完成日期">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_opertor">操作者</label>
-                  <input type="text" class="form-control" name="dip_opertor" id="dip_opertor" value="" placeholder="操作者">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_turn_date">转序日期</label>
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_turn_date" id="dip_turn_date" value="" placeholder="转序日期">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="dip_turn_volume">转序量</label>
-                  <input type="number" class="form-control" name="dip_turn_volume" id="dip_turn_volume" value="" placeholder="转序量">
-                </div>
-              </div>
-
-            </form>
-          </div>
-          <div class="card-footer border-top ">
-            <div class="col">
-              <button id="btn2" form="workshop-dip_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加DIP</button>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
 
 
 
@@ -319,6 +254,7 @@ session_start();?>
             </div>
           </div>
 
+          
 
           <div class="row">
             <div class="col-lg-5 mx-auto">
@@ -388,6 +324,7 @@ session_start();?>
     </tr>
   </thead>
   <tbody>
+    <input type="hidden" name="" value="">
 
     <?php
     require_once('conn.php');
@@ -418,15 +355,133 @@ session_start();?>
       echo "<td>{$row['dip_turn_volume']}</td>";
       echo "<td>
       <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-      <button type='button' class='btn btn-white'>
+      <button type='button' data-toggle='modal' data-target='#modaledit{$i}' class='btn btn-white'>
       <i class='material-icons'>&#xE254;</i>
       </button>
-      <button type='button' class='btn btn-danger'>
+      <button type='button' class='btn btn-white'>
       <i class='material-icons'>&#xE872;</i>
       </button>
       </div>
       </td>";
       echo "</tr>";
+      echo "
+      <div class='modal fade' id='modaledit{$i}' data-backdrop='static' tabindex='-1' role='dialog' aria-hidden='true'>
+        <div class='modal-dialog modal-dialog-centered modal-lg' role='document'>
+          <div class='modal-content'>
+            <div class='modal-card card' data-toggle='lists' data-options='{'valueNames': ['name']}'>
+              <div class='card-header' style='display:flex;'>
+                <!-- Title -->
+                <h5 class='modal-title col text-center' id='gridModalLabel'>修改</h5>
+                <!-- Close -->
+                <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                  <span aria-hidden='true'>&times;</span>
+                </button>
+              </div>
+              <!-- body  -->
+              <div class='card-body p-0'>
+                <form action='workshop-dip-edit_check.php?+id={$row['id']}' class='py-2' id='workshop-dip_edit{$i}' method='post'>
+                  <div class='form-row mx-4'>
+                    <div class='form-group col-md-3'>
+                      <label for='order_id'>订单号</label>
+                      <input type='text' class='form-control' name='order_id' id='order_id' value='{$sql_arr['order_id']}' placeholder='订单号' readonly='readonly'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='order_name'>品名</label>
+                      <input type='text' class='form-control' name='order_name' id='order_name' value='{$sql_arr['order_name']}' placeholder='品名' readonly='readonly'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='order_type'>规格/型号/图号</label>
+                      <input type='text' class='form-control' name='order_type' id='order_type' value='{$sql_arr['order_type']}' placeholder='规格/型号/图号' readonly='readonly'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='order_volume'>订单量</label>
+                      <input type='number' class='form-control' name='order_volume' id='order_volume' value='{$sql_arr['order_volume']}' placeholder='订单量' readonly='readonly'>
+                    </div>
+                  </div>
+
+                  <hr class='mx-4'>
+                  <div class='form-row mx-4'>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_get'>领料日期</label>
+                      <div class='input-group with-addon-icon-left' >
+                      <input type='date' data-provide='datepicker' class='form-control' name='dip_get' id='dip_get' value='{$row['dip_get']}' placeholder='领料日期'>
+                      <span class='input-group-append'>
+                        <span class='input-group-text'>
+                            <i class='fa fa-calendar'></i>
+                        </span>
+                      </span>
+                    </div>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_recipient'>领料者</label>
+                      <input type='text' class='form-control' name='dip_recipient' id='dip_recipient' value='{$row['dip_recipient']}' placeholder='领料者'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_readiness'>准备时间</label>
+                      <input type='text' class='form-control' name='dip_readiness' id='dip_readiness' value='{$row['dip_readiness']}' placeholder='准备时间'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_first_start'>首件生产日期</label>
+                      <div class='input-group with-addon-icon-left' >
+                      <input type='date' data-provide='datepicker' class='form-control' name='dip_first_start' id='dip_first_start' value='{$row['dip_first_start']}' placeholder='首件生产日期'>
+                      <span class='input-group-append'>
+                        <span class='input-group-text'>
+                            <i class='fa fa-calendar'></i>
+                        </span>
+                      </span>
+                      </div>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_first_opertor'>首件操作者</label>
+                      <input type='text' class='form-control' name='dip_first_opertor' id='dip_first_opertor' value='{$row['dip_first_opertor']}' placeholder='首件操作者'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_batch_completion'>批次完成量</label>
+                      <input type='number' class='form-control' name='dip_batch_completion' id='dip_batch_completion' value='{$row['dip_batch_completion']}' placeholder='批次完成量'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_batch_end'>批次完成日期</label>
+                      <div class='input-group with-addon-icon-left' >
+                      <input type='date' data-provide='datepicker' class='form-control' name='dip_batch_end' id='dip_batch_end' value='{$row['dip_batch_end']}' placeholder='批次完成日期'>
+                      <span class='input-group-append'>
+                        <span class='input-group-text'>
+                            <i class='fa fa-calendar'></i>
+                        </span>
+                      </span>
+                      </div>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_opertor'>操作者</label>
+                      <input type='text' class='form-control' name='dip_opertor' id='dip_opertor' value='{$row['dip_opertor']}' placeholder='操作者'>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_turn_date'>转序日期</label>
+                      <div class='input-group with-addon-icon-left' >
+                      <input type='date' data-provide='datepicker' class='form-control' name='dip_turn_date' id='dip_turn_date' value='{$row['dip_turn_date']}' placeholder='转序日期'>
+                      <span class='input-group-append'>
+                        <span class='input-group-text'>
+                            <i class='fa fa-calendar'></i>
+                        </span>
+                      </span>
+                      </div>
+                    </div>
+                    <div class='form-group col-md-3'>
+                      <label for='dip_turn_volume'>转序量</label>
+                      <input type='number' class='form-control' name='dip_turn_volume' id='dip_turn_volume' value='{$row['dip_turn_volume']}' placeholder='转序量'>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class='card-footer border-top '>
+                <div class='col'>
+                  <button id='btn2' form='workshop-dip_edit{$i}' class='btn  btn-accent mx-auto d-table mr-3'><i class='fa fa-check mr-1'></i>修改</button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>";
     }
     mysqli_free_result($result);
     mysqli_close($conn);
