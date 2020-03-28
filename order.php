@@ -213,14 +213,19 @@ session_start();?>
                 </form>
                 <form action='order-edit.php?id={$row['order_id']}' method='post' id='edit{$i}'>
                 </form>
+                <form action='order-time.php?id={$row['order_id']}' method='post' id='time{$i}'>
+                </form>
 
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                <button form='edit{$i}' data-whatever='{$row['order_id']}' data-toggle='modal' data-target='#modaledit0' type='submit' class='btn btn-white'>
-                <i class='material-icons'>&#xE254;</i>
-                </button>
-                <button form='{$row['order_id']}' type='submit' class='btn btn-white'>
-                <i class='material-icons'>&#xE872;</i>
-                </button>
+                  <button form='time{$i}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='订单进度'>
+                    <i class='material-icons'>menu</i>
+                  </button>
+                  <button form='edit{$i}' data-whatever='{$row['order_id']}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='修改订单'>
+                    <i class='material-icons'>&#xE254;</i>
+                  </button>
+                  <button form='{$row['order_id']}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='删除订单'>
+                    <i class='material-icons'>&#xE872;</i>
+                  </button>
                 </div>
                 </td>";
                 echo "</tr>";
