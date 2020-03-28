@@ -31,7 +31,7 @@
     </li>
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle text-nowrap px-3" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-        <img class="user-avatar rounded-circle mr-2" src="images/avatars/ren.png" alt="User Avatar"> <span class="d-none d-md-inline-block"><?php echo $_SESSION['user'];?></span>
+        <img class="user-avatar rounded-circle mr-2" src="images/avatars/ren.png" alt="User Avatar"> <span class="d-none d-md-inline-block">您好，<?php echo $_SESSION['user'];?></span>
       </a>
       <div class="dropdown-menu dropdown-menu-small">
         <a class="dropdown-item" href="userInfo.php"><i class="material-icons">&#xE7FD;</i> 账户信息</a>
