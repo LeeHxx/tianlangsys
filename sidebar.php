@@ -61,6 +61,7 @@
         <a class="nav-link dropdown-toggle" data-submenu="true" data-toggle="dropdown" href="workshop" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">all_inclusive</i>
           <span>生产制造管理</span>
+          <!-- <span class="badge badge-pill badge-secondary float-right">4</span> -->
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <div class="dropdown bbb">
@@ -87,6 +88,7 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="quality" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">playlist_add_check</i>
           <span>质量管理</span>
+          <span class="badge badge-pill badge-secondary float-right">1</span>
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="quality-search.php">质量管理</a>
@@ -97,6 +99,7 @@
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="product" role="button" aria-haspopup="true" aria-expanded="false">
           <i class="material-icons">local_shipping</i>
           <span>成品管理</span>
+          <!-- <span class="badge badge-pill badge-secondary float-right">2</span> -->
         </a>
         <div class="dropdown-menu dropdown-menu-small">
           <a class="dropdown-item " href="product-search.php">成品管理</a>
