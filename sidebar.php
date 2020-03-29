@@ -77,7 +77,7 @@
 
           </div>
 
-          <a class="dropdown-item " href="problem-search.php">问题反馈记录单</a>
+          <a class="dropdown-item " href="workshopproblem-search.php">问题反馈记录单</a>
           <a class="dropdown-item " href="workshopaddition-search.php">物料补领申请单</a>
         </div>
       </li>
