@@ -94,7 +94,7 @@ session_start();?>
   $num_smt=mysqli_num_rows($result_smt);
   $num_quality=mysqli_num_rows($result_quality);
   $num_product=mysqli_num_rows($result_product);
-  //$row = mysqli_fetch_assoc($result);
+  $row = mysqli_fetch_assoc($result);
   // $row_material = mysqli_fetch_assoc($result_material);
   // $row_warehouse = mysqli_fetch_assoc($result_warehouse);
   // $row_smt = mysqli_fetch_assoc($result_smt);
@@ -211,7 +211,7 @@ session_start();?>
                   <div class="horizontal-steps mt-4 mb-4 pb-5">
                       <div class="horizontal-steps-content">
                           <div class="step-item" id="no1">
-                              <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="20/08/2018 07:24 PM">下达订单</span>
+                              <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $row['order_start']; ?> 接单">下达订单</span>
                           </div>
                           <div class="step-item" id="no2">
                               <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">物料/工艺确认</span>
@@ -226,7 +226,7 @@ session_start();?>
                               <span>质量确认</span>
                           </div>
                           <div class="step-item" id="no6">
-                              <span>成品出库</span>
+                              <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $row['order_end']; ?> 交货">成品出库</span>
                           </div>
                       </div>
 
@@ -269,7 +269,7 @@ session_start();?>
             <tbody>
 
               <?php
-              while ($row = mysqli_fetch_assoc($result)) {
+              // while ($row = mysqli_fetch_assoc($result)) {
                 echo "<tr>";
                 echo "<td><strong>{$row['order_start']}</strong></td>";
                 echo "<td><strong>{$row['order_client']}</strong></td>";
@@ -279,7 +279,7 @@ session_start();?>
                 echo "<td><strong>{$row['order_volume']}</strong></td>";
                 echo "<td><strong>{$row['order_end']}</strong></td>";
                 echo "</tr>";
-              }
+              // }
               mysqli_free_result($result);
               mysqli_close($conn);
               ?>
