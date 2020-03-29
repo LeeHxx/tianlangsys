@@ -40,13 +40,13 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
               <span class="text-uppercase page-subtitle">problem</span>
               <h3 class="page-title">问题管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="problem.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 问题列表 </a>
+                <a id="add-new-event" href="workshopproblem.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 全部问题反馈记录 </a>
               </div>
             </div>
 
@@ -57,7 +57,7 @@ $(document).ready(function(){
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-                <form action="problem-search_check.php" class="main-navbar__search w-100 " id="problem_add" method="post">
+                <form action="workshopproblem-search_check.php" class="main-navbar__search w-100 " id="problem_add" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">

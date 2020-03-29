@@ -16,11 +16,13 @@ $sql="insert into problem(order_id,feedback_date,feedback,problem_type,problem_d
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: problem-add-success.php");
-    echo "yes";
+    echo "<script>alert('提交成功！');window.location.href='workshopproblem-add.php';</script>";
+    // header("Location: problem-add-success.php");
+    // echo "yes";
 	exit;
 }else{
-  header("Location: problem-add.php");
+  echo "<script>alert('提交失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  // header("Location: problem-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
