@@ -17,14 +17,14 @@ $sql="insert into warehouse(order_id,warehouse_place,warehouse_kitting,warehouse
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    echo "<script>alert('添加成功！');window.location.href='warehouse-add-success.php';</script>";
+    echo "<script>alert('添加成功！');window.location.href='warehouse-add.php';</script>";
     //header("Location: warehouse-add-success.php");
-    echo "yes";
+    //echo "yes";
 	exit;
 }else{
   echo "<script>alert('添加失败！请检查填写信息无误。');window.history.back(-1);</script>";
   //header("Location: warehouse-add.php");
-  echo "no";
+  //echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
 	}
