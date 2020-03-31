@@ -214,7 +214,7 @@ session_start();?>
                               <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="<?php echo $row['order_start']; ?> 接单">下达订单</span>
                           </div>
                           <div class="step-item" id="no2">
-                              <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">物料/工艺确认</span>
+                              <span data-toggle="tooltip" data-placement="bottom" title="" data-original-title="21/08/2018 11:32 AM">物料来料 <br> 工艺确认</span>
                           </div>
                           <div class="step-item" id="no3">
                               <span>仓库确认</span>
