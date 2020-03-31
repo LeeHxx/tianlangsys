@@ -144,7 +144,7 @@ session_start();?>
                 <div class="form-group col-md-3">
                   <label for="dip_get">领料日期</label>
                   <div class="input-group with-addon-icon-left" >
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_get" id="dip_get" value="" placeholder="领料日期">
+                  <input data-provide="datepicker" class="form-control" name="dip_get" id="dip_get" value="" placeholder="领料日期">
                   <span class="input-group-append">
                     <span class="input-group-text">
                         <i class="fa fa-calendar"></i>
@@ -163,7 +163,7 @@ session_start();?>
                 <div class="form-group col-md-3">
                   <label for="dip_first_start">首件生产日期</label>
                   <div class="input-group with-addon-icon-left" >
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_first_start" id="dip_first_start" value="" placeholder="首件生产日期">
+                  <input data-provide="datepicker" class="form-control" name="dip_first_start" id="dip_first_start" value="" placeholder="首件生产日期">
                   <span class="input-group-append">
                     <span class="input-group-text">
                         <i class="fa fa-calendar"></i>
@@ -182,7 +182,7 @@ session_start();?>
                 <div class="form-group col-md-3">
                   <label for="dip_batch_end">批次完成日期</label>
                   <div class="input-group with-addon-icon-left" >
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_batch_end" id="dip_batch_end" value="" placeholder="批次完成日期">
+                  <input data-provide="datepicker" class="form-control" name="dip_batch_end" id="dip_batch_end" value="" placeholder="批次完成日期">
                   <span class="input-group-append">
                     <span class="input-group-text">
                         <i class="fa fa-calendar"></i>
@@ -254,7 +254,7 @@ session_start();?>
             </div>
           </div>
 
-          
+
 
           <div class="row">
             <div class="col-lg-5 mx-auto">
@@ -404,7 +404,7 @@ session_start();?>
                     <div class='form-group col-md-3'>
                       <label for='dip_get'>领料日期</label>
                       <div class='input-group with-addon-icon-left' >
-                      <input type='date' data-provide='datepicker' class='form-control' name='dip_get' id='dip_get' value='{$row['dip_get']}' placeholder='领料日期'>
+                      <input data-provide='datepicker' class='form-control' name='dip_get' id='dip_get' value='{$row['dip_get']}' placeholder='领料日期'>
                       <span class='input-group-append'>
                         <span class='input-group-text'>
                             <i class='fa fa-calendar'></i>
@@ -423,7 +423,7 @@ session_start();?>
                     <div class='form-group col-md-3'>
                       <label for='dip_first_start'>首件生产日期</label>
                       <div class='input-group with-addon-icon-left' >
-                      <input type='date' data-provide='datepicker' class='form-control' name='dip_first_start' id='dip_first_start' value='{$row['dip_first_start']}' placeholder='首件生产日期'>
+                      <input data-provide='datepicker' class='form-control' name='dip_first_start' id='dip_first_start' value='{$row['dip_first_start']}' placeholder='首件生产日期'>
                       <span class='input-group-append'>
                         <span class='input-group-text'>
                             <i class='fa fa-calendar'></i>
@@ -442,7 +442,7 @@ session_start();?>
                     <div class='form-group col-md-3'>
                       <label for='dip_batch_end'>批次完成日期</label>
                       <div class='input-group with-addon-icon-left' >
-                      <input type='date' data-provide='datepicker' class='form-control' name='dip_batch_end' id='dip_batch_end' value='{$row['dip_batch_end']}' placeholder='批次完成日期'>
+                      <input data-provide='datepicker' class='form-control' name='dip_batch_end' id='dip_batch_end' value='{$row['dip_batch_end']}' placeholder='批次完成日期'>
                       <span class='input-group-append'>
                         <span class='input-group-text'>
                             <i class='fa fa-calendar'></i>
@@ -457,7 +457,7 @@ session_start();?>
                     <div class='form-group col-md-3'>
                       <label for='dip_turn_date'>转序日期</label>
                       <div class='input-group with-addon-icon-left' >
-                      <input type='date' data-provide='datepicker' class='form-control' name='dip_turn_date' id='dip_turn_date' value='{$row['dip_turn_date']}' placeholder='转序日期'>
+                      <input data-provide='datepicker' class='form-control' name='dip_turn_date' id='dip_turn_date' value='{$row['dip_turn_date']}' placeholder='转序日期'>
                       <span class='input-group-append'>
                         <span class='input-group-text'>
                             <i class='fa fa-calendar'></i>
