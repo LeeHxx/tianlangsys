@@ -73,7 +73,7 @@ function dele(id) {
       return true;
     }else{
       alert("该条记录无法删除 ！")
-      window.location.href='order.php';
+      window.location.href='workshopproblem-add.php';
       return false;
     }
   },"text");
