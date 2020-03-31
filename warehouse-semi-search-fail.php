@@ -46,7 +46,7 @@ session_start();?>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="warehouse-semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 半成品列表 </a>
+                <a id="add-new-event" href="warehouse-semi.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 所有半成品信息 </a>
               </div>
             </div>
           </div>
