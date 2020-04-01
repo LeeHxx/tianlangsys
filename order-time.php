@@ -103,81 +103,6 @@ session_start();?>
 
 
   ?>
-  <!-- 新增订单modal -->
-  <div class="modal fade" id="modaladdnew" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-      <div class="modal-content">
-        <div class="modal-card card" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
-          <div class="card-header " style="display: flex;">
-            <!-- Title -->
-            <h5 class="modal-title col text-center" id="gridModalLabel">新增订单</h5>
-
-            <!-- Close -->
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <!-- body  -->
-          <div class="card-body p-0">
-            <form action="order-add_check.php" class="py-4" id="order_add" method="post">
-
-              <div class="form-row mx-4 mt-2">
-                <div class="form-group col-md-3">
-                  <label for="order_id">订单号</label>
-                  <input type="text" class="form-control" name="order_id" id="order_id" value="" placeholder="订单号">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="order_name">品名</label>
-                  <input type="text" class="form-control" name="order_name" id="order_name" value="" placeholder="品名">
-                </div>
-
-                <div class="form-group col-md-3">
-                  <label for="order_type">规格/型号/图号</label>
-                  <input type="text" class="form-control" name="order_type" id="order_type" value="" placeholder="规格/型号/图号">
-                </div>
-                <div class="form-group col-md-3">
-                  <label for="order_volume">订单量</label>
-                  <input type="number" class="form-control" name="order_volume" id="order_volume" value="" placeholder="订单量">
-                </div>
-              </div>
-              <div class="form-row mx-4">
-                <div class="form-group col-md-4">
-                  <label for="order_client">客户</label>
-                  <input type="text" class="form-control" name="order_client" id="order_client" value="" placeholder="客户名称">
-                </div>
-                <div class="form-group col-md-8">
-                  <label for="firstName">接交单日期</label>
-                  <div class="input-daterange input-group" id="transaction-history-date-range">
-                    <span class="input-group-prepend">
-                      <span class="input-group-text">
-                        <i class="fa fa-calendar"></i>
-                      </span>
-                    </span>
-                    <input type="text" class="input-sm form-control" name="order_start" id="order_start"  placeholder="接单日期" />
-                    <span class="input-group-middle"><span class="input-group-text">-</span></span>
-                    <input type="text" class="input-sm form-control" name="order_end" id="order_end" placeholder="交货日期" />
-                    <span class="input-group-append">
-                      <span class="input-group-text">
-                        <i class="fa fa-calendar"></i>
-                      </span>
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-            </form>
-          </div>
-          <div class="card-footer border-top">
-            <div class="col">
-              <button id="btn1" form="order_add" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>确定</button>
-            </div>
-          </div>
-
-
-        </div>
-      </div>
-    </div>
-  </div>
 
   <div class="container-fluid ">
     <div class="row">
@@ -308,16 +233,16 @@ session_start();?>
                 <?php
                 while ($row_material = mysqli_fetch_assoc($result_material)) {
                   echo "<tr>";
-                  echo "<td>{$row_material['material_come']}</td>";
-                  echo "<td>{$row_material['material_volume']}</td>";
-                  echo "<td>{$row_material['material_type']}</td>";
+                  echo "<td><strong>{$row_material['material_come']}</strong></td>";
+                  echo "<td><strong>{$row_material['material_volume']}</strong></td>";
+                  echo "<td><strong>{$row_material['material_type']}</strong></td>";
                   if ($row_material['material_okng']=='合格') {
                   echo "<td><span class='badge badge-pill badge-success'>{$row_material['material_okng']}</span></td>";
                 }else {
                   echo "<td><span class='badge badge-pill badge-danger'>{$row_material['material_okng']}</span></td>";
                 }
-                  echo "<td>{$row_material['material_kitting']}</td>";
-                  echo "<td>{$row_material['material_admin']}</td>";
+                  echo "<td><strong>{$row_material['material_kitting']}</strong></td>";
+                  echo "<td><strong>{$row_material['material_admin']}</strong></td>";
                   echo "</tr>";
                 }
                 mysqli_free_result($result_material);
@@ -352,14 +277,14 @@ session_start();?>
                 <?php
                 while ($row_warehouse = mysqli_fetch_assoc($result_warehouse)) {
                   echo "<tr>";
-                  echo "<td>{$row_warehouse['warehouse_place']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_kitting']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_preprocessing']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_keeper']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_turn_department']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_turn_volume']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_turn_date']}</td>";
-                  echo "<td>{$row_warehouse['warehouse_turn_group']}</td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_place']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_kitting']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_preprocessing']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_keeper']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_turn_department']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_turn_volume']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_turn_date']}</strong></td>";
+                  echo "<td><strong>{$row_warehouse['warehouse_turn_group']}</strong></td>";
                   echo "</tr>";
                 }
                 mysqli_free_result($result_warehouse);
@@ -398,18 +323,18 @@ session_start();?>
                 <?php
                 while ($row_smt = mysqli_fetch_assoc($result_smt)) {
                   echo "<tr>";
-                  echo "<td>{$row_smt['smt_get']}</td>";
-                  echo "<td>{$row_smt['smt_readiness']}</td>";
-                  echo "<td>{$row_smt['smt_line']}</td>";
-                  echo "<td>{$row_smt['smt_classes']}</td>";
-			            echo "<td>{$row_smt['smt_first_start']}</td>";
-			        	  echo "<td>{$row_smt['smt_first_end']}</td>";
-			        	  echo "<td>{$row_smt['smt_first_opertor']}</td>";
-			        	  echo "<td>{$row_smt['smt_batch_completion']}</td>";
-			        	  echo "<td>{$row_smt['smt_batch_end']}</td>";
-		        		  echo "<td>{$row_smt['smt_opertor']}</td>";
-			         	  echo "<td>{$row_smt['smt_turn_department']}</td>";
-				          echo "<td>{$row_smt['smt_turn_volume']}</td>";
+                  echo "<td><strong>{$row_smt['smt_get']}</strong></td>";
+                  echo "<td><strong>{$row_smt['smt_readiness']}</strong></td>";
+                  echo "<td><strong>{$row_smt['smt_line']}</strong></td>";
+                  echo "<td><strong>{$row_smt['smt_classes']}</strong></td>";
+			            echo "<td><strong>{$row_smt['smt_first_start']}<</strong>/td>";
+			        	  echo "<td><strong>{$row_smt['smt_first_end']}</strong></td>";
+			        	  echo "<td><strong>{$row_smt['smt_first_opertor']}</strong></td>";
+			        	  echo "<td><strong>{$row_smt['smt_batch_completion']}</strong></td>";
+			        	  echo "<td><strong>{$row_smt['smt_batch_end']}</strong></td>";
+		        		  echo "<td><strong>{$row_smt['smt_opertor']}</strong></td>";
+			         	  echo "<td><strong>{$row_smt['smt_turn_department']}</strong></td>";
+				          echo "<td><strong>{$row_smt['smt_turn_volume']}</strong></td>";
                   echo "</tr>";
                 }
                 mysqli_free_result($result_smt);
