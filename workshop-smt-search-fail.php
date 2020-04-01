@@ -46,7 +46,7 @@ $(document).ready(function(){
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-smt.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> SMT列表 </a>
+                <a id="add-new-event" href="workshop-smt.php" class="btn btn-primary"><i class="fa fa-list mr-1"></i> 全部订单列表 </a>
               </div>
             </div>
           </div>
