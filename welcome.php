@@ -26,10 +26,10 @@ session_start();?>
                   <a class="btn btn-primary btn-pill  btn-lg" href="order.php" role="button"><i class="material-icons mr-2">insert_drive_file</i>添加订单</a>
                   <hr class="my-4">
                   <p>物料入库或者修改物料详细信息？</p>
-                  <a class="btn btn-primary btn-pill btn-lg" href="#" role="button"><i class="material-icons mr-2">assignment_returned</i>物料管理</a>
+                  <a class="btn btn-primary btn-pill btn-lg" href="material-search.php" role="button"><i class="material-icons mr-2">assignment_returned</i>物料管理</a>
                   <hr class="my-4">
                   <p>填写问题反馈记录单？</p>
-                  <a class="btn btn-primary btn-pill btn-lg" href="#" role="button"><i class="material-icons mr-2">report</i>问题反馈</a>
+                  <a class="btn btn-primary btn-pill btn-lg" href="workshopproblem-search.php" role="button"><i class="material-icons mr-2">report</i>问题反馈</a>
                 </div>
               </div>
             </div>
