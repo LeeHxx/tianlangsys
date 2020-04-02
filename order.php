@@ -217,7 +217,7 @@ session_start();?>
                 </form>
 
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
-                  <button form='time{$i}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='订单进度'>
+                  <button form='time{$i}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='订单状态'>
                     <i class='material-icons'>menu</i>
                   </button>
                   <button form='edit{$i}' data-whatever='{$row['order_id']}' type='submit' class='btn btn-white' data-toggle='tooltip' data-placement='top' title='' data-original-title='修改订单'>
