@@ -18,14 +18,14 @@ $sql="insert into quality(order_id,quality_first_date,quality_first_inspection,q
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    echo "<script>alert('添加成功！');window.location.href='quality-search.php';</script>";
+    echo "<script>alert('添加成功！');window.location.href='quality-add.php';</script>";
     //header("Location: quality-add-success.php");
-    echo "yes";
+    // echo "yes";
 	exit;
 }else{
   echo "<script>alert('添加失败！请检查填写信息无误。');window.history.back(-1);</script>";
   //header("Location: quality-add.php");
-  echo "no";
+  // echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
 	}
