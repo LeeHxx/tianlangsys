@@ -26,6 +26,18 @@
           </div>
         </a>
 
+        <a class="dropdown-item" href="#">
+          <div class="notification__icon-wrapper">
+            <div class="notification__icon">
+              <i class="material-icons">&#xE6E1;</i>
+            </div>
+          </div>
+          <div class="notification__content">
+            <span class="notification__category">消息</span>
+            <p>仓库齐套来料排配超时！<span class="text-success text-semibold"></span> 请尽快处理！</p>
+          </div>
+        </a>
+
         <a class="dropdown-item notification__all text-center" href="#"> 查看所有消息 </a>
       </div>
     </li>
