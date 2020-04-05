@@ -26,6 +26,11 @@ session_start();?>
               <span class="text-uppercase page-subtitle">product</span>
               <h3 class="page-title">成品列表</h3>
             </div>
+            <div class="col-12 col-sm-6 d-flex align-items-center">
+              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
+                <a id="add-new-event" href="product-search.php" class="btn btn-primary"><i class="fa fa-plus mr-1"></i>新增 </a>
+              </div>
+            </div>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->
@@ -45,6 +50,7 @@ session_start();?>
                   <th>出库日期</th>
                 	<th>出库量</th>
                   <th>发货者</th>
+                  <th>客户名</th>
                 <!-- <th>操作</th> -->
                 </tr>
               </thead>
@@ -75,6 +81,7 @@ session_start();?>
 		  		        echo "<td>{$row['product_deliver']}</td>";
           				echo "<td>{$row['product_deliver_volume']}</td>";
                   echo "<td>{$row['product_shipper']}</td>";
+                  echo "<td>{$row['product_client']}</td>";
                   // echo "<td>
                 // <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
                 // <button type='button' class='btn btn-white'>

@@ -14,7 +14,7 @@ $result0=mysqli_query($conn,$sql0);
 $num0=mysqli_num_rows($result0);
 if ($num0>0) {
   $_SESSION['order_id']=$product_id;
-    header("Location: product-edit.php");
+    header("Location: product-add.php");
     echo "yes";
 	exit;
 }elseif($num>0){
