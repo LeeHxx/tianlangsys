@@ -213,7 +213,7 @@ session_start();?>
                 </form>
                 <form action='order-edit.php?id={$row['order_id']}' method='post' id='edit{$i}'>
                 </form>
-                <form action='order-time.php?id={$row['order_id']}' method='post' id='time{$i}'>
+                <form action='order-status.php?id={$row['order_id']}' method='post' id='time{$i}'>
                 </form>
 
                 <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
