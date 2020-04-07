@@ -16,11 +16,13 @@ $sql="insert into code(order_id,code_get,code_readiness,code_opertor,code_comple
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: workshop-clean-add-success.php");
-    echo "yes";
+  echo "<script>alert('提交成功！');window.location.href='workshop-code-add.php';</script>";
+    // header("Location: workshop-code-add-success.php");
+    // echo "yes";
 	exit;
 }else{
-  header("Location: workshop-clean-add.php");
+  echo "<script>alert('提交失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  // header("Location: workshop-code-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;

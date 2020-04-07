@@ -14,38 +14,71 @@ $(document).ready(function(){
       return false;
     }
   });
-  $("#btn2").click(function(){
-    var code_get=$("#code_get").val();
-    var code_readiness=$("#code_readiness").val();
-    var code_opertor=$("#code_opertor").val();
-    var code_completion=$("#code_completion").val();
-    var code_end=$("#code_end").val();
-    var code_turn_date=$("#code_turn_date").val();
-    var code_turn_volume=$("#code_turn_volume").val();
-    if(code_get==""){
-      $("#code_get").focus();
-      return false;
-    }else if(code_readiness==""){
-      $("#code_readiness").focus();
-      return false;
-    }else if(code_opertor==""){
-      $("#code_opertor").focus();
-      return false;
-    }else if(code_completion==""){
-      $("#code_completion").focus();
-      return false;
-    }else if(code_end==""){
-      $("#code_end").focus();
-      return false;
-    }else if(code_turn_date==""){
-      $("#code_turn_date").focus();
-      return false;
-    }else if(code_turn_volume==""){
-      $("#code_turn_volume").focus();
-      return false;
+  // $("#btn2").click(function(){
+  //   var code_get=$("#code_get").val();
+  //   var code_readiness=$("#code_readiness").val();
+  //   var code_opertor=$("#code_opertor").val();
+  //   var code_completion=$("#code_completion").val();
+  //   var code_end=$("#code_end").val();
+  //   var code_turn_date=$("#code_turn_date").val();
+  //   var code_turn_volume=$("#code_turn_volume").val();
+  //   if(code_get==""){
+  //     $("#code_get").focus();
+  //     return false;
+  //   }else if(code_readiness==""){
+  //     $("#code_readiness").focus();
+  //     return false;
+  //   }else if(code_opertor==""){
+  //     $("#code_opertor").focus();
+  //     return false;
+  //   }else if(code_completion==""){
+  //     $("#code_completion").focus();
+  //     return false;
+  //   }else if(code_end==""){
+  //     $("#code_end").focus();
+  //     return false;
+  //   }else if(code_turn_date==""){
+  //     $("#code_turn_date").focus();
+  //     return false;
+  //   }else if(code_turn_volume==""){
+  //     $("#code_turn_volume").focus();
+  //     return false;
+  //   }
+  // });
+
+  $('#codetable').DataTable( {
+    responsive: !0,
+    searching: false,
+    // ordering: false,
+    // info:false,
+    paging: false,
+    language: {
+      "sInfo": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+      "sInfoEmpty": "显示第 0 至 0 项结果，共 0 项",
+      "sEmptyTable": "订单暂无code生产信息"
     }
   });
+  $('.datepicker').datepicker({
+    format: "yyyy-mm-dd",
+    orientation:" auto",
+    });
+
 });
+function dele(id) {
+  if(confirm("确认删除吗？")){
+  $.post("workshop-code-del_check.php?id="+id,function(data){
+    if($.trim(data)=='yes'){
+      alert("删除成功！")
+      window.location.href='workshop-code-add.php';
+      return true;
+    }else{
+      alert("该条记录无法删除 ！")
+      window.location.href='workshop-code-add.php';
+      return false;
+    }
+  },"text");
+  }
+}
 </script>
 </head>
 <body class="h-100">
@@ -64,16 +97,15 @@ $(document).ready(function(){
         <div class="main-content-container container-fluid px-4 mb-4">
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
-            <div class="col-12 col-sm-4 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">打码</span>
-              <h3 class="page-title">打码管理</h3>
+            <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
+              <span class="text-uppercase page-subtitle">code</span>
+              <h3 class="page-title">code管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="workshop-code.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
+                <a id="add-new-event" href="workshop-code-search.php" class="btn btn-outline-primary btn-pill"><i class="fa fa-arrow-left mr-1"></i> 返回 </a>
               </div>
             </div>
-
           </div>
 
           <?php
@@ -85,19 +117,118 @@ $(document).ready(function(){
           $sql_arr = mysqli_fetch_assoc($result);
           ?>
 
+          <div class="modal fade" id="modaladdnew" data-backdrop="static" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-card card" data-toggle="lists" data-options='{"valueNames": ["name"]}'>
+                  <div class="card-header " style="display: flex;">
+                    <!-- Title -->
 
+                    <h5 class="modal-title col text-center" id="gridModalLabel">新增code</h5>
+                    <!-- Close -->
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <!-- body  -->
+                  <div class="card-body p-0">
+                    <form action="workshop-code-add_check.php" class="py-4" id="workshop-code_add" method="post">
+
+                      <div class="form-row mx-4">
+                        <div class="form-group col-md-3">
+                          <label for="order_id">订单号</label>
+                          <input type="text" class="form-control" name="order_id" id="order_id" value="<?php echo $sql_arr['order_id'] ?>" placeholder="订单号" readonly="readonly">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="order_name">品名</label>
+                          <input type="text" class="form-control" name="order_name" id="order_name" value="<?php echo $sql_arr['order_name'] ?>" placeholder="品名" readonly="readonly">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="order_type">规格/型号/图号</label>
+                          <input type="text" class="form-control" name="order_type" id="order_type" value="<?php echo $sql_arr['order_type'] ?>" placeholder="规格/型号/图号" readonly="readonly">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="order_volume">订单量</label>
+                          <input type="number" class="form-control" name="order_volume" id="order_volume" value="<?php echo $sql_arr['order_volume'] ?>" placeholder="订单量" readonly="readonly">
+                        </div>
+                      </div>
+
+                      <hr class="mx-4">
+                      <div class="form-row mx-4">
+                        <div class="form-group col-md-3">
+                          <label for="code_get">领料日期</label>
+                          <div class="input-group with-addon-icon-left" >
+                          <input data-provide="datepicker" type="text" required class="form-control" name="code_get" id="code_get" value="" placeholder="领料日期">
+                          <span class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                          </span>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="code_readiness">准备时间</label>
+                          <input type="text" required class="form-control" name="code_readiness" id="code_readiness" value="" placeholder="准备时间">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for=" code_opertor ">操作者</label>
+                          <input type="text" class="form-control" required name="code_opertor" id="code_opertor" value="" placeholder="操作者">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="code_completion">批次完成量</label>
+                          <input type="number" class="form-control" required name="code_completion" id="code_completion" value="" placeholder="批次完成量">
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="code_end">批次完成日期</label>
+                          <div class="input-group with-addon-icon-left" >
+                          <input data-provide="datepicker" class="form-control" required name="code_end" id="code_end" value="" placeholder="批次完成日期">
+                          <span class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                          </span>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="code_turn_date">转序日期</label>
+                          <div class="input-group with-addon-icon-left" >
+                          <input data-provide="datepicker" class="form-control" required name="code_turn_date" id="code_turn_date" value="" placeholder="转序日期">
+                          <span class="input-group-append">
+                            <span class="input-group-text">
+                                <i class="fa fa-calendar"></i>
+                            </span>
+                          </span>
+                          </div>
+                        </div>
+                        <div class="form-group col-md-3">
+                          <label for="code_turn_volume">转序量</label>
+                          <input type="number" class="form-control" required name="code_turn_volume" id="code_turn_volume" value="" placeholder="转序量">
+                        </div>
+                      </div>
+
+                    </form>
+                  </div>
+                  <div class="card-footer border-top ">
+                    <div class="col">
+                      <button id="btn2" form="workshop-code_add" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>确定</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="row">
             <div class="col-lg-5 mx-auto">
               <div class="card card-small mb-4">
-                <form action="workshop-code-search_check.php" class="main-navbar__search w-100 " id="workshop-code_add" method="post">
+                <form action="workshop-code-search_check.php" class="main-navbar__search w-100" method="post">
                   <div class="input-group input-group-seamless ">
                     <div class="input-group-prepend">
                       <div class="input-group-text">
                         <i class="fa fa-search ml-2 "></i>
                       </div>
                     </div>
-                    <input class="navbar-search form-control ml-3" name="code_id" id="code_id" style="height:50px; border-radius:25px;" type="text" placeholder="请输入订单号..." value="<?php echo $_SESSION['order_id'] ?>" aria-label="Search">
+                    <input class="navbar-search form-control ml-3" name="code_id" id="code_id" style="height:50px; border-radius:25px;" type="text" value="<?php echo $_SESSION['order_id'] ?>" placeholder="请输入订单号..." aria-label="Search">
                   </div>
                 </form>
               </div>
@@ -106,74 +237,179 @@ $(document).ready(function(){
 
 
 
-          <div class="row">
-            <div class="col-lg-12 mx-auto ">
-              <div class="card card-small mb-4">
-                <div class="card-body p-0">
-                  <form action="workshop-code-add_check.php" class="py-4" id="workshop-code_add0" method="post">
-
-
-                    <div class="form-row mx-4">
-                      <div class="form-group col-md-3">
-                        <label for="order_id">订单号</label>
-                        <input type="text" class="form-control" name="order_id" id="order_id" value="<?php echo $sql_arr['order_id'] ?>" placeholder="订单号" readonly="readonly">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="order_name">品名</label>
-                        <input type="text" class="form-control" name="order_name" id="order_name" value="<?php echo $sql_arr['order_name'] ?>" placeholder="品名" readonly="readonly">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="order_type">规格/型号/图号</label>
-                        <input type="text" class="form-control" name="order_type" id="order_type" value="<?php echo $sql_arr['order_type'] ?>" placeholder="规格/型号/图号" readonly="readonly">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="order_volume">订单量</label>
-                        <input type="number" class="form-control" name="order_volume" id="order_volume" value="<?php echo $sql_arr['order_volume'] ?>" placeholder="订单量" readonly="readonly">
-                      </div>
-                    </div>
-
-                    <hr class="mx-4">
-                    <div class="form-row mx-4">
-                      <div class="form-group col-md-3">
-                        <label for="code_get">领料日期</label>
-                        <input type="date" class="form-control" name="code_get" id="code_get" value="" placeholder="领料日期">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_readiness">准备时间</label>
-                        <input type="text" class="form-control" name="code_readiness" id="code_readiness" value="" placeholder="准备时间">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_opertor">操作者</label>
-                        <input type="text" class="form-control" name="code_opertor" id="code_opertor" value="" placeholder="操作者">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_completion">批次完成量</label>
-                        <input type="number" class="form-control" name="code_completion" id="code_completion" value="" placeholder="批次完成量">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_end">批次完成日期</label>
-                        <input type="date" class="form-control" name="code_end" id="code_end" value="" placeholder="批次完成日期">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_turn_date">转序日期</label>
-                        <input type="date" class="form-control" name="code_turn_date" id="code_turn_date" value="" placeholder="转序日期">
-                      </div>
-                      <div class="form-group col-md-3">
-                        <label for="code_turn_volume">转序量</label>
-                        <input type="number" class="form-control" name="code_turn_volume" id="code_turn_volume" value="" placeholder="转序量">
-                      </div>
-                    </div>
-
-                  </form>
-                </div>
-                <div class="card-footer border-top ">
-                  <div class="col">
-                    <button id="btn2" form="workshop-code_add0" class="btn  btn-accent mx-auto d-table mr-3"><i class="fa fa-check mr-1"></i>添加code</button>
-                  </div>
-                </div>
+          <div class="dataTables_length" id="table_length">
+            <div class="">
+              <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
+                <a id="add-new-event" href="#" data-toggle="modal" data-target="#modaladdnew" class="btn btn-primary "><i class="fa fa-plus mr-1"></i> 新增code </a>
               </div>
             </div>
           </div>
+
+          <table id="codetable">
+            <thead>
+			        <tr>
+                <th>订单号</th>
+                <th>品名</th>
+                <th>规格/型号/图号</th>
+                <th>订单量</th>
+                <th>领料时间</th>
+                <th>准备时间</th>
+                <th>操作者</th>
+                <th>批次完成量</th>
+                <th>批次完成日期</th>
+                <th>转序日期</th>
+                <th>转序量</th>
+                <th>操作</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <?php
+              require_once('conn.php');
+              $sql="select * from code where order_id='$id'";
+              $result=mysqli_query($conn,$sql);
+              $loginNum=mysqli_num_rows($result);
+              if(!$result)
+              {
+                die('Could not connect:' .mysqli_error());
+              }
+              for($i=0; $i<$loginNum; $i++){
+                $row = mysqli_fetch_assoc($result);
+                echo "<tr>";
+                echo "<td>{$row['order_id']}</td>";
+                echo "<td>{$sql_arr['order_name']}</td>";
+                echo "<td>{$sql_arr['order_type']}</td>";
+                echo "<td>{$sql_arr['order_volume']}</td>";
+                echo "<td>{$row['code_get']}</td>";
+                echo "<td>{$row['code_readiness']}</td>";
+                echo "<td>{$row['code_opertor']}</td>";
+                echo "<td>{$row['code_completion']}</td>";
+                echo "<td>{$row['code_end']}</td>";
+                echo "<td>{$row['code_turn_date']}</td>";
+                echo "<td>{$row['code_turn_volume']}</td>";
+                echo "<td>
+                <form action='javascript:dele({$row['id']})' method='post' id='del{$row['id']}'>
+                </form>
+                <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
+                  <button type='button' data-toggle='modal' data-target='#modaledit{$i}' class='btn btn-white'>
+                   <i class='material-icons'>&#xE254;</i>
+                  </button>
+                  <button form='del{$row['id']}' class='btn btn-white'>
+                    <i class='material-icons'>&#xE872;</i>
+                  </button>
+                </div>
+                </td>";
+                echo "</tr>";
+                echo "
+                <div class='modal fade' id='modaledit{$i}' data-backdrop='static' tabindex='-1' role='dialog' aria-hidden='true'>
+                  <div class='modal-dialog modal-dialog-centered modal-lg' role='document'>
+                    <div class='modal-content'>
+                      <div class='modal-card card' data-toggle='lists' data-options='{'valueNames': ['name']}'>
+                        <div class='card-header ' style='display: flex;'>
+                          <!-- Title -->
+
+                          <h5 class='modal-title col text-center' id='gridModalLabel'>修改问题反馈记录单</h5>
+                          <!-- Close -->
+                          <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+                            <span aria-hidden='true'>&times;</span>
+                          </button>
+                        </div>
+                        <!-- body  -->
+                        <div class='card-body p-0'>
+                          <form action='workshop-code-edit_check.php?+id={$row['id']}' class='py-2' id='code_edit{$i}' method='post'>
+
+
+                            <div class='form-row mx-4'>
+                              <div class='form-group col-md-3'>
+                                <label for='order_id'>订单号</label>
+                                <input type='text' class='form-control' name='order_id' id='order_id' value='{$sql_arr['order_id']}' placeholder='订单号' readonly='readonly'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='order_name'>品名</label>
+                                <input type='text' class='form-control' name='order_name' id='order_name' value=' {$sql_arr['order_name']}' placeholder='品名' readonly='readonly'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='order_type'>规格/型号/图号</label>
+                                <input type='text' class='form-control' name='order_type' id='order_type' value=' {$sql_arr['order_type']}' placeholder='规格/型号/图号' readonly='readonly'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='order_volume'>订单量</label>
+                                <input type='number' class='form-control' name='order_volume' id='order_volume' value='{$sql_arr['order_volume']}' placeholder='订单量' readonly='readonly'>
+                              </div>
+                            </div>
+
+                            <hr class='mx-4'>
+                            <div class='form-row mx-4'>
+                              <div class='form-group col-md-3'>
+                                <label for='code_get'>领料日期</label>
+                                <div class='input-group with-addon-icon-left' >
+                                <input data-provide='datepicker' type='text' required class='form-control' name='code_get' id='code_get' value='{$row['code_get']}' placeholder='领料日期'>
+                                <span class='input-group-append'>
+                                  <span class='input-group-text'>
+                                      <i class='fa fa-calendar'></i>
+                                  </span>
+                                </span>
+                                </div>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='code_readiness'>准备时间</label>
+                                <input type='text' required class='form-control' name='code_readiness' id='code_readiness' value='{$row['code_readiness']}' placeholder='准备时间'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for=' code_opertor '>操作者</label>
+                                <input type='text' class='form-control' required name='code_opertor' id='code_opertor' value='{$row['code_opertor']}' placeholder='操作者'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='code_completion'>批次完成量</label>
+                                <input type='number' class='form-control' required name='code_completion' id='code_completion' value='{$row['code_completion']}' placeholder='批次完成量'>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='code_end'>批次完成日期</label>
+                                <div class='input-group with-addon-icon-left' >
+                                <input data-provide='datepicker' class='form-control' required name='code_end' id='code_end' value='{$row['code_end']}' placeholder='批次完成日期'>
+                                <span class='input-group-append'>
+                                  <span class='input-group-text'>
+                                      <i class='fa fa-calendar'></i>
+                                  </span>
+                                </span>
+                                </div>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='code_turn_date'>转序日期</label>
+                                <div class='input-group with-addon-icon-left' >
+                                <input data-provide='datepicker' class='form-control' required name='code_turn_date' id='code_turn_date' value='{$row['code_turn_date']}' placeholder='转序日期'>
+                                <span class='input-group-append'>
+                                  <span class='input-group-text'>
+                                      <i class='fa fa-calendar'></i>
+                                  </span>
+                                </span>
+                                </div>
+                              </div>
+                              <div class='form-group col-md-3'>
+                                <label for='code_turn_volume'>转序量</label>
+                                <input type='number' class='form-control' required name='code_turn_volume' id='code_turn_volume' value='{$row['code_turn_volume']}' placeholder='转序量'>
+                              </div>
+                            </div>
+
+                          </form>
+                        </div>
+                        <div class='card-footer border-top '>
+                          <div class='col'>
+                            <button id='btn2' form='code_edit{$i}' class='btn  btn-accent mx-auto d-table mr-3'><i class='fa fa-check mr-1'></i>确定</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                ";
+              }
+              mysqli_free_result($result);
+              mysqli_close($conn);
+              ?>
+
+            </tbody>
+          </table>
 
 
 
