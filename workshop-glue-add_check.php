@@ -16,11 +16,13 @@ $sql="insert into glue(order_id,glue_get,glue_readiness,glue_opertor,glue_comple
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: workshop-glue-add-success.php");
-    echo "yes";
+  echo "<script>alert('提交成功！');window.location.href='workshop-glue-add.php';</script>";
+    // header("Location: workshop-glue-add-success.php");
+    // echo "yes";
 	exit;
 }else{
-  header("Location: workshop-glue-add.php");
+  echo "<script>alert('提交失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  //header("Location: workshop-glue-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
