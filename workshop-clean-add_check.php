@@ -16,11 +16,13 @@ $sql="insert into cleaning(order_id,cleaning_get,cleaning_readiness,cleaning_ope
 $result=mysqli_query($conn,$sql);
 
 if($result){
-    header("Location: workshop-clean-add-success.php");
-    echo "yes";
+  echo "<script>alert('提交成功！');window.location.href='workshop-clean-add.php';</script>";
+    // header("Location: workshop-clean-add-success.php");
+    // echo "yes";
 	exit;
 }else{
-  header("Location: workshop-clean-add.php");
+  echo "<script>alert('提交失败！请检查填写信息无误。');window.history.back(-1);</script>";
+  // header("Location: workshop-clean-add.php");
   echo "no";
 	die('Could not connect:' .mysqli_error());
 	exit;
