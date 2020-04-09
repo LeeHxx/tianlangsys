@@ -18,7 +18,7 @@ session_start();?>
       var dip_get=$("#dip_get").val();
       var dip_recipient=$("#dip_recipient").val();
       var dip_readiness=$("#dip_readiness").val();
-      var dip_first_start=$("#dip_first_satrt").val();
+      var dip_first_start=$("#dip_first_start").val();
       var dip_first_opertor=$("#dip_first_opertor").val();
       var dip_batch_completion=$("#dip_batch_completion").val();
       var dip_batch_end=$("#dip_batch_end").val();
