@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="styles/responsive.dataTables.css">
 <link rel="stylesheet" href="styles/font-awesome.css">
 <link rel="stylesheet" href="styles/bootstrap-select.css">
+<link rel="stylesheet" href="styles/theme.min.css">
 <script src="scripts/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
