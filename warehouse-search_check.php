@@ -19,7 +19,7 @@ if ($num0>0) {
 	exit;
 }elseif($num>0){
     $_SESSION['order_id']=$w_id;
-    echo "<script>alert('注意！物料信息未填写。');window.location.href='warehouse-add.php';</script>";
+    echo "<script>alert('警告！此订单物料信息未填写，系统测试阶段允许继续操作。');window.location.href='warehouse-add.php';</script>";
     //header("Location: warehouse-add.php");
     echo "yes";
 	exit;
