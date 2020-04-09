@@ -23,7 +23,7 @@ session_start();?>
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">清洗</span>
+              <span class="text-uppercase page-subtitle">workshop</span>
               <h3 class="page-title">清洗列表</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
@@ -34,7 +34,7 @@ session_start();?>
           </div>
           <!-- End Page Header -->
           <!-- Order Table -->
-          
+
             <table class="transaction-history d-none">
               <thead>
 		        	  <tr>
@@ -96,7 +96,7 @@ session_start();?>
 
               </tbody>
             </table>
-          
+
           <!-- End Order Table -->
         </div>
         <!-- end Page -->

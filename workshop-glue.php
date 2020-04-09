@@ -23,7 +23,7 @@ session_start();?>
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">打胶</span>
+              <span class="text-uppercase page-subtitle">workshop</span>
               <h3 class="page-title">打胶列表</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">

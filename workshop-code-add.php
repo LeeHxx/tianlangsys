@@ -98,8 +98,8 @@ function dele(id) {
           <!-- Page Header -->
           <div class="page-header row no-gutters py-4">
             <div class="col-12 col-sm-6 text-center text-sm-left mb-4 mb-sm-0">
-              <span class="text-uppercase page-subtitle">code</span>
-              <h3 class="page-title">code管理</h3>
+              <span class="text-uppercase page-subtitle">workshop</span>
+              <h3 class="page-title">打码管理</h3>
             </div>
             <div class="col-12 col-sm-6 d-flex align-items-center">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
@@ -124,7 +124,7 @@ function dele(id) {
                   <div class="card-header " style="display: flex;">
                     <!-- Title -->
 
-                    <h5 class="modal-title col text-center" id="gridModalLabel">新增code</h5>
+                    <h5 class="modal-title col text-center" id="gridModalLabel">新增</h5>
                     <!-- Close -->
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                       <span aria-hidden="true">&times;</span>
@@ -240,7 +240,7 @@ function dele(id) {
           <div class="dataTables_length" id="table_length">
             <div class="">
               <div class="d-inline-flex mb-sm-0 mx-auto ml-sm-auto mr-sm-0" role="group" aria-label="Page actions">
-                <a id="add-new-event" href="#" data-toggle="modal" data-target="#modaladdnew" class="btn btn-primary "><i class="fa fa-plus mr-1"></i> 新增code </a>
+                <a id="add-new-event" href="#" data-toggle="modal" data-target="#modaladdnew" class="btn btn-primary "><i class="fa fa-plus mr-1"></i> 新增 </a>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@ function dele(id) {
                         <div class='card-header ' style='display: flex;'>
                           <!-- Title -->
 
-                          <h5 class='modal-title col text-center' id='gridModalLabel'>修改问题反馈记录单</h5>
+                          <h5 class='modal-title col text-center' id='gridModalLabel'>修改</h5>
                           <!-- Close -->
                           <button type='button' class='close' data-dismiss='modal' aria-label='Close'>
                             <span aria-hidden='true'>&times;</span>
