@@ -91,6 +91,22 @@ session_start();?>
     //     } );
 
   });
+
+  function dele(id) {
+    if(confirm("确认删除吗？")){
+    $.post("workshop-dip-del_check.php?id="+id,function(data){
+      if($.trim(data)=='yes'){
+        alert("删除成功！")
+        window.location.href='workshop-dip-add.php';
+        return true;
+      }else{
+        alert("该条记录无法删除 ！")
+        window.location.href='workshop-dip-add.php';
+        return false;
+      }
+    },"text");
+    }
+  }
 </script>
 </head>
 <body class="h-100">
@@ -197,7 +213,7 @@ session_start();?>
                 <div class="form-group col-md-3">
                   <label for="dip_turn_date">转序日期</label>
                   <div class="input-group with-addon-icon-left" >
-                  <input type="date" data-provide="datepicker" class="form-control" name="dip_turn_date" id="dip_turn_date" value="" placeholder="转序日期">
+                  <input data-provide="datepicker" class="form-control" name="dip_turn_date" id="dip_turn_date" value="" placeholder="转序日期">
                   <span class="input-group-append">
                     <span class="input-group-text">
                         <i class="fa fa-calendar"></i>
@@ -354,11 +370,13 @@ session_start();?>
       echo "<td>{$row['dip_turn_date']}</td>";
       echo "<td>{$row['dip_turn_volume']}</td>";
       echo "<td>
+      <form action='javascript:dele({$row['id']})' method='post' id='del{$row['id']}'>
+      </form>
       <div class='btn-group btn-group-sm' role='group' aria-label='Table row actions'>
       <button type='button' data-toggle='modal' data-target='#modaledit{$i}' class='btn btn-white'>
       <i class='material-icons'>&#xE254;</i>
       </button>
-      <button type='button' class='btn btn-white'>
+      <button form='del{$row['id']}' class='btn btn-white'>
       <i class='material-icons'>&#xE872;</i>
       </button>
       </div>
