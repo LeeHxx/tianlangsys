@@ -19,7 +19,7 @@ if ($num0>0) {
 	exit;
 }elseif($num>0){
     $_SESSION['order_id']=$quality_id;
-    echo "<script>alert('警告！此订单可能未进行生产。系统测试阶段允许继续操作');window.location.href='workshop-smt-add.php';</script>";
+    echo "<script>alert('警告！此订单可能未进行生产。系统测试阶段允许继续操作');window.location.href='quality-add.php';</script>";
     // header("Location: quality-add.php");
     // echo "yes";
 	exit;
