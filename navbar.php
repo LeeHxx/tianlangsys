@@ -14,29 +14,39 @@
         </div>
       </a>
       <div class="dropdown-menu dropdown-menu-small" aria-labelledby="dropdownMenuLink">
-        <a class="dropdown-item" href="#">
-          <div class="notification__icon-wrapper">
-            <div class="notification__icon">
-              <i class="material-icons">&#xE6E1;</i>
-            </div>
-          </div>
-          <div class="notification__content">
-            <span class="notification__category">消息</span>
-            <p>仓库齐套来料排配超时！<span class="text-success text-semibold"></span> 请尽快处理！</p>
-          </div>
-        </a>
 
-        <a class="dropdown-item" href="#">
-          <div class="notification__icon-wrapper">
-            <div class="notification__icon">
-              <i class="material-icons">&#xE6E1;</i>
+        <?php
+        require_once('conn.php');
+        date_default_timezone_set('Asia/Shanghai');
+        $time_now=strtotime(date("Y-m-d"));
+        $sql_time="select * from orders where order_finished=0";
+        $result_time=mysqli_query($conn,$sql_time);
+        $loginNum_time=mysqli_num_rows($result_time);
+        for($i=0; $i<$loginNum_time; $i++){
+          $row_time = mysqli_fetch_assoc($result_time);
+          $time_end = strtotime($row_time['order_end']);
+          $time_left =ceil(($time_end-$time_now)/86400);
+          // echo $time_left;
+          if ($time_left<'100' and $time_left>'0') {
+
+          echo "<a class='dropdown-item' href='order-status.php?id={$row_time['order_id']}'>
+            <div class='notification__icon-wrapper'>
+              <div class='notification__icon'>
+                <i class='material-icons'>priority_high</i>
+              </div>
             </div>
-          </div>
-          <div class="notification__content">
-            <span class="notification__category">消息</span>
-            <p>仓库齐套来料排配超时！<span class="text-success text-semibold"></span> 请尽快处理！</p>
-          </div>
-        </a>
+            <div class='notification__content'>
+              <span class='notification__category'>注意</span>
+              <p><span class='text-danger text-semibold'>订单-{$row_time['order_id']}-</span>距离交货日期不足100天！ 请尽快处理！</p>
+            </div>
+          </a>";
+          }
+        }
+        mysqli_free_result($result_time);
+        // mysqli_close($conn);
+        ?>
+
+
 
         <a class="dropdown-item notification__all text-center" href="#"> 查看所有消息 </a>
       </div>
