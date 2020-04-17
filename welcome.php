@@ -16,7 +16,122 @@ session_start();?>
         </div>
         <div class="main-content-container container-fluid px-4 mb-4">
           <div class="row mt-4">
-            <div class="col-lg-9  mb-4 ">
+
+<div class="col-lg-9  mb-4 ">
+            <div class="card">
+              <div class="card-body text-center">
+                <div class="row justify-content-center">
+                  <div class="col-12 col-md-10 col-xl-8">
+                    <!-- Image -->
+                    <img src="images/coworking.svg" alt="..." class="img-fluid  mb-4" style="max-width: 272px;">
+                    <!-- Title -->
+                    <h2>
+                      欢迎使用
+                    </h2>
+                    <!-- Content -->
+                    <p class="text-muted" style="font-size: 1rem;">
+                      南京天朗电子装备有限公司生产管理系统
+                    </p>
+                    <a href="#" class="btn btn-primary lift">
+                      开始使用
+                    </a>
+                    <hr class="my-4">
+                    <p class="text-muted" style="margin-bottom: 1rem;">查看订单信息或者添加新的订单?</p>
+                    <a href="order.php" class="btn btn-sm btn-outline-primary lift">
+                      订单管理
+                    </a>
+
+                    <p class="text-muted mt-4" style="margin-bottom: 1rem;">填写问题反馈记录单？</p>
+                    <a href="workshopproblem-search.php" class="btn btn-sm btn-outline-primary lift">
+                      问题反馈记录单
+                    </a>
+
+                  </div>
+                </div> <!-- / .row -->
+              </div>
+            </div>
+            </div>
+
+<div class="col-lg-3 mb-4">
+            <div class="card h-md-100">
+                            <div class="card-header d-flex flex-between-center pb-0">
+                              <h6 class="mb-0">天气</h6>
+
+                            </div>
+                            <div class="card-body pt-2">
+                              <div class="row no-gutters h-100 align-items-center">
+                                <div class="col">
+                                  <div class="media align-items-center"><img class="mr-3" src="images/weather-icon.png" alt="" height="60">
+                                    <div class="media-body">
+                                      <h6 class="mb-2">南京市</h6>
+                                      <div class="fs--2 font-weight-semi-bold">
+                                        <div class="text-warning">晴朗</div>降水概率: 50%
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="col-auto text-center pl-2">
+                                  <div class="fs-4 font-weight-normal text-sans-serif text-primary mb-1 line-height-1">31°</div>
+                                  <div class="fs--1 text-800">32° / 25°</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          <div class="card card-small mt-4">
+                            <div class="card-header">
+                              <h6 class="m-0">订单交货提醒</h6>
+                            </div>
+                            <div class="card-body p-0">
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item px-4">
+                                  <div class="progress-wrapper">
+                                    <strong class="text-muted d-block mb-2">订单号TL0001</strong>
+                                    <div class="progress progress-sm">
+                                      <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 74%;">
+                                        <span class="progress-value">剩余3天</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-group-item px-4">
+                                  <div class="progress-wrapper">
+                                    <strong class="text-muted d-block mb-2">订单号TL0002</strong>
+                                    <div class="progress progress-sm">
+                                      <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 64%;">
+                                        <span class="progress-value">剩余2天</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                                <li class="list-group-item px-4">
+                                  <div class="progress-wrapper">
+                                    <strong class="text-muted d-block mb-2">订单号TL0003</strong>
+                                    <div class="progress progress-sm">
+                                      <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100" style="width: 23%;">
+                                        <span class="progress-value">剩余1天</span>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </li>
+                              </ul>
+                            </div>
+                            <div class="card-footer border-top">
+                              <div class="row">
+
+                                <div class="col text-right view-report">
+                                  <a href="#">详细信息 →</a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          </div>
+
+
+            <!-- <div class="col-lg-9  mb-4 ">
               <div class="card card-small mb-4">
                 <div class="jumbotron" style="background:#fff;">
                   <h1 class="display-4" style="font-weight: 400;">欢迎使用!</h1>
@@ -32,7 +147,7 @@ session_start();?>
                   <a class="btn btn-primary btn-pill btn-lg" href="workshopproblem-search.php" role="button"><i class="material-icons mr-2">report</i>问题反馈</a>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="col-lg-3 col-md-12 col-sm-12 mb-4">
               <div class="card card-small">
                 <div class="card-header border-bottom">
