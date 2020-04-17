@@ -8465,6 +8465,35 @@ html .ql-toolbar .ql-picker .ql-picker-options {
     color: #818ea3
 }
 
+.order__countdown {
+    padding: 0 .9375rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: column;
+    flex-flow: column;
+    margin: auto;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center
+}
+
+.order__countdown h2 {
+    color: #cacedb;
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin-bottom: 1.5625rem
+}
+
+.order__countdown h3 {
+    font-weight: 500;
+    font-size: 1.8rem;
+    margin-bottom: .625rem
+}
+
+.order__countdown p {
+    color: #818ea3
+}
+
 @media (max-width:575.98px) {
     html {
         font-size: 15px
@@ -8958,7 +8987,7 @@ html .ql-toolbar .ql-picker .ql-picker-options {
 	box-sizing:content-box;
 	color:#727cf5;
 	background-color:currentColor;
-	border:.25em solid #fafbfe;
+	border:.25em solid #f5f6f8;
 	border-radius:50%;
 	z-index:5
 }
@@ -9025,5 +9054,5 @@ to {
 }
 }@media (max-width:767.98px) {
 	.horizontal-steps .horizontal-steps-content .step-item span {
-	
+
 }
