@@ -186,6 +186,7 @@ session_start();?>
                 <th>规格/型号/图号</th>
                 <th>订单量</th>
                 <th>交货日期</th>
+                <th>订单状态</th>
                 <th>操作</th>
               </tr>
             </thead>
@@ -208,6 +209,14 @@ session_start();?>
                 echo "<td><strong>{$row['order_type']}</strong></td>";
                 echo "<td><strong>{$row['order_volume']}</strong></td>";
                 echo "<td><strong>{$row['order_end']}</strong></td>";
+                if ($row['order_finished']=='0') {
+                  echo "<td>
+                  <span class='text-warning'>生产中</span>
+                  </td>";
+                }else {
+                  echo "<td><span class='text-success'>已完成</span></td>";
+                }
+
                 echo "<td>
                 <form action='javascript:dele({$row['id']})' method='post' id='{$row['order_id']}'>
                 </form>
