@@ -12,6 +12,7 @@
 <script src="scripts/app/app-transaction-history.1.3.1.min.js?v=5"></script>
 <script src="scripts/bootstrap-select.js"></script>
 <script src="scripts/i18n/defaults-zh_CN.min.js"></script>
+<script src="scripts/jquery.countdown.js"></script>
 <script>
 	$(function(){
 		$(".tl-loader").fadeOut("slow");
