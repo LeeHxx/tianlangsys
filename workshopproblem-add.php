@@ -162,7 +162,7 @@ function dele(id) {
                           <div class="form-group col-md-4">
                             <label for="feedback_date">反馈日期</label>
                             <div class="input-group with-addon-icon-left" >
-                            <input type="date" class="form-control" data-provide="datepicker" name="feedback_date" id="feedback_date" value="" placeholder="反馈日期">
+                            <input class="form-control" data-provide="datepicker" name="feedback_date" id="feedback_date" value="" placeholder="反馈日期">
                             <span class="input-group-append">
                               <span class="input-group-text">
                                   <i class="fa fa-calendar"></i>
@@ -188,7 +188,7 @@ function dele(id) {
                           <div class="form-group col-md-4">
                             <label for="solving_time">要求解决时间</label>
                             <div class="input-group with-addon-icon-left" >
-                              <input type="date" class="form-control" data-provide="datepicker" name="solving_time" id="solving_time" placeholder="要求解决时间">
+                              <input class="form-control" data-provide="datepicker" name="solving_time" id="solving_time" placeholder="要求解决时间">
                               <span class="input-group-append">
                                 <span class="input-group-text">
                                     <i class="fa fa-calendar"></i>

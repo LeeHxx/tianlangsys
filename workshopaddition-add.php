@@ -123,7 +123,7 @@ $(document).ready(function(){
               <div class="form-row mx-4">
                 <div class="form-group col-md-3">
                   <label for="addition_date">补领日期</label>
-                  <input type="date" data-provide="datepicker" class="form-control" name="addition_date" id="addition_date" value="" placeholder="补领日期">
+                  <input data-provide="datepicker" class="form-control" name="addition_date" id="addition_date" value="" placeholder="补领日期">
                 </div>
                 <div class="form-group col-md-3">
                   <label for="addition_type">补领型号</label>
