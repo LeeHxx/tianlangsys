@@ -8,12 +8,12 @@
 <link rel="stylesheet" href="styles/all.css">
 <link rel="stylesheet" href="styles/icon.css">
 <link rel="stylesheet" href="styles/bootstrap.css">
-<link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css?v=00111" id="main-stylesheet" data-version="1.3.1">
+<link rel="stylesheet" href="styles/shards-dashboards.1.3.1.css?v=1" id="main-stylesheet" data-version="1.3.1">
 <link rel="stylesheet" href="styles/extras.1.3.1.min.css">
 <link rel="stylesheet" href="styles/responsive.dataTables.css">
 <link rel="stylesheet" href="styles/font-awesome.css">
 <link rel="stylesheet" href="styles/bootstrap-select.css">
-<link rel="stylesheet" href="styles/theme.min.css">
+<!-- <link rel="stylesheet" href="styles/theme.min.css"> -->
 <script src="scripts/jquery-3.3.1.min.js"></script>
 <script type="text/javascript">
 $(document).ready(function(){
