@@ -160,7 +160,7 @@ session_start();?>
   // $row_smt = mysqli_fetch_assoc($result_smt);
   // $row_quality = mysqli_fetch_assoc($result_quality);
   // $row_product = mysqli_fetch_assoc($result_product);
-  mysqli_close($conn);
+  // mysqli_close($conn);
 
   ?>
 
@@ -191,15 +191,18 @@ session_start();?>
           </div>
           <!-- End Page Header -->
 
-
-          <!-- <div class="error__content">
-            <h2>500</h2>
-            <h3>距离交货日期还有!</h3>
-            <p>There was a problem on our end. Please try again later.</p>
-          </div> -->
-
-
-
+<?php if($row['order_finished']=='0'){?>
+          <div class="order__countdown">
+            <h3>距离交货日期还有</h3>
+            <h2>
+              <span class=" " data-countdown="<?php echo $row['order_end']; ?>"></span>
+            </h2>
+          </div>
+<?php }else {?>
+  <div class="order__countdown">
+    <h3>订单已完成</h3>
+  </div>
+  <?php }?>
 
           <div class="row justify-content-center">
             <div class="col-lg-7 col-md-10 col-sm-11">
@@ -570,5 +573,14 @@ session_start();?>
       </div>
     </div>
     <?php include('script.php') ?>
+    <script>
+        $('[data-countdown]').each(function(){
+            var $this = $(this), finalDate = $(this).data('countdown');
+            $this.countdown(finalDate, function(event) {
+                $this.html(event.strftime('%D 天 %H:%M:%S'));
+            });
+        })
+
+    </script>
   </body>
   </html>
