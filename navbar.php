@@ -1,8 +1,9 @@
 <nav class="navbar align-items-stretch navbar-light flex-md-nowrap p-0">
   <div  class=" w-100 d-none d-md-flex d-lg-flex">
     <div class="d-table " style="margin-top: auto !important;margin-right: auto !important;margin-bottom: auto !important;margin-left: auto !important;">
-      <img id="main-logo" class="d-inline-block align-top mr-1" style="max-height: 33px;" src="images/TLlogo-1.png" alt="Dashboard">
-      <a class="d-md-inline ml-1" style="font-size: 22px; color: #3d5170; font-weight: 900;">&nbsp&nbsp&nbsp南京天朗电子装备有限公司</a>
+      <!-- <img id="main-logo" class="d-inline-block align-top mr-1" style="max-height: 33px;" src="images/TLlogo-1.png" alt="Dashboard"> -->
+      <img id="main-logo" class="d-inline-block align-top mr-1" style="max-height: 33px;" src="images/TLlogo.png" alt="Dashboard">
+      <a class="d-md-inline ml-1" style="font-size: 22px; color: #3d5170; font-weight: 900;"> &nbsp南京天朗电子装备有限公司</a>
     </div>
   </div>
   <ul class="navbar-nav border-left flex-row ">
