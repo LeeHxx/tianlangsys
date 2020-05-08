@@ -62,7 +62,7 @@ session_start();?>
 
 
           <div class="row">
-            <div class="col-lg-12 mx-auto">
+            <div class="col-lg-8 mx-auto">
               <!-- Edit User Details -->
               <div class="card card-small edit-user-details mb-4">
                 <div class="card-header p-0">
@@ -255,7 +255,6 @@ session_start();?>
                         </div>
                       </div>
                     </div>
-
                   </form>
                 </div>
                 <div class="card-footer border-top">
