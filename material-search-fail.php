@@ -51,7 +51,7 @@ session_start();?>
 
           <div class="row">
             <div class="col-lg-5 mx-auto">
-              <div class="card card-small mb-4">
+              <div class="card mb-4" style="border-radius: 2rem;">
 
                 <form action="material-search_check.php" class="main-navbar__search w-100 " method="post">
                   <div class="input-group input-group-seamless ">
