@@ -1,37 +1,12 @@
+<?php
+session_start();
+if(isset($_SESSION['ischecked'])){unset($_SESSION['ischecked']);
+}
+?>
 <!DOCTYPE html>
 <html class="no-js h-100" lang="zh-CN">
 <head>
   <?php include('head.php') ?>
-  <script type="text/javascript">
-    $(document).ready(function(){
-      $("#btn1").click(function(){
-        var user=$("#user").val();
-        var passwd=$("#passwd").val();
-        if(user==""){
-          $("#user").focus();
-          return false;
-        }else if(passwd==""){
-          $("#passwd").focus();
-          return false;
-        }else{
-          $.post("login_check.php",{user:user,passwd:passwd},function(data){
-            if($.trim(data)=='yes'){
-              window.location.href='index.php';
-              return true;
-            }else{
-              window.location.href='relogin.php';
-              return false;
-            }
-          },"text");
-        }
-      });
-      $(document).keydown(function (event) {
-        if (event.keyCode == 13) {
-          $('#btn1').triggerHandler('click');
-        }
-      });
-    });
-  </script>
 </head>
 <body class="h-100">
   <div class="container-fluid h-100">
@@ -46,18 +21,18 @@
               <div class="card">
                 <div class="card-body">
                   <img class=" d-table mx-auto mb-3" style="max-height: 50px;" src="images/TLlogo-1.png" alt="天朗科技">
-                  <h5 class="auth-form__title text-center mb-2" style="font-size: 20px; color: #3d5170; font-weight: 500;">南京天朗电子装备有限公司</h5>
-                  <h5 class="auth-form__title text-center mb-4">生产制造管理系统</h5>
-                  <form  class="was-validated" >
+                  <h5 class="auth-form__title text-center mb-4" >南京天朗电子装备有限公司</h5>
+
+                  <form action="login_check.php" method="post">
                     <div class="form-group">
                       <label for="exampleInputEmail1">用户名</label>
                       <div class="input-group input-group-seamless">
-                        <span class="input-group-prepend">
-                          <span class="input-group-text">
+                        <div class="input-group-prepend">
+                          <div class="input-group-text">
                             <i class="fa fa-user"></i>
-                          </span>
-                        </span>
-                        <input type="text" class="form-control is-invalid" id="user" name="user" aria-describedby="emailHelp" placeholder=" 用户名或密码错误！" required>
+                          </div>
+                        </div>
+                        <input type="text" class="form-control" id="user" name="user" required aria-describedby="emailHelp" placeholder="用户名">
                       </div>
                     </div>
                     <div class="form-group">
@@ -68,13 +43,14 @@
                             <i class="fa fa-lock"></i>
                           </span>
                         </span>
-                        <input type="password" class="form-control is-invalid" id="passwd" name="passwd" placeholder="用户名或密码错误！" required>
+                        <input type="password" class="form-control is-invalid" id="passwd" name="passwd" required placeholder="密码">
+                        <div class="invalid-feedback">用户名或密码错误！</div>
                       </div>
                     </div>
                     <div class="form-group mb-3 d-table mx-auto">
 
                     </div>
-                    <button id="btn1" type="button" class="btn btn-pill btn-accent d-table mx-auto">登录</button>
+                    <button id="btn1" class="btn btn-pill btn-accent d-table mx-auto">登录</button>
                   </form>
                 </div>
 
@@ -89,7 +65,6 @@
       </main>
     </div>
   </div>
-  <script src="scripts/jquery-3.3.1.min.js"></script>
   <script src="scripts/popper.min.js"></script>
   <script src="scripts/bootstrap.min.js"></script>
   <script src="scripts/Chart.min.js"></script>
