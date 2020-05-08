@@ -26,10 +26,10 @@ if ($num>0) {
 	$_SESSION['user']=$user;
 	$_SESSION['id']=$row['user_id'];
 	$_SESSION['admin']=$row['admin'];
-    echo "yes";
+  header("Location: index.php");
 	exit;
 }else{
-	echo "no";
+	header("Location: login-fail.php");
 	exit;
 	}
 }
